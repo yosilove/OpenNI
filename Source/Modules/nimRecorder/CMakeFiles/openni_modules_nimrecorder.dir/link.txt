@@ -1,0 +1,2 @@
+/usr/bin/ar cr libopenni_modules_nimrecorder.a  CMakeFiles/openni_modules_nimrecorder.dir/nimRecorder.cpp.o CMakeFiles/openni_modules_nimrecorder.dir/PlayerNode.cpp.o CMakeFiles/openni_modules_nimrecorder.dir/ExportedRecorder.cpp.o CMakeFiles/openni_modules_nimrecorder.dir/ExportedPlayer.cpp.o CMakeFiles/openni_modules_nimrecorder.dir/RecorderNode.cpp.o
+/usr/bin/ranlib libopenni_modules_nimrecorder.a

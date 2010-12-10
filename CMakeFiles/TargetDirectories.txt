@@ -1,0 +1,9 @@
+/home/roxlu/Documents/programming/c++/openni_fork/Source/External/LibJPEG/CMakeFiles/jpeg.dir
+/home/roxlu/Documents/programming/c++/openni_fork/Source/OpenNI/CMakeFiles/openni.dir
+/home/roxlu/Documents/programming/c++/openni_fork/Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir
+/home/roxlu/Documents/programming/c++/openni_fork/Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir
+/home/roxlu/Documents/programming/c++/openni_fork/Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir
+/home/roxlu/Documents/programming/c++/openni_fork/Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir
+/home/roxlu/Documents/programming/c++/openni_fork/Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir
+/home/roxlu/Documents/programming/c++/openni_fork/Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir
+/home/roxlu/Documents/programming/c++/openni_fork/Source/External/TinyXml/CMakeFiles/tinyxml.dir

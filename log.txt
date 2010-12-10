@@ -1,0 +1,407 @@
+CMakeFiles/openni_sample_niaudiosample.dir/NiAudioSample.cpp.o: In function `record(xn::Context&, xn::AudioGenerator*, unsigned int)':
+NiAudioSample.cpp:(.text+0x117): undefined reference to `xnOSOpenFile'
+NiAudioSample.cpp:(.text+0x24c): undefined reference to `xnOSWriteFile'
+NiAudioSample.cpp:(.text+0x2a9): undefined reference to `xnOSWasKeyboardHit'
+NiAudioSample.cpp:(.text+0x2db): undefined reference to `xnOSCloseFile'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnInit':
+XnOpenNI.cpp:(.text+0xce): undefined reference to `xnOSCalloc'
+XnOpenNI.cpp:(.text+0x2c7): undefined reference to `xnOSCreateEvent'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnShutdown':
+XnOpenNI.cpp:(.text+0x59e): undefined reference to `xnOSCloseEvent'
+XnOpenNI.cpp:(.text+0x634): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnGetNeededNodeData(XnInternalNodeData*, XnInternalNodeData*, XnNeededNodeData**)':
+XnOpenNI.cpp:(.text+0x996): undefined reference to `xnOSCalloc'
+XnOpenNI.cpp:(.text+0x9d7): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnMarkFPSFrame(XnContext*, XnFPSDataImpl**)':
+XnOpenNI.cpp:(.text+0xbb5): undefined reference to `xnOSGetHighResTimeStamp'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnNodeInfoAllocate':
+XnOpenNI.cpp:(.text+0xeb7): undefined reference to `xnOSCalloc'
+XnOpenNI.cpp:(.text+0xf91): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnNodeInfoFree':
+XnOpenNI.cpp:(.text+0x107a): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnNodeInfoSetInstanceName':
+XnOpenNI.cpp:(.text+0x10d7): undefined reference to `xnOSStrCopy'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnNodeInfoGetTreeStringRepresentation':
+XnOpenNI.cpp:(.text+0x11ac): undefined reference to `xnOSStrAppend'
+XnOpenNI.cpp:(.text+0x1204): undefined reference to `xnOSStrAppend'
+XnOpenNI.cpp:(.text+0x12a9): undefined reference to `xnOSStrAppend'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnNodeInfoListAllocate':
+XnOpenNI.cpp:(.text+0x12ec): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnNodeInfoListFree':
+XnOpenNI.cpp:(.text+0x132c): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnNodeInfoListAddNode':
+XnOpenNI.cpp:(.text+0x134f): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnNodeInfoListRemove':
+XnOpenNI.cpp:(.text+0x1545): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnNodeInfoListClear':
+XnOpenNI.cpp:(.text+0x1590): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnGeneratorHasNewData(XnInternalNodeData*, void*)':
+XnOpenNI.cpp:(.text+0x1b9f): undefined reference to `xnOSSetEvent'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnCreateProductionNodeImpl(XnContext*, XnNodeInfo*)':
+XnOpenNI.cpp:(.text+0x1ea4): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnFreeProductionNodeImpl(XnInternalNodeData*, unsigned int)':
+XnOpenNI.cpp:(.text+0x2475): undefined reference to `xnOSFree'
+XnOpenNI.cpp:(.text+0x251e): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnRegisterToModuleStateChange(unsigned int (*)(void*, void (*)(void*), void*, void**), void*, XnInternalNodeData*, void (*)(XnInternalNodeData*, void*), void*, void**)':
+XnOpenNI.cpp:(.text+0x4118): undefined reference to `xnOSCalloc'
+XnOpenNI.cpp:(.text+0x417e): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnUnregisterFromModuleStateChange(void (*)(void*, void*), void*, void*)':
+XnOpenNI.cpp:(.text+0x41f1): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnLockedNodeStartChanges':
+XnOpenNI.cpp:(.text+0x49c1): undefined reference to `xnOSGetCurrentThreadID'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnCreateRecorder':
+XnOpenNI.cpp:(.text+0x529b): undefined reference to `xnOSStrCaseCmp'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnCreatePlayer':
+XnOpenNI.cpp:(.text+0x585d): undefined reference to `xnOSStrCaseCmp'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnRegisterGestureCallbacks':
+XnOpenNI.cpp:(.text+0x7f88): undefined reference to `xnOSMalloc'
+XnOpenNI.cpp:(.text+0x8001): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnUnregisterGestureCallbacks':
+XnOpenNI.cpp:(.text+0x807e): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnRegisterUserCallbacks':
+XnOpenNI.cpp:(.text+0x853e): undefined reference to `xnOSMalloc'
+XnOpenNI.cpp:(.text+0x85b7): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnUnregisterUserCallbacks':
+XnOpenNI.cpp:(.text+0x8634): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnRegisterHandCallbacks':
+XnOpenNI.cpp:(.text+0x8798): undefined reference to `xnOSMalloc'
+XnOpenNI.cpp:(.text+0x8825): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnUnregisterHandCallbacks':
+XnOpenNI.cpp:(.text+0x88a2): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnRegisterCalibrationCallbacks':
+XnOpenNI.cpp:(.text+0x97e6): undefined reference to `xnOSMalloc'
+XnOpenNI.cpp:(.text+0x985f): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnUnregisterCalibrationCallbacks':
+XnOpenNI.cpp:(.text+0x98e9): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnRegisterToPoseCallbacks':
+XnOpenNI.cpp:(.text+0x9bdb): undefined reference to `xnOSMalloc'
+XnOpenNI.cpp:(.text+0x9c54): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnUnregisterFromPoseCallbacks':
+XnOpenNI.cpp:(.text+0x9cde): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnAutoCSLocker::XnAutoCSLocker(XnMutex*)':
+XnOpenNI.cpp:(.text._ZN14XnAutoCSLockerC1EP7XnMutex[XnAutoCSLocker::XnAutoCSLocker(XnMutex*)]+0x15): undefined reference to `xnOSEnterCriticalSection'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnAutoCSLocker::~XnAutoCSLocker()':
+XnOpenNI.cpp:(.text._ZN14XnAutoCSLockerD1Ev[XnAutoCSLocker::~XnAutoCSLocker()]+0xd): undefined reference to `xnOSLeaveCriticalSection'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnEvent::XnEvent()':
+XnOpenNI.cpp:(.text._ZN7XnEventC2Ev[XnEvent::XnEvent()]+0x5a): undefined reference to `xnOSCreateCriticalSection'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnEvent::~XnEvent()':
+XnOpenNI.cpp:(.text._ZN7XnEventD2Ev[XnEvent::~XnEvent()]+0x26): undefined reference to `xnOSCloseCriticalSection'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnEvent::~XnEvent()':
+XnOpenNI.cpp:(.text._ZN7XnEventD1Ev[XnEvent::~XnEvent()]+0x26): undefined reference to `xnOSCloseCriticalSection'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnEvent::~XnEvent()':
+XnOpenNI.cpp:(.text._ZN7XnEventD0Ev[XnEvent::~XnEvent()]+0x26): undefined reference to `xnOSCloseCriticalSection'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnEvent::XnCallbackPtrListTranslator::CreateValueCopy(XnCallback* const&)':
+XnOpenNI.cpp:(.text._ZN7XnEvent27XnCallbackPtrListTranslator15CreateValueCopyERKP10XnCallback[XnEvent::XnCallbackPtrListTranslator::CreateValueCopy(XnCallback* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnEvent::XnCallbackPtrListTranslator::GetAsValue(XnCallback* const&)':
+XnOpenNI.cpp:(.text._ZN7XnEvent27XnCallbackPtrListTranslator10GetAsValueERKP10XnCallback[XnEvent::XnCallbackPtrListTranslator::GetAsValue(XnCallback* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnStringsKeyManager::Hash(char const* const&)':
+XnOpenNI.cpp:(.text._ZN19XnStringsKeyManager4HashERKPKc[XnStringsKeyManager::Hash(char const* const&)]+0x1d): undefined reference to `xnOSStrCRC32'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnStringsKeyTranslator::CreateValueCopy(char const* const&)':
+XnOpenNI.cpp:(.text._ZN22XnStringsKeyTranslator15CreateValueCopyERKPKc[XnStringsKeyTranslator::CreateValueCopy(char const* const&)]+0x20): undefined reference to `xnOSMalloc'
+XnOpenNI.cpp:(.text._ZN22XnStringsKeyTranslator15CreateValueCopyERKPKc[XnStringsKeyTranslator::CreateValueCopy(char const* const&)]+0x3e): undefined reference to `xnOSStrCopy'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `XnStringsKeyTranslator::FreeValue(void*&)':
+XnOpenNI.cpp:(.text._ZN22XnStringsKeyTranslator9FreeValueERPv[XnStringsKeyTranslator::FreeValue(void*&)]+0x15): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `_XnNeededNodesDataHashKeyTranslator::CreateValueCopy(XnInternalNodeData* const&)':
+XnOpenNI.cpp:(.text._ZN35_XnNeededNodesDataHashKeyTranslator15CreateValueCopyERKP18XnInternalNodeData[_XnNeededNodesDataHashKeyTranslator::CreateValueCopy(XnInternalNodeData* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `_XnNeededNodesDataHashKeyTranslator::GetAsValue(XnInternalNodeData* const&)':
+XnOpenNI.cpp:(.text._ZN35_XnNeededNodesDataHashKeyTranslator10GetAsValueERKP18XnInternalNodeData[_XnNeededNodesDataHashKeyTranslator::GetAsValue(XnInternalNodeData* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `_XnNeededNodesDataHashValueTranslator::CreateValueCopy(XnNeededNodeData* const&)':
+XnOpenNI.cpp:(.text._ZN37_XnNeededNodesDataHashValueTranslator15CreateValueCopyERKP16XnNeededNodeData[_XnNeededNodesDataHashValueTranslator::CreateValueCopy(XnNeededNodeData* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `_XnNeededNodesDataHashValueTranslator::GetAsValue(XnNeededNodeData* const&)':
+XnOpenNI.cpp:(.text._ZN37_XnNeededNodesDataHashValueTranslator10GetAsValueERKP16XnNeededNodeData[_XnNeededNodesDataHashValueTranslator::GetAsValue(XnNeededNodeData* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `_XnModuleStateCookieHashKeyTranslator::CreateValueCopy(XnModuleStateCookie* const&)':
+XnOpenNI.cpp:(.text._ZN37_XnModuleStateCookieHashKeyTranslator15CreateValueCopyERKP19XnModuleStateCookie[_XnModuleStateCookieHashKeyTranslator::CreateValueCopy(XnModuleStateCookie* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o):XnOpenNI.cpp:(.text._ZN37_XnModuleStateCookieHashKeyTranslator10GetAsValueERKP19XnModuleStateCookie[_XnModuleStateCookieHashKeyTranslator::GetAsValue(XnModuleStateCookie* const&)]+0x23): more undefined references to `xnOSMemCopy' follow
+../../Source/OpenNI/libopenni.a(XnOpenNI.cpp.o): In function `xnAreChangesAllowed(XnInternalNodeData*)':
+XnOpenNI.cpp:(.text._Z19xnAreChangesAllowedP18XnInternalNodeData[xnAreChangesAllowed(XnInternalNodeData*)]+0x1e): undefined reference to `xnOSGetCurrentThreadID'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnModuleLoader::XnDescriptionKeyManager::Hash(XnProductionNodeDescription const&)':
+XnModuleLoader.cpp:(.text+0x55): undefined reference to `xnOSStrCRC32'
+XnModuleLoader.cpp:(.text+0x70): undefined reference to `xnOSStrCRC32'
+XnModuleLoader.cpp:(.text+0x96): undefined reference to `xnOSStrNCRC32'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `resolveModulesFile(char*, unsigned int)':
+XnModuleLoader.cpp:(.text+0x151): undefined reference to `xnOSStrCopy'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `loadModulesFile(TiXmlDocument&)':
+XnModuleLoader.cpp:(.text+0x1e1): undefined reference to `xnOSDoesFileExist'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnModuleLoader::~XnModuleLoader()':
+XnModuleLoader.cpp:(.text+0x3de): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnModuleLoader::~XnModuleLoader()':
+XnModuleLoader.cpp:(.text+0x49c): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnModuleLoader::Init()':
+XnModuleLoader.cpp:(.text+0x58f): undefined reference to `xnOSGetCurrentDir'
+XnModuleLoader.cpp:(.text+0x5d1): undefined reference to `xnOSSetCurrentDir'
+XnModuleLoader.cpp:(.text+0x5e7): undefined reference to `xnOSSetCurrentDir'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnModuleLoader::LoadModule(char const*, char const*)':
+XnModuleLoader.cpp:(.text+0x825): undefined reference to `xnOSGetDirName'
+XnModuleLoader.cpp:(.text+0x84d): undefined reference to `xnOSSetCurrentDir'
+XnModuleLoader.cpp:(.text+0x8b4): undefined reference to `xnOSLoadLibrary'
+XnModuleLoader.cpp:(.text+0x949): undefined reference to `xnOSFreeLibrary'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `FindFuncAddress(char const*, void*, char const*, void (**)(void*))':
+XnModuleLoader.cpp:(.text+0x9a9): undefined reference to `xnOSGetProcAddress'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnModuleLoader::AddModuleGenerators(char const*, void*, char const*)':
+XnModuleLoader.cpp:(.text+0xc18): undefined reference to `xnOSCalloc'
+XnModuleLoader.cpp:(.text+0xca0): undefined reference to `xnOSFree'
+XnModuleLoader.cpp:(.text+0xd57): undefined reference to `xnOSFree'
+XnModuleLoader.cpp:(.text+0xd88): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnModuleLoader::AddGenerator(XnModuleExportedProductionNodeInterface*, char const*)':
+XnModuleLoader.cpp:(.text+0xf6d): undefined reference to `xnOSMemSet'
+XnModuleLoader.cpp:(.text+0x116d): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnModuleLoader::CreateRootNode(XnNodeInfo*, XnModuleInstance**)':
+XnModuleLoader.cpp:(.text+0x4c62): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnModuleLoader::DestroyModuleInstance(XnModuleInstance*)':
+XnModuleLoader.cpp:(.text+0x4d2f): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `xnRegisterModule':
+XnModuleLoader.cpp:(.text+0x4d84): undefined reference to `xnOSGetFullPathName'
+XnModuleLoader.cpp:(.text+0x4dc0): undefined reference to `xnOSDoesFileExist'
+XnModuleLoader.cpp:(.text+0x4e71): undefined reference to `xnOSGetFullPathName'
+XnModuleLoader.cpp:(.text+0x4eb9): undefined reference to `xnOSDoesDirecotyExist'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `xnUnregisterModule':
+XnModuleLoader.cpp:(.text+0x5194): undefined reference to `xnOSGetFullPathName'
+XnModuleLoader.cpp:(.text+0x525f): undefined reference to `xnOSStrCaseCmp'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnProductionNodeInterfaceContainer::XnProductionNodeInterfaceContainer()':
+XnModuleLoader.cpp:(.text._ZN34XnProductionNodeInterfaceContainerC2Ev[XnProductionNodeInterfaceContainer::XnProductionNodeInterfaceContainer()]+0x1d): undefined reference to `xnOSMemSet'
+XnModuleLoader.cpp:(.text._ZN34XnProductionNodeInterfaceContainerC2Ev[XnProductionNodeInterfaceContainer::XnProductionNodeInterfaceContainer()]+0x3b): undefined reference to `xnOSMemSet'
+XnModuleLoader.cpp:(.text._ZN34XnProductionNodeInterfaceContainerC2Ev[XnProductionNodeInterfaceContainer::XnProductionNodeInterfaceContainer()]+0x65): undefined reference to `xnOSMemSet'
+XnModuleLoader.cpp:(.text._ZN34XnProductionNodeInterfaceContainerC2Ev[XnProductionNodeInterfaceContainer::XnProductionNodeInterfaceContainer()]+0x8f): undefined reference to `xnOSMemSet'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o): In function `XnDeviceInterfaceContainer::XnDeviceInterfaceContainer()':
+XnModuleLoader.cpp:(.text._ZN26XnDeviceInterfaceContainerC1Ev[XnDeviceInterfaceContainer::XnDeviceInterfaceContainer()]+0x2b): undefined reference to `xnOSMemSet'
+../../Source/OpenNI/libopenni.a(XnModuleLoader.cpp.o):XnModuleLoader.cpp:(.text._ZN29XnGeneratorInterfaceContainerC2Ev[XnGeneratorInterfaceContainer::XnGeneratorInterfaceContainer()]+0x2b): more undefined references to `xnOSMemSet' follow
+../../Source/OpenNI/libopenni.a(XnLicensing.cpp.o): In function `resolveLicensesFile(char*, unsigned int)':
+XnLicensing.cpp:(.text+0x44): undefined reference to `xnOSStrCopy'
+../../Source/OpenNI/libopenni.a(XnLicensing.cpp.o): In function `loadLicensesFile(TiXmlDocument&)':
+XnLicensing.cpp:(.text+0xd4): undefined reference to `xnOSDoesFileExist'
+../../Source/OpenNI/libopenni.a(XnLicensing.cpp.o): In function `xnEnumerateLicenses':
+XnLicensing.cpp:(.text+0xafc): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnLicensing.cpp.o): In function `xnFreeLicensesList':
+XnLicensing.cpp:(.text+0xc41): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnLicensing.cpp.o): In function `XnLicenseXml::FromElement(TiXmlElement const*)':
+XnLicensing.cpp:(.text._ZN12XnLicenseXml11FromElementEPK12TiXmlElement[XnLicenseXml::FromElement(TiXmlElement const*)]+0x88): undefined reference to `xnOSStrNCopy'
+XnLicensing.cpp:(.text._ZN12XnLicenseXml11FromElementEPK12TiXmlElement[XnLicenseXml::FromElement(TiXmlElement const*)]+0xc5): undefined reference to `xnOSStrNCopy'
+../../Source/OpenNI/libopenni.a(XnRecorderImpl.cpp.o): In function `xn::RecorderImpl::RecorderImpl()':
+XnRecorderImpl.cpp:(.text+0xe2): undefined reference to `xnOSMemSet'
+../../Source/OpenNI/libopenni.a(XnRecorderImpl.cpp.o): In function `xn::RecorderImpl::RecorderImpl()':
+XnRecorderImpl.cpp:(.text+0x1ae): undefined reference to `xnOSMemSet'
+../../Source/OpenNI/libopenni.a(XnRecorderImpl.cpp.o): In function `xn::RecorderImpl::SetDestination(XnRecordMedium, char const*)':
+XnRecorderImpl.cpp:(.text+0xeee): undefined reference to `xnOSStrCopy'
+../../Source/OpenNI/libopenni.a(XnRecorderImpl.cpp.o): In function `xn::RecorderImpl::_NodeWatchersMapKeyTranslator::CreateValueCopy(XnInternalNodeData* const&)':
+XnRecorderImpl.cpp:(.text._ZN2xn12RecorderImpl29_NodeWatchersMapKeyTranslator15CreateValueCopyERKP18XnInternalNodeData[xn::RecorderImpl::_NodeWatchersMapKeyTranslator::CreateValueCopy(XnInternalNodeData* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnRecorderImpl.cpp.o): In function `xn::RecorderImpl::_NodeWatchersMapKeyTranslator::GetAsValue(XnInternalNodeData* const&)':
+XnRecorderImpl.cpp:(.text._ZN2xn12RecorderImpl29_NodeWatchersMapKeyTranslator10GetAsValueERKP18XnInternalNodeData[xn::RecorderImpl::_NodeWatchersMapKeyTranslator::GetAsValue(XnInternalNodeData* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnRecorderImpl.cpp.o): In function `xn::RecorderImpl::_NodeWatchersMapValueTranslator::CreateValueCopy(xn::NodeWatcher* const&)':
+XnRecorderImpl.cpp:(.text._ZN2xn12RecorderImpl31_NodeWatchersMapValueTranslator15CreateValueCopyERKPNS_11NodeWatcherE[xn::RecorderImpl::_NodeWatchersMapValueTranslator::CreateValueCopy(xn::NodeWatcher* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnRecorderImpl.cpp.o): In function `xn::RecorderImpl::_NodeWatchersMapValueTranslator::GetAsValue(xn::NodeWatcher* const&)':
+XnRecorderImpl.cpp:(.text._ZN2xn12RecorderImpl31_NodeWatchersMapValueTranslator10GetAsValueERKPNS_11NodeWatcherE[xn::RecorderImpl::_NodeWatchersMapValueTranslator::GetAsValue(xn::NodeWatcher* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnRecorderImpl.cpp.o): In function `xn::RecorderImpl::RawNodesMapTranslator::CreateValueCopy(xn::RecorderImpl::RawNodeInfo const&)':
+XnRecorderImpl.cpp:(.text._ZN2xn12RecorderImpl21RawNodesMapTranslator15CreateValueCopyERKNS0_11RawNodeInfoE[xn::RecorderImpl::RawNodesMapTranslator::CreateValueCopy(xn::RecorderImpl::RawNodeInfo const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnRecorderImpl.cpp.o):XnRecorderImpl.cpp:(.text._ZN2xn12RecorderImpl21RawNodesMapTranslator10GetAsValueERKNS0_11RawNodeInfoE[xn::RecorderImpl::RawNodesMapTranslator::GetAsValue(xn::RecorderImpl::RawNodeInfo const&)]+0x23): more undefined references to `xnOSMemCopy' follow
+../../Source/OpenNI/libopenni.a(XnStatusRegister.cpp.o): In function `xnRegisterErrorCodeMessages':
+XnStatusRegister.cpp:(.text+0x2ad): undefined reference to `xnOSFree'
+XnStatusRegister.cpp:(.text+0x2b8): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnStatusRegister.cpp.o): In function `_XnStatusHashKeyTranslator::CreateValueCopy(unsigned short const&)':
+XnStatusRegister.cpp:(.text._ZN26_XnStatusHashKeyTranslator15CreateValueCopyERKt[_XnStatusHashKeyTranslator::CreateValueCopy(unsigned short const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnStatusRegister.cpp.o): In function `_XnStatusHashKeyTranslator::GetAsValue(unsigned short const&)':
+XnStatusRegister.cpp:(.text._ZN26_XnStatusHashKeyTranslator10GetAsValueERKt[_XnStatusHashKeyTranslator::GetAsValue(unsigned short const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnStatusRegister.cpp.o): In function `_XnGroupsHashKeyTranslator::CreateValueCopy(unsigned short const&)':
+XnStatusRegister.cpp:(.text._ZN26_XnGroupsHashKeyTranslator15CreateValueCopyERKt[_XnGroupsHashKeyTranslator::CreateValueCopy(unsigned short const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnStatusRegister.cpp.o): In function `_XnGroupsHashKeyTranslator::GetAsValue(unsigned short const&)':
+XnStatusRegister.cpp:(.text._ZN26_XnGroupsHashKeyTranslator10GetAsValueERKt[_XnGroupsHashKeyTranslator::GetAsValue(unsigned short const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnStatusRegister.cpp.o): In function `_XnGroupsHashValueTranslator::CreateValueCopy(XnStatusHash* const&)':
+XnStatusRegister.cpp:(.text._ZN28_XnGroupsHashValueTranslator15CreateValueCopyERKP12XnStatusHash[_XnGroupsHashValueTranslator::CreateValueCopy(XnStatusHash* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnStatusRegister.cpp.o):XnStatusRegister.cpp:(.text._ZN28_XnGroupsHashValueTranslator10GetAsValueERKP12XnStatusHash[_XnGroupsHashValueTranslator::GetAsValue(XnStatusHash* const&)]+0x23): more undefined references to `xnOSMemCopy' follow
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnLogGetMasksString(char*)':
+XnLog.cpp:(.text+0x55): undefined reference to `xnOSStrCopy'
+XnLog.cpp:(.text+0x75): undefined reference to `xnOSStrCopy'
+XnLog.cpp:(.text+0xbc): undefined reference to `xnOSStrAppend'
+XnLog.cpp:(.text+0xd7): undefined reference to `xnOSStrAppend'
+XnLog.cpp:(.text+0x130): undefined reference to `xnOSStrCopy'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnLogCreateFile(char const*, int*)':
+XnLog.cpp:(.text+0x180): undefined reference to `xnOSCreateDirectory'
+XnLog.cpp:(.text+0x19a): undefined reference to `xnOSOpenFile'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnLogConfigurationChanged()':
+XnLog.cpp:(.text+0x1f1): undefined reference to `xnOSGetCurrentProcessID'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnLogInitSystem':
+XnLog.cpp:(.text+0x3de): undefined reference to `xnOSGetCurrentDir'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnLogReadMasksFromINI(char const*, char const*, char const*, XnLogFilteringType*, XnStringsHash*)':
+XnLog.cpp:(.text+0x5aa): undefined reference to `xnOSReadStringFromINI'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnLogInitFromINIFile':
+XnLog.cpp:(.text+0x6c5): undefined reference to `xnOSReadIntFromINI'
+XnLog.cpp:(.text+0x701): undefined reference to `xnOSReadIntFromINI'
+XnLog.cpp:(.text+0x73d): undefined reference to `xnOSReadIntFromINI'
+XnLog.cpp:(.text+0x779): undefined reference to `xnOSReadIntFromINI'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnLogWriteImplV(char const*, XnLogSeverity, char const*, unsigned int, char const*, char*)':
+XnLog.cpp:(.text+0xf29): undefined reference to `xnOSGetHighResTimeStamp'
+XnLog.cpp:(.text+0xff2): undefined reference to `xnOSGetFileName'
+XnLog.cpp:(.text+0x10a4): undefined reference to `xnOSStrFormatV'
+XnLog.cpp:(.text+0x1129): undefined reference to `xnOSWriteFile'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnLogWriteNoEntry':
+XnLog.cpp:(.text+0x12a7): undefined reference to `xnOSStrFormatV'
+XnLog.cpp:(.text+0x12c8): undefined reference to `xnOSWriteFile'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnDumpCreateFileNameImpl(char*, char const*, char*)':
+XnLog.cpp:(.text+0x15a7): undefined reference to `xnOSGetCurrentProcessID'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnDumpClose':
+XnLog.cpp:(.text+0x1797): undefined reference to `xnOSCloseFile'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnDumpWriteBufferImpl':
+XnLog.cpp:(.text+0x17c9): undefined reference to `xnOSWriteFile'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnDumpWriteStringImpl':
+XnLog.cpp:(.text+0x1837): undefined reference to `xnOSStrFormatV'
+XnLog.cpp:(.text+0x1856): undefined reference to `xnOSWriteFile'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `xnDumpFlush':
+XnLog.cpp:(.text+0x1882): undefined reference to `xnOSFlushFile'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `XnStringsHashTranslator::CreateValueCopy(void* const&)':
+XnLog.cpp:(.text._ZN23XnStringsHashTranslator15CreateValueCopyERKPv[XnStringsHashTranslator::CreateValueCopy(void* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `XnStringsHashTranslator::GetAsValue(void* const&)':
+XnLog.cpp:(.text._ZN23XnStringsHashTranslator10GetAsValueERKPv[XnStringsHashTranslator::GetAsValue(void* const&)]+0x23): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnLog.cpp.o): In function `XnLoggerData::CloseFile()':
+XnLog.cpp:(.text._ZN12XnLoggerData9CloseFileEv[XnLoggerData::CloseFile()]+0x28): undefined reference to `xnOSCloseFile'
+../../Source/OpenNI/libopenni.a(XnXml.cpp.o): In function `xnXmlLoadDocument(TiXmlDocument&, char const*)':
+XnXml.cpp:(.text+0x24): undefined reference to `xnOSDoesFileExist'
+../../Source/OpenNI/libopenni.a(XnEnumerationErrors.cpp.o): In function `xnEnumerationErrorsAllocate':
+XnEnumerationErrors.cpp:(.text+0x4b): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnEnumerationErrors.cpp.o): In function `xnEnumerationErrorsClear':
+XnEnumerationErrors.cpp:(.text+0x9d): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnEnumerationErrors.cpp.o): In function `xnEnumerationErrorsFree':
+XnEnumerationErrors.cpp:(.text+0xe0): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnEnumerationErrors.cpp.o): In function `xnEnumerationErrorsAdd':
+XnEnumerationErrors.cpp:(.text+0x146): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnEnumerationErrors.cpp.o): In function `xnEnumerationErrorsToString':
+XnEnumerationErrors.cpp:(.text+0x1c2): undefined reference to `xnOSStrAppend'
+XnEnumerationErrors.cpp:(.text+0x24d): undefined reference to `xnOSStrAppend'
+XnEnumerationErrors.cpp:(.text+0x287): undefined reference to `xnOSStrAppend'
+XnEnumerationErrors.cpp:(.text+0x2af): undefined reference to `xnOSStrAppend'
+../../Source/OpenNI/libopenni.a(XnQueries.cpp.o): In function `xnNodeQueryAllocate':
+XnQueries.cpp:(.text+0x23): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnQueries.cpp.o): In function `xnNodeQueryFree':
+XnQueries.cpp:(.text+0x5e): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnQueries.cpp.o): In function `xnNodeQuerySetMinVersion':
+XnQueries.cpp:(.text+0x125): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnQueries.cpp.o): In function `xnNodeQuerySetMaxVersion':
+XnQueries.cpp:(.text+0x16c): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnQueries.cpp.o): In function `xnNodeQueryAddSupportedMapOutputMode':
+XnQueries.cpp:(.text+0x21a): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnQueries.cpp.o): In function `xnIsMapOutputModeSupported(XnInternalNodeData*, XnMapOutputMode const*)':
+XnQueries.cpp:(.text+0x3ee): undefined reference to `xnOSCalloc'
+XnQueries.cpp:(.text+0x42e): undefined reference to `xnOSFree'
+XnQueries.cpp:(.text+0x4c1): undefined reference to `xnOSFree'
+XnQueries.cpp:(.text+0x4e8): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnAllocateOutputMetaData':
+XnUtils.cpp:(.text+0x2be): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnFreeOutputMetaData':
+XnUtils.cpp:(.text+0x2d7): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnAllocateMapMetaData':
+XnUtils.cpp:(.text+0x2f3): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnFreeMapMetaData':
+XnUtils.cpp:(.text+0x351): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnAllocateDepthMetaData':
+XnUtils.cpp:(.text+0x36d): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnAllocateImageMetaData':
+XnUtils.cpp:(.text+0x3c1): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnAllocateIRMetaData':
+XnUtils.cpp:(.text+0x415): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnAllocateAudioMetaData':
+XnUtils.cpp:(.text+0x469): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnAllocateSceneMetaData':
+XnUtils.cpp:(.text+0x4bd): undefined reference to `xnOSCalloc'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnFreeDepthMetaData':
+XnUtils.cpp:(.text+0x51b): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnFreeImageMetaData':
+XnUtils.cpp:(.text+0x541): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnFreeIRMetaData':
+XnUtils.cpp:(.text+0x567): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnFreeAudioMetaData':
+XnUtils.cpp:(.text+0x58d): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnFreeSceneMetaData':
+XnUtils.cpp:(.text+0x5b3): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnCopyOutputMetaData':
+XnUtils.cpp:(.text+0x5ef): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnCopyMapMetaData':
+XnUtils.cpp:(.text+0x663): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnCopyDepthMetaData':
+XnUtils.cpp:(.text+0x6df): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnCopyImageMetaData':
+XnUtils.cpp:(.text+0x75b): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o): In function `xnCopyIRMetaData':
+XnUtils.cpp:(.text+0x7d7): undefined reference to `xnOSMemCopy'
+../../Source/OpenNI/libopenni.a(XnUtils.cpp.o):XnUtils.cpp:(.text+0x853): more undefined references to `xnOSMemCopy' follow
+../../Source/OpenNI/libopenni.a(XnNodeWatcher.cpp.o): In function `xn::ImageWatcher::NotifySupportedPixelFormats()':
+XnNodeWatcher.cpp:(.text+0x179b): undefined reference to `xnOSMemSet'
+../../Source/OpenNI/libopenni.a(XnNodeWatcher.cpp.o): In function `xn::GestureGenerator::RegisterGestureCallbacks(void (*)(xn::GestureGenerator&, char const*, XnVector3D const*, XnVector3D const*, void*), void (*)(xn::GestureGenerator&, char const*, XnVector3D const*, float, void*), void*, void*&)':
+XnNodeWatcher.cpp:(.text._ZN2xn16GestureGenerator24RegisterGestureCallbacksEPFvRS0_PKcPK10XnVector3DS6_PvEPFvS1_S3_S6_fS7_ES7_RS7_[xn::GestureGenerator::RegisterGestureCallbacks(void (*)(xn::GestureGenerator&, char const*, XnVector3D const*, XnVector3D const*, void*), void (*)(xn::GestureGenerator&, char const*, XnVector3D const*, float, void*), void*, void*&)]+0x15): undefined reference to `xnOSMalloc'
+XnNodeWatcher.cpp:(.text._ZN2xn16GestureGenerator24RegisterGestureCallbacksEPFvRS0_PKcPK10XnVector3DS6_PvEPFvS1_S3_S6_fS7_ES7_RS7_[xn::GestureGenerator::RegisterGestureCallbacks(void (*)(xn::GestureGenerator&, char const*, XnVector3D const*, XnVector3D const*, void*), void (*)(xn::GestureGenerator&, char const*, XnVector3D const*, float, void*), void*, void*&)]+0x82): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnNodeWatcher.cpp.o): In function `xn::GestureGenerator::UnregisterGestureCallbacks(void*)':
+XnNodeWatcher.cpp:(.text._ZN2xn16GestureGenerator26UnregisterGestureCallbacksEPv[xn::GestureGenerator::UnregisterGestureCallbacks(void*)]+0x2b): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnNodeWatcher.cpp.o): In function `XnGestureRecognizedParams::XnGestureRecognizedParams(char const*, XnVector3D const&, XnVector3D const&)':
+XnNodeWatcher.cpp:(.text._ZN25XnGestureRecognizedParamsC1EPKcRK10XnVector3DS4_[XnGestureRecognizedParams::XnGestureRecognizedParams(char const*, XnVector3D const&, XnVector3D const&)]+0x52): undefined reference to `xnOSStrNCopy'
+../../Source/OpenNI/libopenni.a(XnNodeWatcher.cpp.o): In function `XnGestureProgressParams::XnGestureProgressParams(char const*, XnVector3D const&, float)':
+XnNodeWatcher.cpp:(.text._ZN23XnGestureProgressParamsC1EPKcRK10XnVector3Df[XnGestureProgressParams::XnGestureProgressParams(char const*, XnVector3D const&, float)]+0x44): undefined reference to `xnOSStrNCopy'
+../../Source/OpenNI/libopenni.a(XnOS.cpp.o): In function `xnOSInit':
+XnOS.cpp:(.text+0x19): undefined reference to `g_xnOSHighResGlobalTimer'
+XnOS.cpp:(.text+0x1e): undefined reference to `xnOSStartHighResTimer'
+../../Source/OpenNI/libopenni.a(XnOS.cpp.o): In function `xnOSShutdown':
+XnOS.cpp:(.text+0x62): undefined reference to `g_xnOSHighResGlobalTimer'
+XnOS.cpp:(.text+0x67): undefined reference to `xnOSStopTimer'
+../../Source/OpenNI/libopenni.a(XnOS.cpp.o): In function `xnOSStrFormat':
+XnOS.cpp:(.text+0xc7): undefined reference to `xnOSStrFormatV'
+../../Source/OpenNI/libopenni.a(XnOS.cpp.o): In function `xnOSWaitAndTerminateThread':
+XnOS.cpp:(.text+0x10a): undefined reference to `xnOSWaitForThreadExit'
+XnOS.cpp:(.text+0x151): undefined reference to `xnOSTerminateThread'
+XnOS.cpp:(.text+0x15e): undefined reference to `xnOSCloseThread'
+../../Source/OpenNI/libopenni.a(XnOS.cpp.o): In function `xnOSLoadFile':
+XnOS.cpp:(.text+0x1c2): undefined reference to `xnOSOpenFile'
+XnOS.cpp:(.text+0x1e9): undefined reference to `xnOSReadFile'
+XnOS.cpp:(.text+0x205): undefined reference to `xnOSCloseFile'
+XnOS.cpp:(.text+0x217): undefined reference to `xnOSCloseFile'
+../../Source/OpenNI/libopenni.a(XnOS.cpp.o): In function `xnOSSaveFile':
+XnOS.cpp:(.text+0x276): undefined reference to `xnOSOpenFile'
+XnOS.cpp:(.text+0x29d): undefined reference to `xnOSWriteFile'
+XnOS.cpp:(.text+0x2b1): undefined reference to `xnOSCloseFile'
+XnOS.cpp:(.text+0x2c3): undefined reference to `xnOSCloseFile'
+../../Source/OpenNI/libopenni.a(XnOS.cpp.o): In function `xnOSAppendFile':
+XnOS.cpp:(.text+0x322): undefined reference to `xnOSOpenFile'
+XnOS.cpp:(.text+0x349): undefined reference to `xnOSWriteFile'
+XnOS.cpp:(.text+0x35d): undefined reference to `xnOSCloseFile'
+XnOS.cpp:(.text+0x36f): undefined reference to `xnOSCloseFile'
+../../Source/OpenNI/libopenni.a(XnOS.cpp.o): In function `xnOSWaitForCondition':
+XnOS.cpp:(.text+0x39f): undefined reference to `xnOSGetTimeStamp'
+XnOS.cpp:(.text+0x3c7): undefined reference to `xnOSGetTimeStamp'
+XnOS.cpp:(.text+0x433): undefined reference to `xnOSWaitEvent'
+../../Source/OpenNI/libopenni.a(XnOS.cpp.o): In function `xnOSStrDup':
+XnOS.cpp:(.text+0x4cf): undefined reference to `xnOSMalloc'
+../../Source/OpenNI/libopenni.a(XnFPSCalculator.cpp.o): In function `xnFPSInit':
+XnFPSCalculator.cpp:(.text+0x42): undefined reference to `xnOSCalloc'
+XnFPSCalculator.cpp:(.text+0x7c): undefined reference to `xnOSCallocAligned'
+../../Source/OpenNI/libopenni.a(XnFPSCalculator.cpp.o): In function `xnFPSMarkFrame':
+XnFPSCalculator.cpp:(.text+0xe1): undefined reference to `xnOSGetHighResTimeStamp'
+../../Source/OpenNI/libopenni.a(XnFPSCalculator.cpp.o): In function `xnFPSCalc':
+XnFPSCalculator.cpp:(.text+0x175): undefined reference to `xnOSGetHighResTimeStamp'
+../../Source/OpenNI/libopenni.a(XnFPSCalculator.cpp.o): In function `xnFPSFree':
+XnFPSCalculator.cpp:(.text+0x302): undefined reference to `xnOSFreeAligned'
+XnFPSCalculator.cpp:(.text+0x32a): undefined reference to `xnOSFree'
+../../Source/OpenNI/libopenni.a(XnPlayerImpl.cpp.o): In function `xn::PlayerImpl::PlayerImpl()':
+XnPlayerImpl.cpp:(.text+0xcc): undefined reference to `xnOSMemSet'
+../../Source/OpenNI/libopenni.a(XnPlayerImpl.cpp.o): In function `xn::PlayerImpl::PlayerImpl()':
+XnPlayerImpl.cpp:(.text+0x168): undefined reference to `xnOSMemSet'
+../../Source/OpenNI/libopenni.a(XnPlayerImpl.cpp.o): In function `xn::PlayerImpl::SetSource(XnRecordMedium, char const*)':
+XnPlayerImpl.cpp:(.text+0x450): undefined reference to `xnOSStrCopy'
+../../Source/OpenNI/libopenni.a(XnPlayerImpl.cpp.o): In function `xn::PlayerImpl::GetSource(XnRecordMedium&, char*, unsigned int)':
+XnPlayerImpl.cpp:(.text+0x4e1): undefined reference to `xnOSStrCopy'
+../../Source/OpenNI/libopenni.a(XnNodeManager.cpp.o): In function `XnNodeManager::XnNodeManager()':
+XnNodeManager.cpp:(.text+0x4e): undefined reference to `xnOSCreateCriticalSection'
+../../Source/OpenNI/libopenni.a(XnNodeManager.cpp.o): In function `XnNodeManager::XnNodeManager()':
+XnNodeManager.cpp:(.text+0x15a): undefined reference to `xnOSCreateCriticalSection'
+../../Source/OpenNI/libopenni.a(XnNodeManager.cpp.o): In function `XnNodeManager::~XnNodeManager()':
+XnNodeManager.cpp:(.text+0x303): undefined reference to `xnOSCloseCriticalSection'
+../../Source/OpenNI/libopenni.a(XnNodeManager.cpp.o): In function `XnNodeManager::~XnNodeManager()':
+XnNodeManager.cpp:(.text+0x439): undefined reference to `xnOSCloseCriticalSection'
+../../Source/OpenNI/libopenni.a(XnNodeManager.cpp.o): In function `XnNodeManager::~XnNodeManager()':
+XnNodeManager.cpp:(.text+0x56f): undefined reference to `xnOSCloseCriticalSection'
+../../Source/OpenNI/libopenni.a(XnNodeManager.cpp.o): In function `XnNodeManager::Allocate()':
+XnNodeManager.cpp:(.text+0x673): undefined reference to `xnOSEnterCriticalSection'
+XnNodeManager.cpp:(.text+0x6b0): undefined reference to `xnOSLeaveCriticalSection'
+XnNodeManager.cpp:(.text+0x769): undefined reference to `xnOSLeaveCriticalSection'
+XnNodeManager.cpp:(.text+0x7cc): undefined reference to `xnOSLeaveCriticalSection'
+../../Source/OpenNI/libopenni.a(XnNodeManager.cpp.o): In function `XnNodeManager::Deallocate(XnNode*)':
+XnNodeManager.cpp:(.text+0x7e6): undefined reference to `xnOSEnterCriticalSection'
+XnNodeManager.cpp:(.text+0x83f): undefined reference to `xnOSLeaveCriticalSection'
+collect2: ld returned 1 exit status
+make[2]: *** [Samples/NiAudioSample/openni_sample_niaudiosample] Error 1
+make[1]: *** [Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/all] Error 2
+make: *** [all] Error 2
