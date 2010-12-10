@@ -44,7 +44,7 @@
 #endif
 
 #include <stdio.h>
-#include <XnOS.h>
+// #include <XnOS.h> // roxlu: why do we need this here?
 
 /*
  * We need memory copying and zeroing functions, plus strncpy().
