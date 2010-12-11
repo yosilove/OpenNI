@@ -54,6 +54,47 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,25 +137,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/rule:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/rule
-.PHONY : Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/rule
+Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/rule:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/rule
+.PHONY : Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/rule
 
 # Convenience name for target.
-openni_modules_nimrecorder: Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/rule
-.PHONY : openni_modules_nimrecorder
+nimRecorder: Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/rule
+.PHONY : nimRecorder
 
 # fast build rule for target.
-openni_modules_nimrecorder/fast:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build
-.PHONY : openni_modules_nimrecorder/fast
+nimRecorder/fast:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build
+.PHONY : nimRecorder/fast
 
 ExportedPlayer.o: ExportedPlayer.cpp.o
 .PHONY : ExportedPlayer.o
 
 # target to build an object file
 ExportedPlayer.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/ExportedPlayer.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/ExportedPlayer.cpp.o
 .PHONY : ExportedPlayer.cpp.o
 
 ExportedPlayer.i: ExportedPlayer.cpp.i
@@ -122,7 +163,7 @@ ExportedPlayer.i: ExportedPlayer.cpp.i
 
 # target to preprocess a source file
 ExportedPlayer.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/ExportedPlayer.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/ExportedPlayer.cpp.i
 .PHONY : ExportedPlayer.cpp.i
 
 ExportedPlayer.s: ExportedPlayer.cpp.s
@@ -130,7 +171,7 @@ ExportedPlayer.s: ExportedPlayer.cpp.s
 
 # target to generate assembly for a file
 ExportedPlayer.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/ExportedPlayer.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/ExportedPlayer.cpp.s
 .PHONY : ExportedPlayer.cpp.s
 
 ExportedRecorder.o: ExportedRecorder.cpp.o
@@ -138,7 +179,7 @@ ExportedRecorder.o: ExportedRecorder.cpp.o
 
 # target to build an object file
 ExportedRecorder.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/ExportedRecorder.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/ExportedRecorder.cpp.o
 .PHONY : ExportedRecorder.cpp.o
 
 ExportedRecorder.i: ExportedRecorder.cpp.i
@@ -146,7 +187,7 @@ ExportedRecorder.i: ExportedRecorder.cpp.i
 
 # target to preprocess a source file
 ExportedRecorder.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/ExportedRecorder.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/ExportedRecorder.cpp.i
 .PHONY : ExportedRecorder.cpp.i
 
 ExportedRecorder.s: ExportedRecorder.cpp.s
@@ -154,7 +195,7 @@ ExportedRecorder.s: ExportedRecorder.cpp.s
 
 # target to generate assembly for a file
 ExportedRecorder.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/ExportedRecorder.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/ExportedRecorder.cpp.s
 .PHONY : ExportedRecorder.cpp.s
 
 PlayerNode.o: PlayerNode.cpp.o
@@ -162,7 +203,7 @@ PlayerNode.o: PlayerNode.cpp.o
 
 # target to build an object file
 PlayerNode.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/PlayerNode.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/PlayerNode.cpp.o
 .PHONY : PlayerNode.cpp.o
 
 PlayerNode.i: PlayerNode.cpp.i
@@ -170,7 +211,7 @@ PlayerNode.i: PlayerNode.cpp.i
 
 # target to preprocess a source file
 PlayerNode.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/PlayerNode.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/PlayerNode.cpp.i
 .PHONY : PlayerNode.cpp.i
 
 PlayerNode.s: PlayerNode.cpp.s
@@ -178,7 +219,7 @@ PlayerNode.s: PlayerNode.cpp.s
 
 # target to generate assembly for a file
 PlayerNode.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/PlayerNode.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/PlayerNode.cpp.s
 .PHONY : PlayerNode.cpp.s
 
 RecorderNode.o: RecorderNode.cpp.o
@@ -186,7 +227,7 @@ RecorderNode.o: RecorderNode.cpp.o
 
 # target to build an object file
 RecorderNode.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/RecorderNode.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/RecorderNode.cpp.o
 .PHONY : RecorderNode.cpp.o
 
 RecorderNode.i: RecorderNode.cpp.i
@@ -194,7 +235,7 @@ RecorderNode.i: RecorderNode.cpp.i
 
 # target to preprocess a source file
 RecorderNode.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/RecorderNode.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/RecorderNode.cpp.i
 .PHONY : RecorderNode.cpp.i
 
 RecorderNode.s: RecorderNode.cpp.s
@@ -202,7 +243,7 @@ RecorderNode.s: RecorderNode.cpp.s
 
 # target to generate assembly for a file
 RecorderNode.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/RecorderNode.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/RecorderNode.cpp.s
 .PHONY : RecorderNode.cpp.s
 
 nimRecorder.o: nimRecorder.cpp.o
@@ -210,7 +251,7 @@ nimRecorder.o: nimRecorder.cpp.o
 
 # target to build an object file
 nimRecorder.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/nimRecorder.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/nimRecorder.cpp.o
 .PHONY : nimRecorder.cpp.o
 
 nimRecorder.i: nimRecorder.cpp.i
@@ -218,7 +259,7 @@ nimRecorder.i: nimRecorder.cpp.i
 
 # target to preprocess a source file
 nimRecorder.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/nimRecorder.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/nimRecorder.cpp.i
 .PHONY : nimRecorder.cpp.i
 
 nimRecorder.s: nimRecorder.cpp.s
@@ -226,7 +267,7 @@ nimRecorder.s: nimRecorder.cpp.s
 
 # target to generate assembly for a file
 nimRecorder.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/nimRecorder.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/nimRecorder.cpp.s
 .PHONY : nimRecorder.cpp.s
 
 # Help Target
@@ -236,7 +277,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... openni_modules_nimrecorder"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
+	@echo "... nimRecorder"
 	@echo "... rebuild_cache"
 	@echo "... ExportedPlayer.o"
 	@echo "... ExportedPlayer.i"

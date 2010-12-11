@@ -54,6 +54,47 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,25 +137,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Source/OpenNI/CMakeFiles/openni.dir/rule:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/OpenNI/CMakeFiles/openni.dir/rule
-.PHONY : Source/OpenNI/CMakeFiles/openni.dir/rule
+Source/OpenNI/CMakeFiles/OpenNI.dir/rule:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/OpenNI/CMakeFiles/OpenNI.dir/rule
+.PHONY : Source/OpenNI/CMakeFiles/OpenNI.dir/rule
 
 # Convenience name for target.
-openni: Source/OpenNI/CMakeFiles/openni.dir/rule
-.PHONY : openni
+OpenNI: Source/OpenNI/CMakeFiles/OpenNI.dir/rule
+.PHONY : OpenNI
 
 # fast build rule for target.
-openni/fast:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/build
-.PHONY : openni/fast
+OpenNI/fast:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/build
+.PHONY : OpenNI/fast
 
 XnBaseNode.o: XnBaseNode.cpp.o
 .PHONY : XnBaseNode.o
 
 # target to build an object file
 XnBaseNode.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnBaseNode.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnBaseNode.cpp.o
 .PHONY : XnBaseNode.cpp.o
 
 XnBaseNode.i: XnBaseNode.cpp.i
@@ -122,7 +163,7 @@ XnBaseNode.i: XnBaseNode.cpp.i
 
 # target to preprocess a source file
 XnBaseNode.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnBaseNode.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnBaseNode.cpp.i
 .PHONY : XnBaseNode.cpp.i
 
 XnBaseNode.s: XnBaseNode.cpp.s
@@ -130,7 +171,7 @@ XnBaseNode.s: XnBaseNode.cpp.s
 
 # target to generate assembly for a file
 XnBaseNode.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnBaseNode.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnBaseNode.cpp.s
 .PHONY : XnBaseNode.cpp.s
 
 XnEnumerationErrors.o: XnEnumerationErrors.cpp.o
@@ -138,7 +179,7 @@ XnEnumerationErrors.o: XnEnumerationErrors.cpp.o
 
 # target to build an object file
 XnEnumerationErrors.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnEnumerationErrors.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnEnumerationErrors.cpp.o
 .PHONY : XnEnumerationErrors.cpp.o
 
 XnEnumerationErrors.i: XnEnumerationErrors.cpp.i
@@ -146,7 +187,7 @@ XnEnumerationErrors.i: XnEnumerationErrors.cpp.i
 
 # target to preprocess a source file
 XnEnumerationErrors.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnEnumerationErrors.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnEnumerationErrors.cpp.i
 .PHONY : XnEnumerationErrors.cpp.i
 
 XnEnumerationErrors.s: XnEnumerationErrors.cpp.s
@@ -154,7 +195,7 @@ XnEnumerationErrors.s: XnEnumerationErrors.cpp.s
 
 # target to generate assembly for a file
 XnEnumerationErrors.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnEnumerationErrors.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnEnumerationErrors.cpp.s
 .PHONY : XnEnumerationErrors.cpp.s
 
 XnFPSCalculator.o: XnFPSCalculator.cpp.o
@@ -162,7 +203,7 @@ XnFPSCalculator.o: XnFPSCalculator.cpp.o
 
 # target to build an object file
 XnFPSCalculator.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnFPSCalculator.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnFPSCalculator.cpp.o
 .PHONY : XnFPSCalculator.cpp.o
 
 XnFPSCalculator.i: XnFPSCalculator.cpp.i
@@ -170,7 +211,7 @@ XnFPSCalculator.i: XnFPSCalculator.cpp.i
 
 # target to preprocess a source file
 XnFPSCalculator.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnFPSCalculator.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnFPSCalculator.cpp.i
 .PHONY : XnFPSCalculator.cpp.i
 
 XnFPSCalculator.s: XnFPSCalculator.cpp.s
@@ -178,7 +219,7 @@ XnFPSCalculator.s: XnFPSCalculator.cpp.s
 
 # target to generate assembly for a file
 XnFPSCalculator.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnFPSCalculator.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnFPSCalculator.cpp.s
 .PHONY : XnFPSCalculator.cpp.s
 
 XnLicensing.o: XnLicensing.cpp.o
@@ -186,7 +227,7 @@ XnLicensing.o: XnLicensing.cpp.o
 
 # target to build an object file
 XnLicensing.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnLicensing.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnLicensing.cpp.o
 .PHONY : XnLicensing.cpp.o
 
 XnLicensing.i: XnLicensing.cpp.i
@@ -194,7 +235,7 @@ XnLicensing.i: XnLicensing.cpp.i
 
 # target to preprocess a source file
 XnLicensing.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnLicensing.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnLicensing.cpp.i
 .PHONY : XnLicensing.cpp.i
 
 XnLicensing.s: XnLicensing.cpp.s
@@ -202,7 +243,7 @@ XnLicensing.s: XnLicensing.cpp.s
 
 # target to generate assembly for a file
 XnLicensing.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnLicensing.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnLicensing.cpp.s
 .PHONY : XnLicensing.cpp.s
 
 XnLog.o: XnLog.cpp.o
@@ -210,7 +251,7 @@ XnLog.o: XnLog.cpp.o
 
 # target to build an object file
 XnLog.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnLog.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnLog.cpp.o
 .PHONY : XnLog.cpp.o
 
 XnLog.i: XnLog.cpp.i
@@ -218,7 +259,7 @@ XnLog.i: XnLog.cpp.i
 
 # target to preprocess a source file
 XnLog.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnLog.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnLog.cpp.i
 .PHONY : XnLog.cpp.i
 
 XnLog.s: XnLog.cpp.s
@@ -226,7 +267,7 @@ XnLog.s: XnLog.cpp.s
 
 # target to generate assembly for a file
 XnLog.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnLog.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnLog.cpp.s
 .PHONY : XnLog.cpp.s
 
 XnMockNotifier.o: XnMockNotifier.cpp.o
@@ -234,7 +275,7 @@ XnMockNotifier.o: XnMockNotifier.cpp.o
 
 # target to build an object file
 XnMockNotifier.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnMockNotifier.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnMockNotifier.cpp.o
 .PHONY : XnMockNotifier.cpp.o
 
 XnMockNotifier.i: XnMockNotifier.cpp.i
@@ -242,7 +283,7 @@ XnMockNotifier.i: XnMockNotifier.cpp.i
 
 # target to preprocess a source file
 XnMockNotifier.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnMockNotifier.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnMockNotifier.cpp.i
 .PHONY : XnMockNotifier.cpp.i
 
 XnMockNotifier.s: XnMockNotifier.cpp.s
@@ -250,7 +291,7 @@ XnMockNotifier.s: XnMockNotifier.cpp.s
 
 # target to generate assembly for a file
 XnMockNotifier.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnMockNotifier.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnMockNotifier.cpp.s
 .PHONY : XnMockNotifier.cpp.s
 
 XnModuleLoader.o: XnModuleLoader.cpp.o
@@ -258,7 +299,7 @@ XnModuleLoader.o: XnModuleLoader.cpp.o
 
 # target to build an object file
 XnModuleLoader.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnModuleLoader.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnModuleLoader.cpp.o
 .PHONY : XnModuleLoader.cpp.o
 
 XnModuleLoader.i: XnModuleLoader.cpp.i
@@ -266,7 +307,7 @@ XnModuleLoader.i: XnModuleLoader.cpp.i
 
 # target to preprocess a source file
 XnModuleLoader.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnModuleLoader.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnModuleLoader.cpp.i
 .PHONY : XnModuleLoader.cpp.i
 
 XnModuleLoader.s: XnModuleLoader.cpp.s
@@ -274,7 +315,7 @@ XnModuleLoader.s: XnModuleLoader.cpp.s
 
 # target to generate assembly for a file
 XnModuleLoader.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnModuleLoader.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnModuleLoader.cpp.s
 .PHONY : XnModuleLoader.cpp.s
 
 XnNodeManager.o: XnNodeManager.cpp.o
@@ -282,7 +323,7 @@ XnNodeManager.o: XnNodeManager.cpp.o
 
 # target to build an object file
 XnNodeManager.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnNodeManager.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnNodeManager.cpp.o
 .PHONY : XnNodeManager.cpp.o
 
 XnNodeManager.i: XnNodeManager.cpp.i
@@ -290,7 +331,7 @@ XnNodeManager.i: XnNodeManager.cpp.i
 
 # target to preprocess a source file
 XnNodeManager.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnNodeManager.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnNodeManager.cpp.i
 .PHONY : XnNodeManager.cpp.i
 
 XnNodeManager.s: XnNodeManager.cpp.s
@@ -298,7 +339,7 @@ XnNodeManager.s: XnNodeManager.cpp.s
 
 # target to generate assembly for a file
 XnNodeManager.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnNodeManager.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnNodeManager.cpp.s
 .PHONY : XnNodeManager.cpp.s
 
 XnNodeWatcher.o: XnNodeWatcher.cpp.o
@@ -306,7 +347,7 @@ XnNodeWatcher.o: XnNodeWatcher.cpp.o
 
 # target to build an object file
 XnNodeWatcher.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnNodeWatcher.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnNodeWatcher.cpp.o
 .PHONY : XnNodeWatcher.cpp.o
 
 XnNodeWatcher.i: XnNodeWatcher.cpp.i
@@ -314,7 +355,7 @@ XnNodeWatcher.i: XnNodeWatcher.cpp.i
 
 # target to preprocess a source file
 XnNodeWatcher.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnNodeWatcher.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnNodeWatcher.cpp.i
 .PHONY : XnNodeWatcher.cpp.i
 
 XnNodeWatcher.s: XnNodeWatcher.cpp.s
@@ -322,7 +363,7 @@ XnNodeWatcher.s: XnNodeWatcher.cpp.s
 
 # target to generate assembly for a file
 XnNodeWatcher.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnNodeWatcher.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnNodeWatcher.cpp.s
 .PHONY : XnNodeWatcher.cpp.s
 
 XnOS.o: XnOS.cpp.o
@@ -330,7 +371,7 @@ XnOS.o: XnOS.cpp.o
 
 # target to build an object file
 XnOS.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnOS.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnOS.cpp.o
 .PHONY : XnOS.cpp.o
 
 XnOS.i: XnOS.cpp.i
@@ -338,7 +379,7 @@ XnOS.i: XnOS.cpp.i
 
 # target to preprocess a source file
 XnOS.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnOS.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnOS.cpp.i
 .PHONY : XnOS.cpp.i
 
 XnOS.s: XnOS.cpp.s
@@ -346,7 +387,7 @@ XnOS.s: XnOS.cpp.s
 
 # target to generate assembly for a file
 XnOS.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnOS.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnOS.cpp.s
 .PHONY : XnOS.cpp.s
 
 XnOSMemoryProfiling.o: XnOSMemoryProfiling.cpp.o
@@ -354,7 +395,7 @@ XnOSMemoryProfiling.o: XnOSMemoryProfiling.cpp.o
 
 # target to build an object file
 XnOSMemoryProfiling.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnOSMemoryProfiling.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnOSMemoryProfiling.cpp.o
 .PHONY : XnOSMemoryProfiling.cpp.o
 
 XnOSMemoryProfiling.i: XnOSMemoryProfiling.cpp.i
@@ -362,7 +403,7 @@ XnOSMemoryProfiling.i: XnOSMemoryProfiling.cpp.i
 
 # target to preprocess a source file
 XnOSMemoryProfiling.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnOSMemoryProfiling.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnOSMemoryProfiling.cpp.i
 .PHONY : XnOSMemoryProfiling.cpp.i
 
 XnOSMemoryProfiling.s: XnOSMemoryProfiling.cpp.s
@@ -370,7 +411,7 @@ XnOSMemoryProfiling.s: XnOSMemoryProfiling.cpp.s
 
 # target to generate assembly for a file
 XnOSMemoryProfiling.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnOSMemoryProfiling.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnOSMemoryProfiling.cpp.s
 .PHONY : XnOSMemoryProfiling.cpp.s
 
 XnOpenNI.o: XnOpenNI.cpp.o
@@ -378,7 +419,7 @@ XnOpenNI.o: XnOpenNI.cpp.o
 
 # target to build an object file
 XnOpenNI.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnOpenNI.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnOpenNI.cpp.o
 .PHONY : XnOpenNI.cpp.o
 
 XnOpenNI.i: XnOpenNI.cpp.i
@@ -386,7 +427,7 @@ XnOpenNI.i: XnOpenNI.cpp.i
 
 # target to preprocess a source file
 XnOpenNI.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnOpenNI.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnOpenNI.cpp.i
 .PHONY : XnOpenNI.cpp.i
 
 XnOpenNI.s: XnOpenNI.cpp.s
@@ -394,7 +435,7 @@ XnOpenNI.s: XnOpenNI.cpp.s
 
 # target to generate assembly for a file
 XnOpenNI.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnOpenNI.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnOpenNI.cpp.s
 .PHONY : XnOpenNI.cpp.s
 
 XnPlayerImpl.o: XnPlayerImpl.cpp.o
@@ -402,7 +443,7 @@ XnPlayerImpl.o: XnPlayerImpl.cpp.o
 
 # target to build an object file
 XnPlayerImpl.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnPlayerImpl.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnPlayerImpl.cpp.o
 .PHONY : XnPlayerImpl.cpp.o
 
 XnPlayerImpl.i: XnPlayerImpl.cpp.i
@@ -410,7 +451,7 @@ XnPlayerImpl.i: XnPlayerImpl.cpp.i
 
 # target to preprocess a source file
 XnPlayerImpl.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnPlayerImpl.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnPlayerImpl.cpp.i
 .PHONY : XnPlayerImpl.cpp.i
 
 XnPlayerImpl.s: XnPlayerImpl.cpp.s
@@ -418,7 +459,7 @@ XnPlayerImpl.s: XnPlayerImpl.cpp.s
 
 # target to generate assembly for a file
 XnPlayerImpl.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnPlayerImpl.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnPlayerImpl.cpp.s
 .PHONY : XnPlayerImpl.cpp.s
 
 XnProfiling.o: XnProfiling.cpp.o
@@ -426,7 +467,7 @@ XnProfiling.o: XnProfiling.cpp.o
 
 # target to build an object file
 XnProfiling.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnProfiling.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnProfiling.cpp.o
 .PHONY : XnProfiling.cpp.o
 
 XnProfiling.i: XnProfiling.cpp.i
@@ -434,7 +475,7 @@ XnProfiling.i: XnProfiling.cpp.i
 
 # target to preprocess a source file
 XnProfiling.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnProfiling.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnProfiling.cpp.i
 .PHONY : XnProfiling.cpp.i
 
 XnProfiling.s: XnProfiling.cpp.s
@@ -442,7 +483,7 @@ XnProfiling.s: XnProfiling.cpp.s
 
 # target to generate assembly for a file
 XnProfiling.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnProfiling.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnProfiling.cpp.s
 .PHONY : XnProfiling.cpp.s
 
 XnQueries.o: XnQueries.cpp.o
@@ -450,7 +491,7 @@ XnQueries.o: XnQueries.cpp.o
 
 # target to build an object file
 XnQueries.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnQueries.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnQueries.cpp.o
 .PHONY : XnQueries.cpp.o
 
 XnQueries.i: XnQueries.cpp.i
@@ -458,7 +499,7 @@ XnQueries.i: XnQueries.cpp.i
 
 # target to preprocess a source file
 XnQueries.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnQueries.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnQueries.cpp.i
 .PHONY : XnQueries.cpp.i
 
 XnQueries.s: XnQueries.cpp.s
@@ -466,7 +507,7 @@ XnQueries.s: XnQueries.cpp.s
 
 # target to generate assembly for a file
 XnQueries.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnQueries.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnQueries.cpp.s
 .PHONY : XnQueries.cpp.s
 
 XnRecorderImpl.o: XnRecorderImpl.cpp.o
@@ -474,7 +515,7 @@ XnRecorderImpl.o: XnRecorderImpl.cpp.o
 
 # target to build an object file
 XnRecorderImpl.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnRecorderImpl.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnRecorderImpl.cpp.o
 .PHONY : XnRecorderImpl.cpp.o
 
 XnRecorderImpl.i: XnRecorderImpl.cpp.i
@@ -482,7 +523,7 @@ XnRecorderImpl.i: XnRecorderImpl.cpp.i
 
 # target to preprocess a source file
 XnRecorderImpl.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnRecorderImpl.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnRecorderImpl.cpp.i
 .PHONY : XnRecorderImpl.cpp.i
 
 XnRecorderImpl.s: XnRecorderImpl.cpp.s
@@ -490,7 +531,7 @@ XnRecorderImpl.s: XnRecorderImpl.cpp.s
 
 # target to generate assembly for a file
 XnRecorderImpl.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnRecorderImpl.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnRecorderImpl.cpp.s
 .PHONY : XnRecorderImpl.cpp.s
 
 XnScheduler.o: XnScheduler.cpp.o
@@ -498,7 +539,7 @@ XnScheduler.o: XnScheduler.cpp.o
 
 # target to build an object file
 XnScheduler.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnScheduler.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnScheduler.cpp.o
 .PHONY : XnScheduler.cpp.o
 
 XnScheduler.i: XnScheduler.cpp.i
@@ -506,7 +547,7 @@ XnScheduler.i: XnScheduler.cpp.i
 
 # target to preprocess a source file
 XnScheduler.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnScheduler.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnScheduler.cpp.i
 .PHONY : XnScheduler.cpp.i
 
 XnScheduler.s: XnScheduler.cpp.s
@@ -514,7 +555,7 @@ XnScheduler.s: XnScheduler.cpp.s
 
 # target to generate assembly for a file
 XnScheduler.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnScheduler.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnScheduler.cpp.s
 .PHONY : XnScheduler.cpp.s
 
 XnStatusRegister.o: XnStatusRegister.cpp.o
@@ -522,7 +563,7 @@ XnStatusRegister.o: XnStatusRegister.cpp.o
 
 # target to build an object file
 XnStatusRegister.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnStatusRegister.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnStatusRegister.cpp.o
 .PHONY : XnStatusRegister.cpp.o
 
 XnStatusRegister.i: XnStatusRegister.cpp.i
@@ -530,7 +571,7 @@ XnStatusRegister.i: XnStatusRegister.cpp.i
 
 # target to preprocess a source file
 XnStatusRegister.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnStatusRegister.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnStatusRegister.cpp.i
 .PHONY : XnStatusRegister.cpp.i
 
 XnStatusRegister.s: XnStatusRegister.cpp.s
@@ -538,7 +579,7 @@ XnStatusRegister.s: XnStatusRegister.cpp.s
 
 # target to generate assembly for a file
 XnStatusRegister.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnStatusRegister.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnStatusRegister.cpp.s
 .PHONY : XnStatusRegister.cpp.s
 
 XnUSB.o: XnUSB.cpp.o
@@ -546,7 +587,7 @@ XnUSB.o: XnUSB.cpp.o
 
 # target to build an object file
 XnUSB.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnUSB.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnUSB.cpp.o
 .PHONY : XnUSB.cpp.o
 
 XnUSB.i: XnUSB.cpp.i
@@ -554,7 +595,7 @@ XnUSB.i: XnUSB.cpp.i
 
 # target to preprocess a source file
 XnUSB.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnUSB.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnUSB.cpp.i
 .PHONY : XnUSB.cpp.i
 
 XnUSB.s: XnUSB.cpp.s
@@ -562,7 +603,7 @@ XnUSB.s: XnUSB.cpp.s
 
 # target to generate assembly for a file
 XnUSB.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnUSB.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnUSB.cpp.s
 .PHONY : XnUSB.cpp.s
 
 XnUtils.o: XnUtils.cpp.o
@@ -570,7 +611,7 @@ XnUtils.o: XnUtils.cpp.o
 
 # target to build an object file
 XnUtils.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnUtils.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnUtils.cpp.o
 .PHONY : XnUtils.cpp.o
 
 XnUtils.i: XnUtils.cpp.i
@@ -578,7 +619,7 @@ XnUtils.i: XnUtils.cpp.i
 
 # target to preprocess a source file
 XnUtils.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnUtils.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnUtils.cpp.i
 .PHONY : XnUtils.cpp.i
 
 XnUtils.s: XnUtils.cpp.s
@@ -586,7 +627,7 @@ XnUtils.s: XnUtils.cpp.s
 
 # target to generate assembly for a file
 XnUtils.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnUtils.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnUtils.cpp.s
 .PHONY : XnUtils.cpp.s
 
 XnXml.o: XnXml.cpp.o
@@ -594,7 +635,7 @@ XnXml.o: XnXml.cpp.o
 
 # target to build an object file
 XnXml.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnXml.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnXml.cpp.o
 .PHONY : XnXml.cpp.o
 
 XnXml.i: XnXml.cpp.i
@@ -602,7 +643,7 @@ XnXml.i: XnXml.cpp.i
 
 # target to preprocess a source file
 XnXml.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnXml.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnXml.cpp.i
 .PHONY : XnXml.cpp.i
 
 XnXml.s: XnXml.cpp.s
@@ -610,7 +651,7 @@ XnXml.s: XnXml.cpp.s
 
 # target to generate assembly for a file
 XnXml.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnXml.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnXml.cpp.s
 .PHONY : XnXml.cpp.s
 
 XnXmlConfig.o: XnXmlConfig.cpp.o
@@ -618,7 +659,7 @@ XnXmlConfig.o: XnXmlConfig.cpp.o
 
 # target to build an object file
 XnXmlConfig.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnXmlConfig.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnXmlConfig.cpp.o
 .PHONY : XnXmlConfig.cpp.o
 
 XnXmlConfig.i: XnXmlConfig.cpp.i
@@ -626,7 +667,7 @@ XnXmlConfig.i: XnXmlConfig.cpp.i
 
 # target to preprocess a source file
 XnXmlConfig.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnXmlConfig.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnXmlConfig.cpp.i
 .PHONY : XnXmlConfig.cpp.i
 
 XnXmlConfig.s: XnXmlConfig.cpp.s
@@ -634,7 +675,7 @@ XnXmlConfig.s: XnXmlConfig.cpp.s
 
 # target to generate assembly for a file
 XnXmlConfig.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/XnXmlConfig.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/XnXmlConfig.cpp.s
 .PHONY : XnXmlConfig.cpp.s
 
 openNI.o: openNI.cpp.o
@@ -642,7 +683,7 @@ openNI.o: openNI.cpp.o
 
 # target to build an object file
 openNI.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/openNI.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/openNI.cpp.o
 .PHONY : openNI.cpp.o
 
 openNI.i: openNI.cpp.i
@@ -650,7 +691,7 @@ openNI.i: openNI.cpp.i
 
 # target to preprocess a source file
 openNI.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/openNI.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/openNI.cpp.i
 .PHONY : openNI.cpp.i
 
 openNI.s: openNI.cpp.s
@@ -658,7 +699,7 @@ openNI.s: openNI.cpp.s
 
 # target to generate assembly for a file
 openNI.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/openNI.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/openNI.cpp.s
 .PHONY : openNI.cpp.s
 
 # Help Target
@@ -667,8 +708,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... OpenNI"
 	@echo "... edit_cache"
-	@echo "... openni"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... XnBaseNode.o"
 	@echo "... XnBaseNode.i"

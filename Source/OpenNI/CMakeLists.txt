@@ -1,4 +1,4 @@
-project(openni)
+project(OpenNI)
 
 file(GLOB ${PROJECT_NAME}_sources ./*.cpp)
 
@@ -7,7 +7,17 @@ include_directories(${OPENNI_INCLUDE_DIR})
 include_directories("./FilesOnly")
 
 if(OPENNI_PLATFORM_LINUX)
-	include_directories("./Linux-x86")
+	file(GLOB ${PROJECT_NAME}_platform_sources ./Linux-x86/*.cpp)
 endif()
-message("${TINYXML_INCLUDE_DIR}")
-add_library(${PROJECT_NAME} STATIC ${${PROJECT_NAME}_sources})
+
+add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_sources} ${${PROJECT_NAME}_platform_sources})
+
+# @todo don't use full path here.
+target_link_libraries(${PROJECT_NAME} "/usr/local/lib/libusb-1.0.so")
+target_link_libraries(${PROJECT_NAME} dl)
+target_link_libraries(${PROJECT_NAME} rt)
+
+install(TARGETS ${PROJECT_NAME}
+	LIBRARY DESTINATION .
+	RUNTIME DESTINATION .
+)

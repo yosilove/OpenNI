@@ -22,13 +22,24 @@ set(OPENNI_MODULES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/Modules")
 add_subdirectory("./Source/External/TinyXml/")
 add_subdirectory("./Source/External/LibJPEG/")
 add_subdirectory("./Source/OpenNI/")
-
-if(OPENNI_PLATFORM_LINUX)
-	add_subdirectory("./Source/OpenNI/Linux-x86")
-endif()
-
 add_subdirectory("./Source/Modules/")
+
+# Add samples
+# ---------------------------
 add_subdirectory("./Samples/NiAudioSample")
+add_subdirectory("./Samples/NiBackRecorder")
+add_subdirectory("./Samples/NiConvertXToONI")
+# add_subdirectory("./Samples/NiCRead") # gives error in linux
+add_subdirectory("./Samples/NiRecordSynthetic")
+add_subdirectory("./Samples/NiSampleModule")
+add_subdirectory("./Samples/NiSimpleCreate")
+add_subdirectory("./Samples/NiSimpleRead")
 add_subdirectory("./Samples/NiSimpleViewer")
+add_subdirectory("./Samples/NiUserTracker")
+add_subdirectory("./Samples/NiViewer")
+
+# Utils
+# ---------------------------
+add_subdirectory("./Source/Utils/")
 
 

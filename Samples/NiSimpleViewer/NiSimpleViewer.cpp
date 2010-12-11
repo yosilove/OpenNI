@@ -37,7 +37,7 @@ using namespace xn;
 // Defines
 //---------------------------------------------------------------------------
 #define SAMPLE_XML_PATH "../../../../Data/SamplesConfig.xml"
-
+//#define SAMPLE_XML_PATH "/home/roxlu/Documents/programming/c++/openni_fork/Data/SamplesConfig.xml"
 #define GL_WIN_SIZE_X 1280
 #define GL_WIN_SIZE_Y 1024
 

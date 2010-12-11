@@ -53,11 +53,11 @@ CMAKE_BINARY_DIR = /home/roxlu/Documents/programming/c++/openni_fork
 # Directory level rules for directory Source/External/TinyXml
 
 # Convenience name for "all" pass in the directory.
-Source/External/TinyXml/all: Source/External/TinyXml/CMakeFiles/tinyxml.dir/all
+Source/External/TinyXml/all: Source/External/TinyXml/CMakeFiles/TinyXml.dir/all
 .PHONY : Source/External/TinyXml/all
 
 # Convenience name for "clean" pass in the directory.
-Source/External/TinyXml/clean: Source/External/TinyXml/CMakeFiles/tinyxml.dir/clean
+Source/External/TinyXml/clean: Source/External/TinyXml/CMakeFiles/TinyXml.dir/clean
 .PHONY : Source/External/TinyXml/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -65,49 +65,49 @@ Source/External/TinyXml/preinstall:
 .PHONY : Source/External/TinyXml/preinstall
 
 #=============================================================================
-# Target rules for target Source/External/TinyXml/CMakeFiles/tinyxml.dir
+# Target rules for target Source/External/TinyXml/CMakeFiles/TinyXml.dir
 
 # All Build rule for target.
-Source/External/TinyXml/CMakeFiles/tinyxml.dir/all:
-	$(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/depend
-	$(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  97 98 99 100
-	@echo "Built target tinyxml"
-.PHONY : Source/External/TinyXml/CMakeFiles/tinyxml.dir/all
+Source/External/TinyXml/CMakeFiles/TinyXml.dir/all:
+	$(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/depend
+	$(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  76 77 78 79
+	@echo "Built target TinyXml"
+.PHONY : Source/External/TinyXml/CMakeFiles/TinyXml.dir/all
 
 # Include target in all.
-all: Source/External/TinyXml/CMakeFiles/tinyxml.dir/all
+all: Source/External/TinyXml/CMakeFiles/TinyXml.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Source/External/TinyXml/CMakeFiles/tinyxml.dir/rule: cmake_check_build_system
+Source/External/TinyXml/CMakeFiles/TinyXml.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 Source/External/TinyXml/CMakeFiles/tinyxml.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 Source/External/TinyXml/CMakeFiles/TinyXml.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 0
-.PHONY : Source/External/TinyXml/CMakeFiles/tinyxml.dir/rule
+.PHONY : Source/External/TinyXml/CMakeFiles/TinyXml.dir/rule
 
 # Convenience name for target.
-tinyxml: Source/External/TinyXml/CMakeFiles/tinyxml.dir/rule
-.PHONY : tinyxml
+TinyXml: Source/External/TinyXml/CMakeFiles/TinyXml.dir/rule
+.PHONY : TinyXml
 
 # clean rule for target.
-Source/External/TinyXml/CMakeFiles/tinyxml.dir/clean:
-	$(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/clean
-.PHONY : Source/External/TinyXml/CMakeFiles/tinyxml.dir/clean
+Source/External/TinyXml/CMakeFiles/TinyXml.dir/clean:
+	$(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/clean
+.PHONY : Source/External/TinyXml/CMakeFiles/TinyXml.dir/clean
 
 # clean rule for target.
-clean: Source/External/TinyXml/CMakeFiles/tinyxml.dir/clean
+clean: Source/External/TinyXml/CMakeFiles/TinyXml.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory Source/External/LibJPEG
 
 # Convenience name for "all" pass in the directory.
-Source/External/LibJPEG/all: Source/External/LibJPEG/CMakeFiles/jpeg.dir/all
+Source/External/LibJPEG/all: Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/all
 .PHONY : Source/External/LibJPEG/all
 
 # Convenience name for "clean" pass in the directory.
-Source/External/LibJPEG/clean: Source/External/LibJPEG/CMakeFiles/jpeg.dir/clean
+Source/External/LibJPEG/clean: Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/clean
 .PHONY : Source/External/LibJPEG/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -115,49 +115,49 @@ Source/External/LibJPEG/preinstall:
 .PHONY : Source/External/LibJPEG/preinstall
 
 #=============================================================================
-# Target rules for target Source/External/LibJPEG/CMakeFiles/jpeg.dir
+# Target rules for target Source/External/LibJPEG/CMakeFiles/LibJPEG.dir
 
 # All Build rule for target.
-Source/External/LibJPEG/CMakeFiles/jpeg.dir/all:
-	$(MAKE) -f Source/External/LibJPEG/CMakeFiles/jpeg.dir/build.make Source/External/LibJPEG/CMakeFiles/jpeg.dir/depend
-	$(MAKE) -f Source/External/LibJPEG/CMakeFiles/jpeg.dir/build.make Source/External/LibJPEG/CMakeFiles/jpeg.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40
-	@echo "Built target jpeg"
-.PHONY : Source/External/LibJPEG/CMakeFiles/jpeg.dir/all
+Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/all:
+	$(MAKE) -f Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/build.make Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/depend
+	$(MAKE) -f Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/build.make Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39
+	@echo "Built target LibJPEG"
+.PHONY : Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/all
 
 # Include target in all.
-all: Source/External/LibJPEG/CMakeFiles/jpeg.dir/all
+all: Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Source/External/LibJPEG/CMakeFiles/jpeg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 40
-	$(MAKE) -f CMakeFiles/Makefile2 Source/External/LibJPEG/CMakeFiles/jpeg.dir/all
+Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 39
+	$(MAKE) -f CMakeFiles/Makefile2 Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 0
-.PHONY : Source/External/LibJPEG/CMakeFiles/jpeg.dir/rule
+.PHONY : Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/rule
 
 # Convenience name for target.
-jpeg: Source/External/LibJPEG/CMakeFiles/jpeg.dir/rule
-.PHONY : jpeg
+LibJPEG: Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/rule
+.PHONY : LibJPEG
 
 # clean rule for target.
-Source/External/LibJPEG/CMakeFiles/jpeg.dir/clean:
-	$(MAKE) -f Source/External/LibJPEG/CMakeFiles/jpeg.dir/build.make Source/External/LibJPEG/CMakeFiles/jpeg.dir/clean
-.PHONY : Source/External/LibJPEG/CMakeFiles/jpeg.dir/clean
+Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/clean:
+	$(MAKE) -f Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/build.make Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/clean
+.PHONY : Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/clean
 
 # clean rule for target.
-clean: Source/External/LibJPEG/CMakeFiles/jpeg.dir/clean
+clean: Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory Source/OpenNI
 
 # Convenience name for "all" pass in the directory.
-Source/OpenNI/all: Source/OpenNI/CMakeFiles/openni.dir/all
+Source/OpenNI/all: Source/OpenNI/CMakeFiles/OpenNI.dir/all
 .PHONY : Source/OpenNI/all
 
 # Convenience name for "clean" pass in the directory.
-Source/OpenNI/clean: Source/OpenNI/CMakeFiles/openni.dir/clean
+Source/OpenNI/clean: Source/OpenNI/CMakeFiles/OpenNI.dir/clean
 .PHONY : Source/OpenNI/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -165,49 +165,49 @@ Source/OpenNI/preinstall:
 .PHONY : Source/OpenNI/preinstall
 
 #=============================================================================
-# Target rules for target Source/OpenNI/CMakeFiles/openni.dir
+# Target rules for target Source/OpenNI/CMakeFiles/OpenNI.dir
 
 # All Build rule for target.
-Source/OpenNI/CMakeFiles/openni.dir/all:
-	$(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/depend
-	$(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60
-	@echo "Built target openni"
-.PHONY : Source/OpenNI/CMakeFiles/openni.dir/all
+Source/OpenNI/CMakeFiles/OpenNI.dir/all:
+	$(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/depend
+	$(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59
+	@echo "Built target OpenNI"
+.PHONY : Source/OpenNI/CMakeFiles/OpenNI.dir/all
 
 # Include target in all.
-all: Source/OpenNI/CMakeFiles/openni.dir/all
+all: Source/OpenNI/CMakeFiles/OpenNI.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Source/OpenNI/CMakeFiles/openni.dir/rule: cmake_check_build_system
+Source/OpenNI/CMakeFiles/OpenNI.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 20
-	$(MAKE) -f CMakeFiles/Makefile2 Source/OpenNI/CMakeFiles/openni.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 Source/OpenNI/CMakeFiles/OpenNI.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 0
-.PHONY : Source/OpenNI/CMakeFiles/openni.dir/rule
+.PHONY : Source/OpenNI/CMakeFiles/OpenNI.dir/rule
 
 # Convenience name for target.
-openni: Source/OpenNI/CMakeFiles/openni.dir/rule
-.PHONY : openni
+OpenNI: Source/OpenNI/CMakeFiles/OpenNI.dir/rule
+.PHONY : OpenNI
 
 # clean rule for target.
-Source/OpenNI/CMakeFiles/openni.dir/clean:
-	$(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/clean
-.PHONY : Source/OpenNI/CMakeFiles/openni.dir/clean
+Source/OpenNI/CMakeFiles/OpenNI.dir/clean:
+	$(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/clean
+.PHONY : Source/OpenNI/CMakeFiles/OpenNI.dir/clean
 
 # clean rule for target.
-clean: Source/OpenNI/CMakeFiles/openni.dir/clean
+clean: Source/OpenNI/CMakeFiles/OpenNI.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory Source/OpenNI/Linux-x86
 
 # Convenience name for "all" pass in the directory.
-Source/OpenNI/Linux-x86/all: Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/all
+Source/OpenNI/Linux-x86/all: Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/all
 .PHONY : Source/OpenNI/Linux-x86/all
 
 # Convenience name for "clean" pass in the directory.
-Source/OpenNI/Linux-x86/clean: Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/clean
+Source/OpenNI/Linux-x86/clean: Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/clean
 .PHONY : Source/OpenNI/Linux-x86/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -215,38 +215,38 @@ Source/OpenNI/Linux-x86/preinstall:
 .PHONY : Source/OpenNI/Linux-x86/preinstall
 
 #=============================================================================
-# Target rules for target Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir
+# Target rules for target Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir
 
 # All Build rule for target.
-Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/all:
-	$(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/depend
-	$(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  61 62 63 64 65 66 67 68 69 70 71 72 73
-	@echo "Built target openni_linux"
-.PHONY : Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/all
+Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/all:
+	$(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/depend
+	$(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  60 61 62 63 64 65 66 67 68 69 70 71 72 73
+	@echo "Built target OpenNI_PlatformSpecific"
+.PHONY : Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/all
 
 # Include target in all.
-all: Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/all
+all: Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 13
-	$(MAKE) -f CMakeFiles/Makefile2 Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/all
+Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 0
-.PHONY : Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/rule
+.PHONY : Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/rule
 
 # Convenience name for target.
-openni_linux: Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/rule
-.PHONY : openni_linux
+OpenNI_PlatformSpecific: Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/rule
+.PHONY : OpenNI_PlatformSpecific
 
 # clean rule for target.
-Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/clean:
-	$(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/clean
-.PHONY : Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/clean
+Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/clean:
+	$(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/clean
+.PHONY : Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/clean
 
 # clean rule for target.
-clean: Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/clean
+clean: Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -292,11 +292,11 @@ Source/Modules/Common/preinstall:
 # Directory level rules for directory Source/Modules/nimCodecs
 
 # Convenience name for "all" pass in the directory.
-Source/Modules/nimCodecs/all: Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/all
+Source/Modules/nimCodecs/all: Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/all
 .PHONY : Source/Modules/nimCodecs/all
 
 # Convenience name for "clean" pass in the directory.
-Source/Modules/nimCodecs/clean: Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/clean
+Source/Modules/nimCodecs/clean: Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/clean
 .PHONY : Source/Modules/nimCodecs/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -304,49 +304,49 @@ Source/Modules/nimCodecs/preinstall:
 .PHONY : Source/Modules/nimCodecs/preinstall
 
 #=============================================================================
-# Target rules for target Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir
+# Target rules for target Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir
 
 # All Build rule for target.
-Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/all:
-	$(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/depend
-	$(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  74 75 76 77 78 79 80 81
-	@echo "Built target openni_modules_nimcodecs"
-.PHONY : Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/all
+Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/all:
+	$(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/depend
+	$(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  80 81 82 83 84 85 86 87
+	@echo "Built target nimCodecs"
+.PHONY : Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/all
 
 # Include target in all.
-all: Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/all
+all: Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/rule: cmake_check_build_system
+Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 0
-.PHONY : Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/rule
+.PHONY : Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/rule
 
 # Convenience name for target.
-openni_modules_nimcodecs: Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/rule
-.PHONY : openni_modules_nimcodecs
+nimCodecs: Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/rule
+.PHONY : nimCodecs
 
 # clean rule for target.
-Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/clean:
-	$(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/clean
-.PHONY : Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/clean
+Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/clean:
+	$(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/clean
+.PHONY : Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/clean
 
 # clean rule for target.
-clean: Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/clean
+clean: Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory Source/Modules/nimMockNodes
 
 # Convenience name for "all" pass in the directory.
-Source/Modules/nimMockNodes/all: Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/all
+Source/Modules/nimMockNodes/all: Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/all
 .PHONY : Source/Modules/nimMockNodes/all
 
 # Convenience name for "clean" pass in the directory.
-Source/Modules/nimMockNodes/clean: Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/clean
+Source/Modules/nimMockNodes/clean: Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/clean
 .PHONY : Source/Modules/nimMockNodes/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -354,49 +354,49 @@ Source/Modules/nimMockNodes/preinstall:
 .PHONY : Source/Modules/nimMockNodes/preinstall
 
 #=============================================================================
-# Target rules for target Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir
+# Target rules for target Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir
 
 # All Build rule for target.
-Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/all:
-	$(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/depend
-	$(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  82 83 84 85 86 87 88 89 90
-	@echo "Built target openni_modules_nimmocknodes"
-.PHONY : Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/all
+Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/all:
+	$(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/depend
+	$(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  88 89 90 91 92 93 94 95
+	@echo "Built target nimMockNodes"
+.PHONY : Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/all
 
 # Include target in all.
-all: Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/all
+all: Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 9
-	$(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/all
+Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 0
-.PHONY : Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/rule
+.PHONY : Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/rule
 
 # Convenience name for target.
-openni_modules_nimmocknodes: Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/rule
-.PHONY : openni_modules_nimmocknodes
+nimMockNodes: Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/rule
+.PHONY : nimMockNodes
 
 # clean rule for target.
-Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/clean:
-	$(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/clean
-.PHONY : Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/clean
+Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/clean:
+	$(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/clean
+.PHONY : Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/clean
 
 # clean rule for target.
-clean: Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/clean
+clean: Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory Source/Modules/nimRecorder
 
 # Convenience name for "all" pass in the directory.
-Source/Modules/nimRecorder/all: Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/all
+Source/Modules/nimRecorder/all: Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/all
 .PHONY : Source/Modules/nimRecorder/all
 
 # Convenience name for "clean" pass in the directory.
-Source/Modules/nimRecorder/clean: Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/clean
+Source/Modules/nimRecorder/clean: Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/clean
 .PHONY : Source/Modules/nimRecorder/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -404,49 +404,49 @@ Source/Modules/nimRecorder/preinstall:
 .PHONY : Source/Modules/nimRecorder/preinstall
 
 #=============================================================================
-# Target rules for target Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir
+# Target rules for target Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir
 
 # All Build rule for target.
-Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/all:
-	$(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/depend
-	$(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  91 92 93 94
-	@echo "Built target openni_modules_nimrecorder"
-.PHONY : Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/all
+Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/all:
+	$(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/depend
+	$(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  96 97 98 99 100
+	@echo "Built target nimRecorder"
+.PHONY : Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/all
 
 # Include target in all.
-all: Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/all
+all: Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/all
+Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 0
-.PHONY : Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/rule
+.PHONY : Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/rule
 
 # Convenience name for target.
-openni_modules_nimrecorder: Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/rule
-.PHONY : openni_modules_nimrecorder
+nimRecorder: Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/rule
+.PHONY : nimRecorder
 
 # clean rule for target.
-Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/clean:
-	$(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/clean
-.PHONY : Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/clean
+Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/clean:
+	$(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/clean
+.PHONY : Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/clean
 
 # clean rule for target.
-clean: Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/clean
+clean: Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory Samples/NiAudioSample
 
 # Convenience name for "all" pass in the directory.
-Samples/NiAudioSample/all: Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/all
+Samples/NiAudioSample/all: Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/all
 .PHONY : Samples/NiAudioSample/all
 
 # Convenience name for "clean" pass in the directory.
-Samples/NiAudioSample/clean: Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/clean
+Samples/NiAudioSample/clean: Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/clean
 .PHONY : Samples/NiAudioSample/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -454,51 +454,51 @@ Samples/NiAudioSample/preinstall:
 .PHONY : Samples/NiAudioSample/preinstall
 
 #=============================================================================
-# Target rules for target Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir
+# Target rules for target Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir
 
 # All Build rule for target.
-Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/all: Source/External/TinyXml/CMakeFiles/tinyxml.dir/all
-Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/all: Source/OpenNI/CMakeFiles/openni.dir/all
-Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/all: Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/all
-	$(MAKE) -f Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/build.make Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/depend
-	$(MAKE) -f Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/build.make Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  95
-	@echo "Built target openni_sample_niaudiosample"
-.PHONY : Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/all
+Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/all: Source/External/TinyXml/CMakeFiles/TinyXml.dir/all
+Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/all: Source/OpenNI/CMakeFiles/OpenNI.dir/all
+Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/all: Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/all
+	$(MAKE) -f Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/build.make Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/depend
+	$(MAKE) -f Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/build.make Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  74
+	@echo "Built target Sample-NiAudioSample"
+.PHONY : Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/all
 
 # Include target in all.
-all: Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/all
+all: Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 38
-	$(MAKE) -f CMakeFiles/Makefile2 Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/all
+Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 39
+	$(MAKE) -f CMakeFiles/Makefile2 Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 0
-.PHONY : Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/rule
+.PHONY : Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/rule
 
 # Convenience name for target.
-openni_sample_niaudiosample: Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/rule
-.PHONY : openni_sample_niaudiosample
+Sample-NiAudioSample: Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/rule
+.PHONY : Sample-NiAudioSample
 
 # clean rule for target.
-Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/clean:
-	$(MAKE) -f Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/build.make Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/clean
-.PHONY : Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/clean
+Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/clean:
+	$(MAKE) -f Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/build.make Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/clean
+.PHONY : Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/clean
 
 # clean rule for target.
-clean: Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/clean
+clean: Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/clean
 .PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory Samples/NiSimpleViewer
 
 # Convenience name for "all" pass in the directory.
-Samples/NiSimpleViewer/all: Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/all
+Samples/NiSimpleViewer/all: Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/all
 .PHONY : Samples/NiSimpleViewer/all
 
 # Convenience name for "clean" pass in the directory.
-Samples/NiSimpleViewer/clean: Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/clean
+Samples/NiSimpleViewer/clean: Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/clean
 .PHONY : Samples/NiSimpleViewer/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -506,40 +506,92 @@ Samples/NiSimpleViewer/preinstall:
 .PHONY : Samples/NiSimpleViewer/preinstall
 
 #=============================================================================
-# Target rules for target Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir
+# Target rules for target Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir
 
 # All Build rule for target.
-Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/all: Source/External/TinyXml/CMakeFiles/tinyxml.dir/all
-Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/all: Source/OpenNI/CMakeFiles/openni.dir/all
-Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/all: Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/all
-	$(MAKE) -f Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/build.make Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/depend
-	$(MAKE) -f Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/build.make Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  96
-	@echo "Built target openni_sample_nisimpleviewer"
-.PHONY : Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/all
+Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/all: Source/External/TinyXml/CMakeFiles/TinyXml.dir/all
+Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/all: Source/OpenNI/CMakeFiles/OpenNI.dir/all
+Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/all: Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/all
+	$(MAKE) -f Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/build.make Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/depend
+	$(MAKE) -f Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/build.make Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 
+	@echo "Built target Sample-NiSimpleViewer"
+.PHONY : Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/all
 
 # Include target in all.
-all: Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/all
+all: Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/rule: cmake_check_build_system
+Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 38
-	$(MAKE) -f CMakeFiles/Makefile2 Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 0
-.PHONY : Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/rule
+.PHONY : Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/rule
 
 # Convenience name for target.
-openni_sample_nisimpleviewer: Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/rule
-.PHONY : openni_sample_nisimpleviewer
+Sample-NiSimpleViewer: Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/rule
+.PHONY : Sample-NiSimpleViewer
 
 # clean rule for target.
-Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/clean:
-	$(MAKE) -f Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/build.make Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/clean
-.PHONY : Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/clean
+Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/clean:
+	$(MAKE) -f Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/build.make Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/clean
+.PHONY : Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/clean
 
 # clean rule for target.
-clean: Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/clean
+clean: Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory Samples/NiConvertXToONI
+
+# Convenience name for "all" pass in the directory.
+Samples/NiConvertXToONI/all: Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/all
+.PHONY : Samples/NiConvertXToONI/all
+
+# Convenience name for "clean" pass in the directory.
+Samples/NiConvertXToONI/clean: Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/clean
+.PHONY : Samples/NiConvertXToONI/clean
+
+# Convenience name for "preinstall" pass in the directory.
+Samples/NiConvertXToONI/preinstall:
+.PHONY : Samples/NiConvertXToONI/preinstall
+
+#=============================================================================
+# Target rules for target Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir
+
+# All Build rule for target.
+Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/all: Source/External/TinyXml/CMakeFiles/TinyXml.dir/all
+Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/all: Source/OpenNI/CMakeFiles/OpenNI.dir/all
+Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/all: Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/all
+	$(MAKE) -f Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/build.make Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/depend
+	$(MAKE) -f Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/build.make Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles  75
+	@echo "Built target Sample-NiConvertXToONI"
+.PHONY : Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/all
+
+# Include target in all.
+all: Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 39
+	$(MAKE) -f CMakeFiles/Makefile2 Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/roxlu/Documents/programming/c++/openni_fork/CMakeFiles 0
+.PHONY : Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/rule
+
+# Convenience name for target.
+Sample-NiConvertXToONI: Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/rule
+.PHONY : Sample-NiConvertXToONI
+
+# clean rule for target.
+Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/clean:
+	$(MAKE) -f Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/build.make Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/clean
+.PHONY : Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/clean
+
+# clean rule for target.
+clean: Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/clean
 .PHONY : clean
 
 #=============================================================================

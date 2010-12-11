@@ -54,6 +54,47 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,25 +137,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/rule:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/rule
-.PHONY : Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/rule
+Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/rule:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/rule
+.PHONY : Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/rule
 
 # Convenience name for target.
-openni_modules_nimcodecs: Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/rule
-.PHONY : openni_modules_nimcodecs
+nimCodecs: Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/rule
+.PHONY : nimCodecs
 
 # fast build rule for target.
-openni_modules_nimcodecs/fast:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build
-.PHONY : openni_modules_nimcodecs/fast
+nimCodecs/fast:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build
+.PHONY : nimCodecs/fast
 
 ExportedCodec.o: ExportedCodec.cpp.o
 .PHONY : ExportedCodec.o
 
 # target to build an object file
 ExportedCodec.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/ExportedCodec.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/ExportedCodec.cpp.o
 .PHONY : ExportedCodec.cpp.o
 
 ExportedCodec.i: ExportedCodec.cpp.i
@@ -122,7 +163,7 @@ ExportedCodec.i: ExportedCodec.cpp.i
 
 # target to preprocess a source file
 ExportedCodec.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/ExportedCodec.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/ExportedCodec.cpp.i
 .PHONY : ExportedCodec.cpp.i
 
 ExportedCodec.s: ExportedCodec.cpp.s
@@ -130,7 +171,7 @@ ExportedCodec.s: ExportedCodec.cpp.s
 
 # target to generate assembly for a file
 ExportedCodec.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/ExportedCodec.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/ExportedCodec.cpp.s
 .PHONY : ExportedCodec.cpp.s
 
 Xn16zCodec.o: Xn16zCodec.cpp.o
@@ -138,7 +179,7 @@ Xn16zCodec.o: Xn16zCodec.cpp.o
 
 # target to build an object file
 Xn16zCodec.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/Xn16zCodec.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/Xn16zCodec.cpp.o
 .PHONY : Xn16zCodec.cpp.o
 
 Xn16zCodec.i: Xn16zCodec.cpp.i
@@ -146,7 +187,7 @@ Xn16zCodec.i: Xn16zCodec.cpp.i
 
 # target to preprocess a source file
 Xn16zCodec.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/Xn16zCodec.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/Xn16zCodec.cpp.i
 .PHONY : Xn16zCodec.cpp.i
 
 Xn16zCodec.s: Xn16zCodec.cpp.s
@@ -154,7 +195,7 @@ Xn16zCodec.s: Xn16zCodec.cpp.s
 
 # target to generate assembly for a file
 Xn16zCodec.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/Xn16zCodec.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/Xn16zCodec.cpp.s
 .PHONY : Xn16zCodec.cpp.s
 
 Xn16zEmbTablesCodec.o: Xn16zEmbTablesCodec.cpp.o
@@ -162,7 +203,7 @@ Xn16zEmbTablesCodec.o: Xn16zEmbTablesCodec.cpp.o
 
 # target to build an object file
 Xn16zEmbTablesCodec.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/Xn16zEmbTablesCodec.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/Xn16zEmbTablesCodec.cpp.o
 .PHONY : Xn16zEmbTablesCodec.cpp.o
 
 Xn16zEmbTablesCodec.i: Xn16zEmbTablesCodec.cpp.i
@@ -170,7 +211,7 @@ Xn16zEmbTablesCodec.i: Xn16zEmbTablesCodec.cpp.i
 
 # target to preprocess a source file
 Xn16zEmbTablesCodec.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/Xn16zEmbTablesCodec.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/Xn16zEmbTablesCodec.cpp.i
 .PHONY : Xn16zEmbTablesCodec.cpp.i
 
 Xn16zEmbTablesCodec.s: Xn16zEmbTablesCodec.cpp.s
@@ -178,7 +219,7 @@ Xn16zEmbTablesCodec.s: Xn16zEmbTablesCodec.cpp.s
 
 # target to generate assembly for a file
 Xn16zEmbTablesCodec.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/Xn16zEmbTablesCodec.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/Xn16zEmbTablesCodec.cpp.s
 .PHONY : Xn16zEmbTablesCodec.cpp.s
 
 Xn8zCodec.o: Xn8zCodec.cpp.o
@@ -186,7 +227,7 @@ Xn8zCodec.o: Xn8zCodec.cpp.o
 
 # target to build an object file
 Xn8zCodec.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/Xn8zCodec.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/Xn8zCodec.cpp.o
 .PHONY : Xn8zCodec.cpp.o
 
 Xn8zCodec.i: Xn8zCodec.cpp.i
@@ -194,7 +235,7 @@ Xn8zCodec.i: Xn8zCodec.cpp.i
 
 # target to preprocess a source file
 Xn8zCodec.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/Xn8zCodec.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/Xn8zCodec.cpp.i
 .PHONY : Xn8zCodec.cpp.i
 
 Xn8zCodec.s: Xn8zCodec.cpp.s
@@ -202,7 +243,7 @@ Xn8zCodec.s: Xn8zCodec.cpp.s
 
 # target to generate assembly for a file
 Xn8zCodec.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/Xn8zCodec.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/Xn8zCodec.cpp.s
 .PHONY : Xn8zCodec.cpp.s
 
 XnCodec.o: XnCodec.cpp.o
@@ -210,7 +251,7 @@ XnCodec.o: XnCodec.cpp.o
 
 # target to build an object file
 XnCodec.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnCodec.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnCodec.cpp.o
 .PHONY : XnCodec.cpp.o
 
 XnCodec.i: XnCodec.cpp.i
@@ -218,7 +259,7 @@ XnCodec.i: XnCodec.cpp.i
 
 # target to preprocess a source file
 XnCodec.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnCodec.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnCodec.cpp.i
 .PHONY : XnCodec.cpp.i
 
 XnCodec.s: XnCodec.cpp.s
@@ -226,7 +267,7 @@ XnCodec.s: XnCodec.cpp.s
 
 # target to generate assembly for a file
 XnCodec.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnCodec.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnCodec.cpp.s
 .PHONY : XnCodec.cpp.s
 
 XnCodecs.o: XnCodecs.cpp.o
@@ -234,7 +275,7 @@ XnCodecs.o: XnCodecs.cpp.o
 
 # target to build an object file
 XnCodecs.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnCodecs.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnCodecs.cpp.o
 .PHONY : XnCodecs.cpp.o
 
 XnCodecs.i: XnCodecs.cpp.i
@@ -242,7 +283,7 @@ XnCodecs.i: XnCodecs.cpp.i
 
 # target to preprocess a source file
 XnCodecs.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnCodecs.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnCodecs.cpp.i
 .PHONY : XnCodecs.cpp.i
 
 XnCodecs.s: XnCodecs.cpp.s
@@ -250,7 +291,7 @@ XnCodecs.s: XnCodecs.cpp.s
 
 # target to generate assembly for a file
 XnCodecs.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnCodecs.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnCodecs.cpp.s
 .PHONY : XnCodecs.cpp.s
 
 XnJpegCodec.o: XnJpegCodec.cpp.o
@@ -258,7 +299,7 @@ XnJpegCodec.o: XnJpegCodec.cpp.o
 
 # target to build an object file
 XnJpegCodec.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnJpegCodec.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnJpegCodec.cpp.o
 .PHONY : XnJpegCodec.cpp.o
 
 XnJpegCodec.i: XnJpegCodec.cpp.i
@@ -266,7 +307,7 @@ XnJpegCodec.i: XnJpegCodec.cpp.i
 
 # target to preprocess a source file
 XnJpegCodec.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnJpegCodec.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnJpegCodec.cpp.i
 .PHONY : XnJpegCodec.cpp.i
 
 XnJpegCodec.s: XnJpegCodec.cpp.s
@@ -274,7 +315,7 @@ XnJpegCodec.s: XnJpegCodec.cpp.s
 
 # target to generate assembly for a file
 XnJpegCodec.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnJpegCodec.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnJpegCodec.cpp.s
 .PHONY : XnJpegCodec.cpp.s
 
 XnStreamCompression.o: XnStreamCompression.cpp.o
@@ -282,7 +323,7 @@ XnStreamCompression.o: XnStreamCompression.cpp.o
 
 # target to build an object file
 XnStreamCompression.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnStreamCompression.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnStreamCompression.cpp.o
 .PHONY : XnStreamCompression.cpp.o
 
 XnStreamCompression.i: XnStreamCompression.cpp.i
@@ -290,7 +331,7 @@ XnStreamCompression.i: XnStreamCompression.cpp.i
 
 # target to preprocess a source file
 XnStreamCompression.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnStreamCompression.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnStreamCompression.cpp.i
 .PHONY : XnStreamCompression.cpp.i
 
 XnStreamCompression.s: XnStreamCompression.cpp.s
@@ -298,7 +339,7 @@ XnStreamCompression.s: XnStreamCompression.cpp.s
 
 # target to generate assembly for a file
 XnStreamCompression.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnStreamCompression.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnStreamCompression.cpp.s
 .PHONY : XnStreamCompression.cpp.s
 
 XnUncompressedCodec.o: XnUncompressedCodec.cpp.o
@@ -306,7 +347,7 @@ XnUncompressedCodec.o: XnUncompressedCodec.cpp.o
 
 # target to build an object file
 XnUncompressedCodec.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnUncompressedCodec.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnUncompressedCodec.cpp.o
 .PHONY : XnUncompressedCodec.cpp.o
 
 XnUncompressedCodec.i: XnUncompressedCodec.cpp.i
@@ -314,7 +355,7 @@ XnUncompressedCodec.i: XnUncompressedCodec.cpp.i
 
 # target to preprocess a source file
 XnUncompressedCodec.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnUncompressedCodec.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnUncompressedCodec.cpp.i
 .PHONY : XnUncompressedCodec.cpp.i
 
 XnUncompressedCodec.s: XnUncompressedCodec.cpp.s
@@ -322,7 +363,7 @@ XnUncompressedCodec.s: XnUncompressedCodec.cpp.s
 
 # target to generate assembly for a file
 XnUncompressedCodec.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/XnUncompressedCodec.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/XnUncompressedCodec.cpp.s
 .PHONY : XnUncompressedCodec.cpp.s
 
 # Help Target
@@ -332,7 +373,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... openni_modules_nimcodecs"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
+	@echo "... nimCodecs"
 	@echo "... rebuild_cache"
 	@echo "... ExportedCodec.o"
 	@echo "... ExportedCodec.i"

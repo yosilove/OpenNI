@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/openni_sample_niaudiosample.dir/NiAudioSample.cpp.o  -o openni_sample_niaudiosample -rdynamic ../../Source/OpenNI/libopenni.a ../../Source/OpenNI/Linux-x86/libopenni_linux.a ../../Source/External/TinyXml/libtinyxml.a -lrt -ldl 
+/usr/bin/c++      CMakeFiles/openni_sample_niaudiosample.dir/NiAudioSample.cpp.o  -o openni_sample_niaudiosample -rdynamic -lopenni -lopenni_linux -ltinyxml -lrt -ldl 

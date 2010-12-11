@@ -1,4 +1,3 @@
-project(openni_modules)
 add_subdirectory(./Common)
 add_subdirectory(./nimCodecs)
 add_subdirectory(./nimMockNodes)

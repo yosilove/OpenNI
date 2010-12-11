@@ -54,6 +54,47 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,25 +137,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/rule:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/rule
-.PHONY : Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/rule
+Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/rule:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/rule
+.PHONY : Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/rule
 
 # Convenience name for target.
-openni_linux: Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/rule
-.PHONY : openni_linux
+OpenNI_PlatformSpecific: Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/rule
+.PHONY : OpenNI_PlatformSpecific
 
 # fast build rule for target.
-openni_linux/fast:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build
-.PHONY : openni_linux/fast
+OpenNI_PlatformSpecific/fast:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build
+.PHONY : OpenNI_PlatformSpecific/fast
 
 Linux-x86CriticalSections.o: Linux-x86CriticalSections.cpp.o
 .PHONY : Linux-x86CriticalSections.o
 
 # target to build an object file
 Linux-x86CriticalSections.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86CriticalSections.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86CriticalSections.cpp.o
 .PHONY : Linux-x86CriticalSections.cpp.o
 
 Linux-x86CriticalSections.i: Linux-x86CriticalSections.cpp.i
@@ -122,7 +163,7 @@ Linux-x86CriticalSections.i: Linux-x86CriticalSections.cpp.i
 
 # target to preprocess a source file
 Linux-x86CriticalSections.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86CriticalSections.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86CriticalSections.cpp.i
 .PHONY : Linux-x86CriticalSections.cpp.i
 
 Linux-x86CriticalSections.s: Linux-x86CriticalSections.cpp.s
@@ -130,7 +171,7 @@ Linux-x86CriticalSections.s: Linux-x86CriticalSections.cpp.s
 
 # target to generate assembly for a file
 Linux-x86CriticalSections.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86CriticalSections.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86CriticalSections.cpp.s
 .PHONY : Linux-x86CriticalSections.cpp.s
 
 Linux-x86Debug.o: Linux-x86Debug.cpp.o
@@ -138,7 +179,7 @@ Linux-x86Debug.o: Linux-x86Debug.cpp.o
 
 # target to build an object file
 Linux-x86Debug.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Debug.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Debug.cpp.o
 .PHONY : Linux-x86Debug.cpp.o
 
 Linux-x86Debug.i: Linux-x86Debug.cpp.i
@@ -146,7 +187,7 @@ Linux-x86Debug.i: Linux-x86Debug.cpp.i
 
 # target to preprocess a source file
 Linux-x86Debug.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Debug.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Debug.cpp.i
 .PHONY : Linux-x86Debug.cpp.i
 
 Linux-x86Debug.s: Linux-x86Debug.cpp.s
@@ -154,7 +195,7 @@ Linux-x86Debug.s: Linux-x86Debug.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Debug.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Debug.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Debug.cpp.s
 .PHONY : Linux-x86Debug.cpp.s
 
 Linux-x86Events.o: Linux-x86Events.cpp.o
@@ -162,7 +203,7 @@ Linux-x86Events.o: Linux-x86Events.cpp.o
 
 # target to build an object file
 Linux-x86Events.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Events.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Events.cpp.o
 .PHONY : Linux-x86Events.cpp.o
 
 Linux-x86Events.i: Linux-x86Events.cpp.i
@@ -170,7 +211,7 @@ Linux-x86Events.i: Linux-x86Events.cpp.i
 
 # target to preprocess a source file
 Linux-x86Events.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Events.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Events.cpp.i
 .PHONY : Linux-x86Events.cpp.i
 
 Linux-x86Events.s: Linux-x86Events.cpp.s
@@ -178,7 +219,7 @@ Linux-x86Events.s: Linux-x86Events.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Events.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Events.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Events.cpp.s
 .PHONY : Linux-x86Events.cpp.s
 
 Linux-x86Files.o: Linux-x86Files.cpp.o
@@ -186,7 +227,7 @@ Linux-x86Files.o: Linux-x86Files.cpp.o
 
 # target to build an object file
 Linux-x86Files.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Files.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Files.cpp.o
 .PHONY : Linux-x86Files.cpp.o
 
 Linux-x86Files.i: Linux-x86Files.cpp.i
@@ -194,7 +235,7 @@ Linux-x86Files.i: Linux-x86Files.cpp.i
 
 # target to preprocess a source file
 Linux-x86Files.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Files.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Files.cpp.i
 .PHONY : Linux-x86Files.cpp.i
 
 Linux-x86Files.s: Linux-x86Files.cpp.s
@@ -202,7 +243,7 @@ Linux-x86Files.s: Linux-x86Files.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Files.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Files.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Files.cpp.s
 .PHONY : Linux-x86Files.cpp.s
 
 Linux-x86INI.o: Linux-x86INI.cpp.o
@@ -210,7 +251,7 @@ Linux-x86INI.o: Linux-x86INI.cpp.o
 
 # target to build an object file
 Linux-x86INI.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86INI.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86INI.cpp.o
 .PHONY : Linux-x86INI.cpp.o
 
 Linux-x86INI.i: Linux-x86INI.cpp.i
@@ -218,7 +259,7 @@ Linux-x86INI.i: Linux-x86INI.cpp.i
 
 # target to preprocess a source file
 Linux-x86INI.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86INI.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86INI.cpp.i
 .PHONY : Linux-x86INI.cpp.i
 
 Linux-x86INI.s: Linux-x86INI.cpp.s
@@ -226,7 +267,7 @@ Linux-x86INI.s: Linux-x86INI.cpp.s
 
 # target to generate assembly for a file
 Linux-x86INI.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86INI.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86INI.cpp.s
 .PHONY : Linux-x86INI.cpp.s
 
 Linux-x86Keyboard.o: Linux-x86Keyboard.cpp.o
@@ -234,7 +275,7 @@ Linux-x86Keyboard.o: Linux-x86Keyboard.cpp.o
 
 # target to build an object file
 Linux-x86Keyboard.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Keyboard.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Keyboard.cpp.o
 .PHONY : Linux-x86Keyboard.cpp.o
 
 Linux-x86Keyboard.i: Linux-x86Keyboard.cpp.i
@@ -242,7 +283,7 @@ Linux-x86Keyboard.i: Linux-x86Keyboard.cpp.i
 
 # target to preprocess a source file
 Linux-x86Keyboard.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Keyboard.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Keyboard.cpp.i
 .PHONY : Linux-x86Keyboard.cpp.i
 
 Linux-x86Keyboard.s: Linux-x86Keyboard.cpp.s
@@ -250,7 +291,7 @@ Linux-x86Keyboard.s: Linux-x86Keyboard.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Keyboard.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Keyboard.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Keyboard.cpp.s
 .PHONY : Linux-x86Keyboard.cpp.s
 
 Linux-x86Memory.o: Linux-x86Memory.cpp.o
@@ -258,7 +299,7 @@ Linux-x86Memory.o: Linux-x86Memory.cpp.o
 
 # target to build an object file
 Linux-x86Memory.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Memory.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Memory.cpp.o
 .PHONY : Linux-x86Memory.cpp.o
 
 Linux-x86Memory.i: Linux-x86Memory.cpp.i
@@ -266,7 +307,7 @@ Linux-x86Memory.i: Linux-x86Memory.cpp.i
 
 # target to preprocess a source file
 Linux-x86Memory.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Memory.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Memory.cpp.i
 .PHONY : Linux-x86Memory.cpp.i
 
 Linux-x86Memory.s: Linux-x86Memory.cpp.s
@@ -274,7 +315,7 @@ Linux-x86Memory.s: Linux-x86Memory.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Memory.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Memory.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Memory.cpp.s
 .PHONY : Linux-x86Memory.cpp.s
 
 Linux-x86Mutex.o: Linux-x86Mutex.cpp.o
@@ -282,7 +323,7 @@ Linux-x86Mutex.o: Linux-x86Mutex.cpp.o
 
 # target to build an object file
 Linux-x86Mutex.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Mutex.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Mutex.cpp.o
 .PHONY : Linux-x86Mutex.cpp.o
 
 Linux-x86Mutex.i: Linux-x86Mutex.cpp.i
@@ -290,7 +331,7 @@ Linux-x86Mutex.i: Linux-x86Mutex.cpp.i
 
 # target to preprocess a source file
 Linux-x86Mutex.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Mutex.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Mutex.cpp.i
 .PHONY : Linux-x86Mutex.cpp.i
 
 Linux-x86Mutex.s: Linux-x86Mutex.cpp.s
@@ -298,7 +339,7 @@ Linux-x86Mutex.s: Linux-x86Mutex.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Mutex.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Mutex.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Mutex.cpp.s
 .PHONY : Linux-x86Mutex.cpp.s
 
 Linux-x86Network.o: Linux-x86Network.cpp.o
@@ -306,7 +347,7 @@ Linux-x86Network.o: Linux-x86Network.cpp.o
 
 # target to build an object file
 Linux-x86Network.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Network.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Network.cpp.o
 .PHONY : Linux-x86Network.cpp.o
 
 Linux-x86Network.i: Linux-x86Network.cpp.i
@@ -314,7 +355,7 @@ Linux-x86Network.i: Linux-x86Network.cpp.i
 
 # target to preprocess a source file
 Linux-x86Network.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Network.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Network.cpp.i
 .PHONY : Linux-x86Network.cpp.i
 
 Linux-x86Network.s: Linux-x86Network.cpp.s
@@ -322,7 +363,7 @@ Linux-x86Network.s: Linux-x86Network.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Network.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Network.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Network.cpp.s
 .PHONY : Linux-x86Network.cpp.s
 
 Linux-x86Processes.o: Linux-x86Processes.cpp.o
@@ -330,7 +371,7 @@ Linux-x86Processes.o: Linux-x86Processes.cpp.o
 
 # target to build an object file
 Linux-x86Processes.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Processes.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Processes.cpp.o
 .PHONY : Linux-x86Processes.cpp.o
 
 Linux-x86Processes.i: Linux-x86Processes.cpp.i
@@ -338,7 +379,7 @@ Linux-x86Processes.i: Linux-x86Processes.cpp.i
 
 # target to preprocess a source file
 Linux-x86Processes.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Processes.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Processes.cpp.i
 .PHONY : Linux-x86Processes.cpp.i
 
 Linux-x86Processes.s: Linux-x86Processes.cpp.s
@@ -346,7 +387,7 @@ Linux-x86Processes.s: Linux-x86Processes.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Processes.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Processes.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Processes.cpp.s
 .PHONY : Linux-x86Processes.cpp.s
 
 Linux-x86SharedLibs.o: Linux-x86SharedLibs.cpp.o
@@ -354,7 +395,7 @@ Linux-x86SharedLibs.o: Linux-x86SharedLibs.cpp.o
 
 # target to build an object file
 Linux-x86SharedLibs.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86SharedLibs.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86SharedLibs.cpp.o
 .PHONY : Linux-x86SharedLibs.cpp.o
 
 Linux-x86SharedLibs.i: Linux-x86SharedLibs.cpp.i
@@ -362,7 +403,7 @@ Linux-x86SharedLibs.i: Linux-x86SharedLibs.cpp.i
 
 # target to preprocess a source file
 Linux-x86SharedLibs.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86SharedLibs.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86SharedLibs.cpp.i
 .PHONY : Linux-x86SharedLibs.cpp.i
 
 Linux-x86SharedLibs.s: Linux-x86SharedLibs.cpp.s
@@ -370,7 +411,7 @@ Linux-x86SharedLibs.s: Linux-x86SharedLibs.cpp.s
 
 # target to generate assembly for a file
 Linux-x86SharedLibs.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86SharedLibs.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86SharedLibs.cpp.s
 .PHONY : Linux-x86SharedLibs.cpp.s
 
 Linux-x86SharedMemory.o: Linux-x86SharedMemory.cpp.o
@@ -378,7 +419,7 @@ Linux-x86SharedMemory.o: Linux-x86SharedMemory.cpp.o
 
 # target to build an object file
 Linux-x86SharedMemory.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86SharedMemory.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86SharedMemory.cpp.o
 .PHONY : Linux-x86SharedMemory.cpp.o
 
 Linux-x86SharedMemory.i: Linux-x86SharedMemory.cpp.i
@@ -386,7 +427,7 @@ Linux-x86SharedMemory.i: Linux-x86SharedMemory.cpp.i
 
 # target to preprocess a source file
 Linux-x86SharedMemory.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86SharedMemory.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86SharedMemory.cpp.i
 .PHONY : Linux-x86SharedMemory.cpp.i
 
 Linux-x86SharedMemory.s: Linux-x86SharedMemory.cpp.s
@@ -394,7 +435,7 @@ Linux-x86SharedMemory.s: Linux-x86SharedMemory.cpp.s
 
 # target to generate assembly for a file
 Linux-x86SharedMemory.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86SharedMemory.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86SharedMemory.cpp.s
 .PHONY : Linux-x86SharedMemory.cpp.s
 
 Linux-x86Strings.o: Linux-x86Strings.cpp.o
@@ -402,7 +443,7 @@ Linux-x86Strings.o: Linux-x86Strings.cpp.o
 
 # target to build an object file
 Linux-x86Strings.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Strings.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Strings.cpp.o
 .PHONY : Linux-x86Strings.cpp.o
 
 Linux-x86Strings.i: Linux-x86Strings.cpp.i
@@ -410,7 +451,7 @@ Linux-x86Strings.i: Linux-x86Strings.cpp.i
 
 # target to preprocess a source file
 Linux-x86Strings.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Strings.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Strings.cpp.i
 .PHONY : Linux-x86Strings.cpp.i
 
 Linux-x86Strings.s: Linux-x86Strings.cpp.s
@@ -418,7 +459,7 @@ Linux-x86Strings.s: Linux-x86Strings.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Strings.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Strings.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Strings.cpp.s
 .PHONY : Linux-x86Strings.cpp.s
 
 Linux-x86Threads.o: Linux-x86Threads.cpp.o
@@ -426,7 +467,7 @@ Linux-x86Threads.o: Linux-x86Threads.cpp.o
 
 # target to build an object file
 Linux-x86Threads.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Threads.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Threads.cpp.o
 .PHONY : Linux-x86Threads.cpp.o
 
 Linux-x86Threads.i: Linux-x86Threads.cpp.i
@@ -434,7 +475,7 @@ Linux-x86Threads.i: Linux-x86Threads.cpp.i
 
 # target to preprocess a source file
 Linux-x86Threads.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Threads.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Threads.cpp.i
 .PHONY : Linux-x86Threads.cpp.i
 
 Linux-x86Threads.s: Linux-x86Threads.cpp.s
@@ -442,7 +483,7 @@ Linux-x86Threads.s: Linux-x86Threads.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Threads.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Threads.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Threads.cpp.s
 .PHONY : Linux-x86Threads.cpp.s
 
 Linux-x86Time.o: Linux-x86Time.cpp.o
@@ -450,7 +491,7 @@ Linux-x86Time.o: Linux-x86Time.cpp.o
 
 # target to build an object file
 Linux-x86Time.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Time.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Time.cpp.o
 .PHONY : Linux-x86Time.cpp.o
 
 Linux-x86Time.i: Linux-x86Time.cpp.i
@@ -458,7 +499,7 @@ Linux-x86Time.i: Linux-x86Time.cpp.i
 
 # target to preprocess a source file
 Linux-x86Time.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Time.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Time.cpp.i
 .PHONY : Linux-x86Time.cpp.i
 
 Linux-x86Time.s: Linux-x86Time.cpp.s
@@ -466,7 +507,7 @@ Linux-x86Time.s: Linux-x86Time.cpp.s
 
 # target to generate assembly for a file
 Linux-x86Time.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/Linux-x86Time.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/Linux-x86Time.cpp.s
 .PHONY : Linux-x86Time.cpp.s
 
 XnUSBLinux-x86.o: XnUSBLinux-x86.cpp.o
@@ -474,7 +515,7 @@ XnUSBLinux-x86.o: XnUSBLinux-x86.cpp.o
 
 # target to build an object file
 XnUSBLinux-x86.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/XnUSBLinux-x86.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/XnUSBLinux-x86.cpp.o
 .PHONY : XnUSBLinux-x86.cpp.o
 
 XnUSBLinux-x86.i: XnUSBLinux-x86.cpp.i
@@ -482,7 +523,7 @@ XnUSBLinux-x86.i: XnUSBLinux-x86.cpp.i
 
 # target to preprocess a source file
 XnUSBLinux-x86.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/XnUSBLinux-x86.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/XnUSBLinux-x86.cpp.i
 .PHONY : XnUSBLinux-x86.cpp.i
 
 XnUSBLinux-x86.s: XnUSBLinux-x86.cpp.s
@@ -490,7 +531,7 @@ XnUSBLinux-x86.s: XnUSBLinux-x86.cpp.s
 
 # target to generate assembly for a file
 XnUSBLinux-x86.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/XnUSBLinux-x86.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/XnUSBLinux-x86.cpp.s
 .PHONY : XnUSBLinux-x86.cpp.s
 
 # Help Target
@@ -499,8 +540,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... OpenNI_PlatformSpecific"
 	@echo "... edit_cache"
-	@echo "... openni_linux"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... Linux-x86CriticalSections.o"
 	@echo "... Linux-x86CriticalSections.i"

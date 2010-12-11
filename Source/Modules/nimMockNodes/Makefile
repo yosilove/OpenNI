@@ -54,6 +54,47 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,25 +137,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/rule:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/rule
-.PHONY : Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/rule
+Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/rule:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/rule
+.PHONY : Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/rule
 
 # Convenience name for target.
-openni_modules_nimmocknodes: Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/rule
-.PHONY : openni_modules_nimmocknodes
+nimMockNodes: Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/rule
+.PHONY : nimMockNodes
 
 # fast build rule for target.
-openni_modules_nimmocknodes/fast:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build
-.PHONY : openni_modules_nimmocknodes/fast
+nimMockNodes/fast:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build
+.PHONY : nimMockNodes/fast
 
 ExportedMockNodes.o: ExportedMockNodes.cpp.o
 .PHONY : ExportedMockNodes.o
 
 # target to build an object file
 ExportedMockNodes.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/ExportedMockNodes.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/ExportedMockNodes.cpp.o
 .PHONY : ExportedMockNodes.cpp.o
 
 ExportedMockNodes.i: ExportedMockNodes.cpp.i
@@ -122,7 +163,7 @@ ExportedMockNodes.i: ExportedMockNodes.cpp.i
 
 # target to preprocess a source file
 ExportedMockNodes.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/ExportedMockNodes.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/ExportedMockNodes.cpp.i
 .PHONY : ExportedMockNodes.cpp.i
 
 ExportedMockNodes.s: ExportedMockNodes.cpp.s
@@ -130,7 +171,7 @@ ExportedMockNodes.s: ExportedMockNodes.cpp.s
 
 # target to generate assembly for a file
 ExportedMockNodes.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/ExportedMockNodes.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/ExportedMockNodes.cpp.s
 .PHONY : ExportedMockNodes.cpp.s
 
 MockAudioGenerator.o: MockAudioGenerator.cpp.o
@@ -138,7 +179,7 @@ MockAudioGenerator.o: MockAudioGenerator.cpp.o
 
 # target to build an object file
 MockAudioGenerator.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockAudioGenerator.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockAudioGenerator.cpp.o
 .PHONY : MockAudioGenerator.cpp.o
 
 MockAudioGenerator.i: MockAudioGenerator.cpp.i
@@ -146,7 +187,7 @@ MockAudioGenerator.i: MockAudioGenerator.cpp.i
 
 # target to preprocess a source file
 MockAudioGenerator.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockAudioGenerator.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockAudioGenerator.cpp.i
 .PHONY : MockAudioGenerator.cpp.i
 
 MockAudioGenerator.s: MockAudioGenerator.cpp.s
@@ -154,7 +195,7 @@ MockAudioGenerator.s: MockAudioGenerator.cpp.s
 
 # target to generate assembly for a file
 MockAudioGenerator.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockAudioGenerator.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockAudioGenerator.cpp.s
 .PHONY : MockAudioGenerator.cpp.s
 
 MockDepthGenerator.o: MockDepthGenerator.cpp.o
@@ -162,7 +203,7 @@ MockDepthGenerator.o: MockDepthGenerator.cpp.o
 
 # target to build an object file
 MockDepthGenerator.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockDepthGenerator.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockDepthGenerator.cpp.o
 .PHONY : MockDepthGenerator.cpp.o
 
 MockDepthGenerator.i: MockDepthGenerator.cpp.i
@@ -170,7 +211,7 @@ MockDepthGenerator.i: MockDepthGenerator.cpp.i
 
 # target to preprocess a source file
 MockDepthGenerator.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockDepthGenerator.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockDepthGenerator.cpp.i
 .PHONY : MockDepthGenerator.cpp.i
 
 MockDepthGenerator.s: MockDepthGenerator.cpp.s
@@ -178,7 +219,7 @@ MockDepthGenerator.s: MockDepthGenerator.cpp.s
 
 # target to generate assembly for a file
 MockDepthGenerator.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockDepthGenerator.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockDepthGenerator.cpp.s
 .PHONY : MockDepthGenerator.cpp.s
 
 MockDevice.o: MockDevice.cpp.o
@@ -186,7 +227,7 @@ MockDevice.o: MockDevice.cpp.o
 
 # target to build an object file
 MockDevice.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockDevice.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockDevice.cpp.o
 .PHONY : MockDevice.cpp.o
 
 MockDevice.i: MockDevice.cpp.i
@@ -194,7 +235,7 @@ MockDevice.i: MockDevice.cpp.i
 
 # target to preprocess a source file
 MockDevice.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockDevice.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockDevice.cpp.i
 .PHONY : MockDevice.cpp.i
 
 MockDevice.s: MockDevice.cpp.s
@@ -202,7 +243,7 @@ MockDevice.s: MockDevice.cpp.s
 
 # target to generate assembly for a file
 MockDevice.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockDevice.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockDevice.cpp.s
 .PHONY : MockDevice.cpp.s
 
 MockGenerator.o: MockGenerator.cpp.o
@@ -210,7 +251,7 @@ MockGenerator.o: MockGenerator.cpp.o
 
 # target to build an object file
 MockGenerator.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockGenerator.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockGenerator.cpp.o
 .PHONY : MockGenerator.cpp.o
 
 MockGenerator.i: MockGenerator.cpp.i
@@ -218,7 +259,7 @@ MockGenerator.i: MockGenerator.cpp.i
 
 # target to preprocess a source file
 MockGenerator.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockGenerator.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockGenerator.cpp.i
 .PHONY : MockGenerator.cpp.i
 
 MockGenerator.s: MockGenerator.cpp.s
@@ -226,7 +267,7 @@ MockGenerator.s: MockGenerator.cpp.s
 
 # target to generate assembly for a file
 MockGenerator.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockGenerator.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockGenerator.cpp.s
 .PHONY : MockGenerator.cpp.s
 
 MockIRGenerator.o: MockIRGenerator.cpp.o
@@ -234,7 +275,7 @@ MockIRGenerator.o: MockIRGenerator.cpp.o
 
 # target to build an object file
 MockIRGenerator.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockIRGenerator.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockIRGenerator.cpp.o
 .PHONY : MockIRGenerator.cpp.o
 
 MockIRGenerator.i: MockIRGenerator.cpp.i
@@ -242,7 +283,7 @@ MockIRGenerator.i: MockIRGenerator.cpp.i
 
 # target to preprocess a source file
 MockIRGenerator.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockIRGenerator.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockIRGenerator.cpp.i
 .PHONY : MockIRGenerator.cpp.i
 
 MockIRGenerator.s: MockIRGenerator.cpp.s
@@ -250,7 +291,7 @@ MockIRGenerator.s: MockIRGenerator.cpp.s
 
 # target to generate assembly for a file
 MockIRGenerator.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockIRGenerator.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockIRGenerator.cpp.s
 .PHONY : MockIRGenerator.cpp.s
 
 MockImageGenerator.o: MockImageGenerator.cpp.o
@@ -258,7 +299,7 @@ MockImageGenerator.o: MockImageGenerator.cpp.o
 
 # target to build an object file
 MockImageGenerator.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockImageGenerator.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockImageGenerator.cpp.o
 .PHONY : MockImageGenerator.cpp.o
 
 MockImageGenerator.i: MockImageGenerator.cpp.i
@@ -266,7 +307,7 @@ MockImageGenerator.i: MockImageGenerator.cpp.i
 
 # target to preprocess a source file
 MockImageGenerator.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockImageGenerator.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockImageGenerator.cpp.i
 .PHONY : MockImageGenerator.cpp.i
 
 MockImageGenerator.s: MockImageGenerator.cpp.s
@@ -274,7 +315,7 @@ MockImageGenerator.s: MockImageGenerator.cpp.s
 
 # target to generate assembly for a file
 MockImageGenerator.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockImageGenerator.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockImageGenerator.cpp.s
 .PHONY : MockImageGenerator.cpp.s
 
 MockMapGenerator.o: MockMapGenerator.cpp.o
@@ -282,7 +323,7 @@ MockMapGenerator.o: MockMapGenerator.cpp.o
 
 # target to build an object file
 MockMapGenerator.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockMapGenerator.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockMapGenerator.cpp.o
 .PHONY : MockMapGenerator.cpp.o
 
 MockMapGenerator.i: MockMapGenerator.cpp.i
@@ -290,7 +331,7 @@ MockMapGenerator.i: MockMapGenerator.cpp.i
 
 # target to preprocess a source file
 MockMapGenerator.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockMapGenerator.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockMapGenerator.cpp.i
 .PHONY : MockMapGenerator.cpp.i
 
 MockMapGenerator.s: MockMapGenerator.cpp.s
@@ -298,7 +339,7 @@ MockMapGenerator.s: MockMapGenerator.cpp.s
 
 # target to generate assembly for a file
 MockMapGenerator.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockMapGenerator.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockMapGenerator.cpp.s
 .PHONY : MockMapGenerator.cpp.s
 
 MockProductionNode.o: MockProductionNode.cpp.o
@@ -306,7 +347,7 @@ MockProductionNode.o: MockProductionNode.cpp.o
 
 # target to build an object file
 MockProductionNode.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockProductionNode.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockProductionNode.cpp.o
 .PHONY : MockProductionNode.cpp.o
 
 MockProductionNode.i: MockProductionNode.cpp.i
@@ -314,7 +355,7 @@ MockProductionNode.i: MockProductionNode.cpp.i
 
 # target to preprocess a source file
 MockProductionNode.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockProductionNode.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockProductionNode.cpp.i
 .PHONY : MockProductionNode.cpp.i
 
 MockProductionNode.s: MockProductionNode.cpp.s
@@ -322,7 +363,7 @@ MockProductionNode.s: MockProductionNode.cpp.s
 
 # target to generate assembly for a file
 MockProductionNode.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/MockProductionNode.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/MockProductionNode.cpp.s
 .PHONY : MockProductionNode.cpp.s
 
 nimMockNodes.o: nimMockNodes.cpp.o
@@ -330,7 +371,7 @@ nimMockNodes.o: nimMockNodes.cpp.o
 
 # target to build an object file
 nimMockNodes.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/nimMockNodes.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/nimMockNodes.cpp.o
 .PHONY : nimMockNodes.cpp.o
 
 nimMockNodes.i: nimMockNodes.cpp.i
@@ -338,7 +379,7 @@ nimMockNodes.i: nimMockNodes.cpp.i
 
 # target to preprocess a source file
 nimMockNodes.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/nimMockNodes.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/nimMockNodes.cpp.i
 .PHONY : nimMockNodes.cpp.i
 
 nimMockNodes.s: nimMockNodes.cpp.s
@@ -346,7 +387,7 @@ nimMockNodes.s: nimMockNodes.cpp.s
 
 # target to generate assembly for a file
 nimMockNodes.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/nimMockNodes.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/nimMockNodes.cpp.s
 .PHONY : nimMockNodes.cpp.s
 
 # Help Target
@@ -356,7 +397,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... openni_modules_nimmocknodes"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
+	@echo "... nimMockNodes"
 	@echo "... rebuild_cache"
 	@echo "... ExportedMockNodes.o"
 	@echo "... ExportedMockNodes.i"

@@ -1,14 +1,25 @@
-project(openni_sample_nisimpleviewer)
+project(Sample-NiSimpleViewer)
 
+# Add all files we have for the example.
+# ---------------------------------------
 file(GLOB ${PROJECT_NAME}_sources ./*.cpp)
-message("${GLUT_LIB_LIBRARIES}")
+
+# Include directories
+# ---------------------------------------
 include_directories(${OPENNI_INCLUDE_DIR})
+
+# The target for this sample
+# ---------------------------------------
 add_executable(${PROJECT_NAME} ${${PROJECT_NAME}_sources})
-target_link_libraries(${PROJECT_NAME} openni)
 
-if(OPENNI_PLATFORM_LINUX)
-	target_link_libraries(${PROJECT_NAME} openni_linux)
-endif()
-
-target_link_libraries(${PROJECT_NAME} tinyxml)
+# And make it link against these libs.
+# ---------------------------------------
+target_link_libraries(${PROJECT_NAME} OpenNI)
+target_link_libraries(${PROJECT_NAME} TinyXml)
 target_link_libraries(${PROJECT_NAME} glut)
+
+# We install the file to the dir where cmake is executed
+# ------------------------------------------------------
+install(TARGETS ${PROJECT_NAME}
+	RUNTIME DESTINATION .
+)

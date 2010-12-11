@@ -78,9 +78,6 @@ openni_sample_niaudiosample_OBJECTS = \
 openni_sample_niaudiosample_EXTERNAL_OBJECTS =
 
 Samples/NiAudioSample/openni_sample_niaudiosample: Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/NiAudioSample.cpp.o
-Samples/NiAudioSample/openni_sample_niaudiosample: Source/OpenNI/libopenni.a
-Samples/NiAudioSample/openni_sample_niaudiosample: Source/OpenNI/Linux-x86/libopenni_linux.a
-Samples/NiAudioSample/openni_sample_niaudiosample: Source/External/TinyXml/libtinyxml.a
 Samples/NiAudioSample/openni_sample_niaudiosample: Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/build.make
 Samples/NiAudioSample/openni_sample_niaudiosample: Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable openni_sample_niaudiosample"

@@ -54,6 +54,47 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,25 +137,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Source/External/TinyXml/CMakeFiles/tinyxml.dir/rule:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/External/TinyXml/CMakeFiles/tinyxml.dir/rule
-.PHONY : Source/External/TinyXml/CMakeFiles/tinyxml.dir/rule
+Source/External/TinyXml/CMakeFiles/TinyXml.dir/rule:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f CMakeFiles/Makefile2 Source/External/TinyXml/CMakeFiles/TinyXml.dir/rule
+.PHONY : Source/External/TinyXml/CMakeFiles/TinyXml.dir/rule
 
 # Convenience name for target.
-tinyxml: Source/External/TinyXml/CMakeFiles/tinyxml.dir/rule
-.PHONY : tinyxml
+TinyXml: Source/External/TinyXml/CMakeFiles/TinyXml.dir/rule
+.PHONY : TinyXml
 
 # fast build rule for target.
-tinyxml/fast:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/build
-.PHONY : tinyxml/fast
+TinyXml/fast:
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/build
+.PHONY : TinyXml/fast
 
 tinystr.o: tinystr.cpp.o
 .PHONY : tinystr.o
 
 # target to build an object file
 tinystr.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinystr.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinystr.cpp.o
 .PHONY : tinystr.cpp.o
 
 tinystr.i: tinystr.cpp.i
@@ -122,7 +163,7 @@ tinystr.i: tinystr.cpp.i
 
 # target to preprocess a source file
 tinystr.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinystr.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinystr.cpp.i
 .PHONY : tinystr.cpp.i
 
 tinystr.s: tinystr.cpp.s
@@ -130,7 +171,7 @@ tinystr.s: tinystr.cpp.s
 
 # target to generate assembly for a file
 tinystr.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinystr.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinystr.cpp.s
 .PHONY : tinystr.cpp.s
 
 tinyxml.o: tinyxml.cpp.o
@@ -138,7 +179,7 @@ tinyxml.o: tinyxml.cpp.o
 
 # target to build an object file
 tinyxml.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinyxml.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinyxml.cpp.o
 .PHONY : tinyxml.cpp.o
 
 tinyxml.i: tinyxml.cpp.i
@@ -146,7 +187,7 @@ tinyxml.i: tinyxml.cpp.i
 
 # target to preprocess a source file
 tinyxml.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinyxml.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinyxml.cpp.i
 .PHONY : tinyxml.cpp.i
 
 tinyxml.s: tinyxml.cpp.s
@@ -154,7 +195,7 @@ tinyxml.s: tinyxml.cpp.s
 
 # target to generate assembly for a file
 tinyxml.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinyxml.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinyxml.cpp.s
 .PHONY : tinyxml.cpp.s
 
 tinyxmlerror.o: tinyxmlerror.cpp.o
@@ -162,7 +203,7 @@ tinyxmlerror.o: tinyxmlerror.cpp.o
 
 # target to build an object file
 tinyxmlerror.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinyxmlerror.cpp.o
 .PHONY : tinyxmlerror.cpp.o
 
 tinyxmlerror.i: tinyxmlerror.cpp.i
@@ -170,7 +211,7 @@ tinyxmlerror.i: tinyxmlerror.cpp.i
 
 # target to preprocess a source file
 tinyxmlerror.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinyxmlerror.cpp.i
 .PHONY : tinyxmlerror.cpp.i
 
 tinyxmlerror.s: tinyxmlerror.cpp.s
@@ -178,7 +219,7 @@ tinyxmlerror.s: tinyxmlerror.cpp.s
 
 # target to generate assembly for a file
 tinyxmlerror.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinyxmlerror.cpp.s
 .PHONY : tinyxmlerror.cpp.s
 
 tinyxmlparser.o: tinyxmlparser.cpp.o
@@ -186,7 +227,7 @@ tinyxmlparser.o: tinyxmlparser.cpp.o
 
 # target to build an object file
 tinyxmlparser.cpp.o:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.o
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinyxmlparser.cpp.o
 .PHONY : tinyxmlparser.cpp.o
 
 tinyxmlparser.i: tinyxmlparser.cpp.i
@@ -194,7 +235,7 @@ tinyxmlparser.i: tinyxmlparser.cpp.i
 
 # target to preprocess a source file
 tinyxmlparser.cpp.i:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.i
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinyxmlparser.cpp.i
 .PHONY : tinyxmlparser.cpp.i
 
 tinyxmlparser.s: tinyxmlparser.cpp.s
@@ -202,7 +243,7 @@ tinyxmlparser.s: tinyxmlparser.cpp.s
 
 # target to generate assembly for a file
 tinyxmlparser.cpp.s:
-	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.s
+	cd /home/roxlu/Documents/programming/c++/openni_fork && $(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/tinyxmlparser.cpp.s
 .PHONY : tinyxmlparser.cpp.s
 
 # Help Target
@@ -211,9 +252,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... TinyXml"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... tinyxml"
 	@echo "... tinystr.o"
 	@echo "... tinystr.i"
 	@echo "... tinystr.s"

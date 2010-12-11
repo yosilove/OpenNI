@@ -54,6 +54,47 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -96,121 +137,134 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tinyxml
+# Target rules for targets named TinyXml
 
 # Build rule for target.
-tinyxml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tinyxml
-.PHONY : tinyxml
+TinyXml: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TinyXml
+.PHONY : TinyXml
 
 # fast build rule for target.
-tinyxml/fast:
-	$(MAKE) -f Source/External/TinyXml/CMakeFiles/tinyxml.dir/build.make Source/External/TinyXml/CMakeFiles/tinyxml.dir/build
-.PHONY : tinyxml/fast
+TinyXml/fast:
+	$(MAKE) -f Source/External/TinyXml/CMakeFiles/TinyXml.dir/build.make Source/External/TinyXml/CMakeFiles/TinyXml.dir/build
+.PHONY : TinyXml/fast
 
 #=============================================================================
-# Target rules for targets named jpeg
+# Target rules for targets named LibJPEG
 
 # Build rule for target.
-jpeg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 jpeg
-.PHONY : jpeg
+LibJPEG: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 LibJPEG
+.PHONY : LibJPEG
 
 # fast build rule for target.
-jpeg/fast:
-	$(MAKE) -f Source/External/LibJPEG/CMakeFiles/jpeg.dir/build.make Source/External/LibJPEG/CMakeFiles/jpeg.dir/build
-.PHONY : jpeg/fast
+LibJPEG/fast:
+	$(MAKE) -f Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/build.make Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/build
+.PHONY : LibJPEG/fast
 
 #=============================================================================
-# Target rules for targets named openni
+# Target rules for targets named OpenNI
 
 # Build rule for target.
-openni: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 openni
-.PHONY : openni
+OpenNI: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 OpenNI
+.PHONY : OpenNI
 
 # fast build rule for target.
-openni/fast:
-	$(MAKE) -f Source/OpenNI/CMakeFiles/openni.dir/build.make Source/OpenNI/CMakeFiles/openni.dir/build
-.PHONY : openni/fast
+OpenNI/fast:
+	$(MAKE) -f Source/OpenNI/CMakeFiles/OpenNI.dir/build.make Source/OpenNI/CMakeFiles/OpenNI.dir/build
+.PHONY : OpenNI/fast
 
 #=============================================================================
-# Target rules for targets named openni_linux
+# Target rules for targets named OpenNI_PlatformSpecific
 
 # Build rule for target.
-openni_linux: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 openni_linux
-.PHONY : openni_linux
+OpenNI_PlatformSpecific: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 OpenNI_PlatformSpecific
+.PHONY : OpenNI_PlatformSpecific
 
 # fast build rule for target.
-openni_linux/fast:
-	$(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/build
-.PHONY : openni_linux/fast
+OpenNI_PlatformSpecific/fast:
+	$(MAKE) -f Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build.make Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/build
+.PHONY : OpenNI_PlatformSpecific/fast
 
 #=============================================================================
-# Target rules for targets named openni_modules_nimcodecs
+# Target rules for targets named nimCodecs
 
 # Build rule for target.
-openni_modules_nimcodecs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 openni_modules_nimcodecs
-.PHONY : openni_modules_nimcodecs
+nimCodecs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nimCodecs
+.PHONY : nimCodecs
 
 # fast build rule for target.
-openni_modules_nimcodecs/fast:
-	$(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/build
-.PHONY : openni_modules_nimcodecs/fast
+nimCodecs/fast:
+	$(MAKE) -f Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build.make Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/build
+.PHONY : nimCodecs/fast
 
 #=============================================================================
-# Target rules for targets named openni_modules_nimmocknodes
+# Target rules for targets named nimMockNodes
 
 # Build rule for target.
-openni_modules_nimmocknodes: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 openni_modules_nimmocknodes
-.PHONY : openni_modules_nimmocknodes
+nimMockNodes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nimMockNodes
+.PHONY : nimMockNodes
 
 # fast build rule for target.
-openni_modules_nimmocknodes/fast:
-	$(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/build
-.PHONY : openni_modules_nimmocknodes/fast
+nimMockNodes/fast:
+	$(MAKE) -f Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build.make Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/build
+.PHONY : nimMockNodes/fast
 
 #=============================================================================
-# Target rules for targets named openni_modules_nimrecorder
+# Target rules for targets named nimRecorder
 
 # Build rule for target.
-openni_modules_nimrecorder: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 openni_modules_nimrecorder
-.PHONY : openni_modules_nimrecorder
+nimRecorder: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 nimRecorder
+.PHONY : nimRecorder
 
 # fast build rule for target.
-openni_modules_nimrecorder/fast:
-	$(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/build
-.PHONY : openni_modules_nimrecorder/fast
+nimRecorder/fast:
+	$(MAKE) -f Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build.make Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/build
+.PHONY : nimRecorder/fast
 
 #=============================================================================
-# Target rules for targets named openni_sample_niaudiosample
+# Target rules for targets named Sample-NiAudioSample
 
 # Build rule for target.
-openni_sample_niaudiosample: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 openni_sample_niaudiosample
-.PHONY : openni_sample_niaudiosample
+Sample-NiAudioSample: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Sample-NiAudioSample
+.PHONY : Sample-NiAudioSample
 
 # fast build rule for target.
-openni_sample_niaudiosample/fast:
-	$(MAKE) -f Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/build.make Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/build
-.PHONY : openni_sample_niaudiosample/fast
+Sample-NiAudioSample/fast:
+	$(MAKE) -f Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/build.make Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/build
+.PHONY : Sample-NiAudioSample/fast
 
 #=============================================================================
-# Target rules for targets named openni_sample_nisimpleviewer
+# Target rules for targets named Sample-NiSimpleViewer
 
 # Build rule for target.
-openni_sample_nisimpleviewer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 openni_sample_nisimpleviewer
-.PHONY : openni_sample_nisimpleviewer
+Sample-NiSimpleViewer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Sample-NiSimpleViewer
+.PHONY : Sample-NiSimpleViewer
 
 # fast build rule for target.
-openni_sample_nisimpleviewer/fast:
-	$(MAKE) -f Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/build.make Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/build
-.PHONY : openni_sample_nisimpleviewer/fast
+Sample-NiSimpleViewer/fast:
+	$(MAKE) -f Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/build.make Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/build
+.PHONY : Sample-NiSimpleViewer/fast
+
+#=============================================================================
+# Target rules for targets named Sample-NiConvertXToONI
+
+# Build rule for target.
+Sample-NiConvertXToONI: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Sample-NiConvertXToONI
+.PHONY : Sample-NiConvertXToONI
+
+# fast build rule for target.
+Sample-NiConvertXToONI/fast:
+	$(MAKE) -f Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/build.make Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/build
+.PHONY : Sample-NiConvertXToONI/fast
 
 # Help Target
 help:
@@ -219,16 +273,21 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... tinyxml"
-	@echo "... jpeg"
-	@echo "... openni"
-	@echo "... openni_linux"
-	@echo "... openni_modules_nimcodecs"
-	@echo "... openni_modules_nimmocknodes"
-	@echo "... openni_modules_nimrecorder"
-	@echo "... openni_sample_niaudiosample"
-	@echo "... openni_sample_nisimpleviewer"
+	@echo "... TinyXml"
+	@echo "... LibJPEG"
+	@echo "... OpenNI"
+	@echo "... OpenNI_PlatformSpecific"
+	@echo "... nimCodecs"
+	@echo "... nimMockNodes"
+	@echo "... nimRecorder"
+	@echo "... Sample-NiAudioSample"
+	@echo "... Sample-NiSimpleViewer"
+	@echo "... Sample-NiConvertXToONI"
 .PHONY : help
 
 

@@ -1,4 +1,4 @@
-project(tinyxml)
+project(TinyXml)
 
 set(${PROJECT_NAME}_sources tinyxml.cpp tinystr.cpp tinyxmlerror.cpp tinyxmlparser.cpp)
 

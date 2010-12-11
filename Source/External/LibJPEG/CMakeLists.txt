@@ -1,4 +1,4 @@
-project(jpeg)
+project(LibJPEG)
 
 file(GLOB ${PROJECT_NAME}_sources *.c)
 

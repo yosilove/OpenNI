@@ -41,6 +41,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/roxlu/Documents/programming/c++/openni_fork/Source/Modules/cmake_install.cmake")
   INCLUDE("/home/roxlu/Documents/programming/c++/openni_fork/Samples/NiAudioSample/cmake_install.cmake")
   INCLUDE("/home/roxlu/Documents/programming/c++/openni_fork/Samples/NiSimpleViewer/cmake_install.cmake")
+  INCLUDE("/home/roxlu/Documents/programming/c++/openni_fork/Samples/NiConvertXToONI/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

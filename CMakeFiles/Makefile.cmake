@@ -12,6 +12,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/CMakeSystem.cmake"
   "CMakeLists.txt"
   "Samples/NiAudioSample/CMakeLists.txt"
+  "Samples/NiConvertXToONI/CMakeLists.txt"
   "Samples/NiSimpleViewer/CMakeLists.txt"
   "Source/External/LibJPEG/CMakeLists.txt"
   "Source/External/TinyXml/CMakeLists.txt"
@@ -57,17 +58,19 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "Source/Modules/nimRecorder/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Samples/NiAudioSample/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Samples/NiSimpleViewer/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Samples/NiConvertXToONI/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
-  "Source/External/TinyXml/CMakeFiles/tinyxml.dir/DependInfo.cmake"
-  "Source/External/LibJPEG/CMakeFiles/jpeg.dir/DependInfo.cmake"
-  "Source/OpenNI/CMakeFiles/openni.dir/DependInfo.cmake"
-  "Source/OpenNI/Linux-x86/CMakeFiles/openni_linux.dir/DependInfo.cmake"
-  "Source/Modules/nimCodecs/CMakeFiles/openni_modules_nimcodecs.dir/DependInfo.cmake"
-  "Source/Modules/nimMockNodes/CMakeFiles/openni_modules_nimmocknodes.dir/DependInfo.cmake"
-  "Source/Modules/nimRecorder/CMakeFiles/openni_modules_nimrecorder.dir/DependInfo.cmake"
-  "Samples/NiAudioSample/CMakeFiles/openni_sample_niaudiosample.dir/DependInfo.cmake"
-  "Samples/NiSimpleViewer/CMakeFiles/openni_sample_nisimpleviewer.dir/DependInfo.cmake"
+  "Source/External/TinyXml/CMakeFiles/TinyXml.dir/DependInfo.cmake"
+  "Source/External/LibJPEG/CMakeFiles/LibJPEG.dir/DependInfo.cmake"
+  "Source/OpenNI/CMakeFiles/OpenNI.dir/DependInfo.cmake"
+  "Source/OpenNI/Linux-x86/CMakeFiles/OpenNI_PlatformSpecific.dir/DependInfo.cmake"
+  "Source/Modules/nimCodecs/CMakeFiles/nimCodecs.dir/DependInfo.cmake"
+  "Source/Modules/nimMockNodes/CMakeFiles/nimMockNodes.dir/DependInfo.cmake"
+  "Source/Modules/nimRecorder/CMakeFiles/nimRecorder.dir/DependInfo.cmake"
+  "Samples/NiAudioSample/CMakeFiles/Sample-NiAudioSample.dir/DependInfo.cmake"
+  "Samples/NiSimpleViewer/CMakeFiles/Sample-NiSimpleViewer.dir/DependInfo.cmake"
+  "Samples/NiConvertXToONI/CMakeFiles/Sample-NiConvertXToONI.dir/DependInfo.cmake"
   )
