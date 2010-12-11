@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/openni_sample_nisimpleviewer.dir/NiSimpleViewer.cpp.o  -o openni_sample_nisimpleviewer -rdynamic ../../Source/OpenNI/libopenni.a ../../Source/OpenNI/Linux-x86/libopenni_linux.a ../../Source/External/TinyXml/libtinyxml.a -lglut -lrt -ldl 
