@@ -66,6 +66,8 @@
 	#include "Linux-x86/XnPlatformLinux-x86.h"
 #elif (linux && __arm__)
 	#include "Linux-Arm/XnPlatformLinux-Arm.h"
+#elif (__APPLE__)
+	#include "Mac/XnPlatformMac.h"
 #else
 	#error OpenNI Platform Abstraction Layer - Unsupported Platform!
 #endif

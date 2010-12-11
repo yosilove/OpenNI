@@ -102,6 +102,10 @@ XnStatus resolveModulesFile(XnChar* strFileName, XnUInt32 nBufSize)
 #elif (XN_PLATFORM == XN_PLATFORM_LINUX_X86 || XN_PLATFORM == XN_PLATFORM_LINUX_ARM)
 	nRetVal = xnOSStrCopy(strFileName, "/var/lib/ni/modules.xml", nBufSize);
 	XN_IS_STATUS_OK(nRetVal);
+#elif (XN_PLATFORM == XN_PLATFORM_MAC)
+	// @todo porting to Mac	
+	nRetVal = xnOSStrCopy(strFileName, "/var/lib/ni/modules.xml", nBufSize);
+	XN_IS_STATUS_OK(nRetVal);
 #else
 	#error "Module Loader is not supported on this platform!"
 #endif

@@ -6,8 +6,11 @@ include_directories(${TINYXML_INCLUDE_DIR})
 include_directories(${OPENNI_INCLUDE_DIR})
 include_directories("./FilesOnly")
 
+
 if(OPENNI_PLATFORM_LINUX)
 	file(GLOB ${PROJECT_NAME}_platform_sources ./Linux-x86/*.cpp)
+elseif(OPENNI_PLATFORM_APPLE)
+	file(GLOB ${PROJECT_NAME}_platform_sources ./Mac/*.cpp)
 endif()
 
 add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_sources} ${${PROJECT_NAME}_platform_sources})

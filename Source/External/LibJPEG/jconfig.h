@@ -4,6 +4,9 @@
 #elif SN_TARGET_PS3
 	#include "jconfig.ps3"
 	#include <stdio.h>
+#elif __APPLE__
+	#include "jconfig.mac"
+	#include <stdio.h>
 #elif (linux)
 	#include "jconfig.lnx86"
 	#include <stdio.h>

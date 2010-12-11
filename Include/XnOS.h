@@ -48,6 +48,8 @@
 	#include "Win32/XnOSWin32.h"
 #elif defined(linux)
 	#include "Linux-x86/XnOSLinux-x86.h"
+#elif defined(__APPLE__)
+	#include "Mac/XnOSMac.h"
 #endif
 
 //---------------------------------------------------------------------------
