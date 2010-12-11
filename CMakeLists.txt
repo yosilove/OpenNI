@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
+project(OpenNI)
+
 # Find platform 
 # -------------
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
@@ -12,15 +14,30 @@ endif()
 
 # Some global variables
 # ----------------------
-set(TINYXML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/TinyXml/")
-set(JPEG_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibJPEG/")
+
 set(OPENNI_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Include/")
 set(OPENNI_MODULES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/Modules")
 
 # Use external libraries.
 # -----------------------
+set(TINYXML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/TinyXml/")
 add_subdirectory("./Source/External/TinyXml/")
-add_subdirectory("./Source/External/LibJPEG/")
+
+find_package(JPEG)
+if(NOT JPEG_FOUND)
+  set(JPEG_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibJPEG/")
+  add_subdirectory("./Source/External/LibJPEG/")
+endif()
+
+if(UNIX)
+  find_package(libusb-1.0)
+  if(NOT LIBUSB_1_FOUND)
+    message(fatal "Cannot find libusb-1.0 package on system, exiting")
+  endif()
+endif()
+
+# Internal Libs
+
 add_subdirectory("./Source/OpenNI/")
 add_subdirectory("./Source/Modules/")
 
