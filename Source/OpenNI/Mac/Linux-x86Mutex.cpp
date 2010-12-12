@@ -1,24 +1,24 @@
 /*****************************************************************************
-*                                                                            *
-*  OpenNI 1.0 Alpha                                                          *
-*  Copyright (C) 2010 PrimeSense Ltd.                                        *
-*                                                                            *
-*  This file is part of OpenNI.                                              *
-*                                                                            *
-*  OpenNI is free software: you can redistribute it and/or modify            *
-*  it under the terms of the GNU Lesser General Public License as published  *
-*  by the Free Software Foundation, either version 3 of the License, or      *
-*  (at your option) any later version.                                       *
-*                                                                            *
-*  OpenNI is distributed in the hope that it will be useful,                 *
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of            *
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the              *
-*  GNU Lesser General Public License for more details.                       *
-*                                                                            *
-*  You should have received a copy of the GNU Lesser General Public License  *
-*  along with OpenNI. If not, see <http://www.gnu.org/licenses/>.            *
-*                                                                            *
-*****************************************************************************/
+ *                                                                            *
+ *  OpenNI 1.0 Alpha                                                          *
+ *  Copyright (C) 2010 PrimeSense Ltd.                                        *
+ *                                                                            *
+ *  This file is part of OpenNI.                                              *
+ *                                                                            *
+ *  OpenNI is free software: you can redistribute it and/or modify            *
+ *  it under the terms of the GNU Lesser General Public License as published  *
+ *  by the Free Software Foundation, either version 3 of the License, or      *
+ *  (at your option) any later version.                                       *
+ *                                                                            *
+ *  OpenNI is distributed in the hope that it will be useful,                 *
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of            *
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the              *
+ *  GNU Lesser General Public License for more details.                       *
+ *                                                                            *
+ *  You should have received a copy of the GNU Lesser General Public License  *
+ *  along with OpenNI. If not, see <http://www.gnu.org/licenses/>.            *
+ *                                                                            *
+ *****************************************************************************/
 
 
 
@@ -31,6 +31,66 @@
 #include <sys/stat.h>
 #include <sys/ipc.h>
 #include <sys/sem.h>
+
+
+//---------------------------------------------------------------------------
+//Mac pthread implementation taken from: http://lists.apple.com/archives/xcode-users/2007/Apr/msg00331.html
+//---------------------------------------------------------------------------
+
+int tsCompare (struct  timespec  time1, struct  timespec  time2){	
+    if (time1.tv_sec < time2.tv_sec)
+        return (-1) ;				/* Less than. */
+    else if (time1.tv_sec > time2.tv_sec)
+        return (1) ;				/* Greater than. */
+    else if (time1.tv_nsec < time2.tv_nsec)
+        return (-1) ;				/* Less than. */
+    else if (time1.tv_nsec > time2.tv_nsec)
+        return (1) ;				/* Greater than. */
+    else
+        return (0) ;				/* Equal. */
+}
+
+struct  timespec  tsAdd (struct  timespec  time1, struct  timespec  time2){
+    struct  timespec  result ;
+    result.tv_sec = time1.tv_sec + time2.tv_sec ;
+    result.tv_nsec = time1.tv_nsec + time2.tv_nsec ;
+    if (result.tv_nsec >= 1000000000L) {		/* Carry? */
+        result.tv_sec++ ;  result.tv_nsec = result.tv_nsec - 1000000000L ;
+    }	
+    return (result) ;
+}
+
+int pthread_mutex_timedlock(pthread_mutex_t * mutex, const timespec  * abs_timeout)
+{
+	int result;
+	timespec counter;
+	counter.tv_sec = 0;
+	counter.tv_nsec = 0;
+	
+	do
+	{
+		result = pthread_mutex_trylock(mutex);
+		if (result == EBUSY)
+		{
+			timespec ts;
+			ts.tv_sec = 0;
+			ts.tv_nsec = 10000000;
+			
+			/* Sleep for 10,000,000 nanoseconds before trying again. */
+			int status = -1;
+			while (status == -1){
+				counter = tsAdd(ts,counter);
+				status = nanosleep(&ts, &ts);
+			}
+		}
+		else
+			break;
+	}
+	while (result != 0 && (abs_timeout == 0 || tsCompare(counter, *abs_timeout) < 0));
+	
+	return result;
+}
+
 
 //---------------------------------------------------------------------------
 // Types
@@ -56,7 +116,7 @@ XnStatus xnOSUnNamedMutexCreate(XnMutex* pMutex)
 	
 	// make the mutex recursive (re-entrent)
 	pthread_mutexattr_t tAttributes;
-
+	
 	if (0 != pthread_mutexattr_init(&tAttributes))
 		return (XN_STATUS_OS_MUTEX_CREATION_FAILED);
 	
@@ -74,7 +134,7 @@ XnStatus xnOSUnNamedMutexCreate(XnMutex* pMutex)
 	{
 		return (XN_STATUS_OS_MUTEX_CREATION_FAILED);
 	}
-
+	
 	return (XN_STATUS_OK);
 }
 
@@ -82,7 +142,7 @@ XnStatus xnOSNamedMutexCreate(XnMutex* pMutex, const XnChar* csMutexName)
 {
 	XnStatus nRetVal = XN_STATUS_OK;
 	int rc;
-
+	
 	// tanslate mutex name to key file name
 	XnUInt32 nBytesWritten;
 	xnOSStrFormat(pMutex->csSemFileName, XN_FILE_MAX_PATH, &nBytesWritten, "/tmp/XnCore.Mutex.%s.key", csMutexName);
@@ -97,7 +157,7 @@ XnStatus xnOSNamedMutexCreate(XnMutex* pMutex, const XnChar* csMutexName)
 	
 	// create the key
 	key_t key = ftok(pMutex->csSemFileName, 1);
-
+	
 	// first we try to create it. If we fail, we'll know it already existed
 	XnBool bCreated = TRUE;
 	
@@ -115,16 +175,16 @@ XnStatus xnOSNamedMutexCreate(XnMutex* pMutex, const XnChar* csMutexName)
 		
 		bCreated = FALSE;
 	}
-
+	
 	if (bCreated)
 	{
 		union semun 
 		{
-				   int              val;    /* Value for SETVAL */
-				   struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
-				   unsigned short  *array;  /* Array for GETALL, SETALL */
-				   struct seminfo  *__buf;  /* Buffer for IPC_INFO
-											   (Linux-specific) */
+			int              val;    /* Value for SETVAL */
+			struct semid_ds *buf;    /* Buffer for IPC_STAT, IPC_SET */
+			unsigned short  *array;  /* Array for GETALL, SETALL */
+			struct seminfo  *__buf;  /* Buffer for IPC_INFO
+									  (Linux-specific) */
 		} init;
 		
 		// init lock semaphore to 1 (not locked)
@@ -135,7 +195,7 @@ XnStatus xnOSNamedMutexCreate(XnMutex* pMutex, const XnChar* csMutexName)
 			semctl(pMutex->NamedSem, 0, IPC_RMID);
 			return (XN_STATUS_OS_MUTEX_CREATION_FAILED);
 		}
-
+		
 		// init process counter to 0
 		init.val = 0;
 		rc = semctl(pMutex->NamedSem, 1, SETVAL, init);
@@ -145,7 +205,7 @@ XnStatus xnOSNamedMutexCreate(XnMutex* pMutex, const XnChar* csMutexName)
 			return (XN_STATUS_OS_MUTEX_CREATION_FAILED);
 		}
 	}
-
+	
 	// increment second sem
 	struct sembuf op;
 	op.sem_num = 1;
@@ -158,7 +218,7 @@ XnStatus xnOSNamedMutexCreate(XnMutex* pMutex, const XnChar* csMutexName)
 		xnOSCloseMutex(&pMutex);
 		return (XN_STATUS_OS_MUTEX_CREATION_FAILED);
 	}
-
+	
 	return (XN_STATUS_OK);
 }
 
@@ -167,7 +227,7 @@ XN_C_API XnStatus xnOSCreateMutex(XN_MUTEX_HANDLE* pMutexHandle)
 	// Local function variables
 	XnStatus nRetVal = XN_STATUS_OK;
 	int rc = 0;
-
+	
 	// Validate the input/output pointers (to make sure none of them is NULL)
 	XN_VALIDATE_OUTPUT_PTR(pMutexHandle);
 	
@@ -183,7 +243,7 @@ XN_C_API XnStatus xnOSCreateMutex(XN_MUTEX_HANDLE* pMutexHandle)
 	}
 	
 	*pMutexHandle = pMutex;
-
+	
 	// All is good...
 	return (XN_STATUS_OK);
 }
@@ -193,7 +253,7 @@ XN_C_API XnStatus xnOSCreateNamedMutex(XN_MUTEX_HANDLE* pMutexHandle, const XnCh
 	// Local function variables
 	XnStatus nRetVal = XN_STATUS_OK;
 	int rc = 0;
-
+	
 	// Validate the input/output pointers (to make sure none of them is NULL)
 	XN_VALIDATE_OUTPUT_PTR(pMutexHandle);
 	
@@ -209,7 +269,7 @@ XN_C_API XnStatus xnOSCreateNamedMutex(XN_MUTEX_HANDLE* pMutexHandle, const XnCh
 	}
 	
 	*pMutexHandle = pMutex;
-
+	
 	// All is good...
 	return (XN_STATUS_OK);
 }
@@ -218,15 +278,15 @@ XN_C_API XnStatus xnOSCloseMutex(XN_MUTEX_HANDLE* pMutexHandle)
 {
 	// Local function variables
 	XnStatus nRetVal = XN_STATUS_OK;
-
+	
 	// Validate the input/output pointers (to make sure none of them is NULL)
 	XN_VALIDATE_INPUT_PTR(pMutexHandle);
-
+	
 	// Make sure the actual mutex handle isn't NULL
 	XN_RET_IF_NULL(*pMutexHandle, XN_STATUS_OS_INVALID_MUTEX);
 	
 	XnMutex* pMutex = *pMutexHandle;
-
+	
 	// check the kind of mutex
 	if (pMutex->bIsNamed)
 	{
@@ -270,21 +330,24 @@ XN_C_API XnStatus xnOSCloseMutex(XN_MUTEX_HANDLE* pMutexHandle)
 	return (XN_STATUS_OK);
 }
 
+
+
+
 XN_C_API XnStatus xnOSLockMutex(const XN_MUTEX_HANDLE MutexHandle, XnUInt32 nMilliseconds)
 {
 	// Local function variables
 	XnStatus nRetVal = XN_STATUS_OK;
 	int rc = 0;
-
+	
 	// Make sure the actual mutex handle isn't NULL
 	XN_RET_IF_NULL(MutexHandle, XN_STATUS_OS_INVALID_MUTEX);
-
+	
 	struct sembuf op;
 	// try to decrease it by 1 (if it's 0, we'll wait)
 	op.sem_num = 0;
 	op.sem_op = -1;
 	op.sem_flg = SEM_UNDO;
-
+	
 	if (nMilliseconds == XN_WAIT_INFINITE)
 	{
 		// lock via the OS
@@ -312,16 +375,17 @@ XN_C_API XnStatus xnOSLockMutex(const XN_MUTEX_HANDLE MutexHandle, XnUInt32 nMil
 		{
 			// @todo Porting to Mac - not yet ready
 			/*
-			if (0 != semtimedop(MutexHandle->NamedSem, &op, 1, &time))
-			{
-				rc = errno;
-			}
-			*/
+			 if (0 != semtimedop(MutexHandle->NamedSem, &op, 1, &time))
+			 {
+			 rc = errno;
+			 }
+			 */
+			printf("This functionality is not portet to mac.   Mutex.cpp");
 		}
 		else
 		{
-			// @todo Porting to Mac - not yet ready
-			//rc = pthread_mutex_timedlock(&MutexHandle->ThreadMutex, &time);
+			// @todo Porting to Mac - untested 
+			rc = pthread_mutex_timedlock(&MutexHandle->ThreadMutex, &time);
 		}
 	}
 	
@@ -344,7 +408,7 @@ XN_C_API XnStatus xnOSUnLockMutex(const XN_MUTEX_HANDLE MutexHandle)
 	// Local function variables
 	XnStatus nRetVal = XN_STATUS_OK;
 	int rc = 0;
-
+	
 	// Make sure the actual mutex handle isn't NULL
 	XN_RET_IF_NULL(MutexHandle, XN_STATUS_OS_INVALID_MUTEX);
 	
@@ -370,7 +434,7 @@ XN_C_API XnStatus xnOSUnLockMutex(const XN_MUTEX_HANDLE MutexHandle)
 	{
 		return (XN_STATUS_OS_MUTEX_UNLOCK_FAILED);
 	}
-
+	
 	// All is good...
 	return (XN_STATUS_OK);
 }
