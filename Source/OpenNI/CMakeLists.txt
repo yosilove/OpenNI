@@ -16,7 +16,12 @@ endif()
 add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_sources} ${${PROJECT_NAME}_platform_sources})
 
 # @todo don't use full path here.
-target_link_libraries(${PROJECT_NAME} "/usr/local/lib/libusb-1.0.so")
+if(OPENNI_PLATFORM_LINUX)
+	target_link_libraries(${PROJECT_NAME} "/usr/local/lib/libusb-1.0.so")
+elseif(OPENNI_PLATFORM_APPLE)
+	target_link_libraries(${PROJECT_NAME} "/usr/local/lib/libusb-1.0.a")
+endif()
+
 target_link_libraries(${PROJECT_NAME} dl)
 target_link_libraries(${PROJECT_NAME} rt)
 

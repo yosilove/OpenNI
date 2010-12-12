@@ -412,12 +412,12 @@ XN_C_API XnStatus xnOSWaitEvent(const XN_EVENT_HANDLE EventHandle, XnUInt32 nMil
 		if (nMilliseconds != XN_WAIT_INFINITE)
 		{
 			//@todo Porting to Mac
+			// calculate timeout absolute time. First we take current time
 			struct timeval tv;
 			gettimeofday(&tv, NULL);
 			time.tv_sec = tv.tv_sec;
 			time.tv_nsec = tv.tv_usec * 1000;
 			
-			// calculate timeout absolute time. First we take current time
 			/*
 			if (0 != clock_gettime(CLOCK_REALTIME, &time))
 			{
