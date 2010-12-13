@@ -105,15 +105,11 @@ XN_C_API XnStatus xnOSStartTimer(XnOSTimer* pTimer)
 	
 	
 
-	// @todo Porting to Mac - begin
+	// @todo Porting to Mac
 	struct timeval tv;
-	gettimeofday(&tv, NULL);
-	tp.tv_sec = tv.tv_sec;
-	tp.tv_nsec = tv.tv_usec*1000;
-	
+	gettimeofday(&tv, NULL);	
 	pTimer->tStartTime.tv_sec = tv.tv_sec;
-	pTimers->tStartTime.tv_nsec = tv.tv_usec * 1000;
-	// @todo Porting to Mac - end
+	pTimer->tStartTime.tv_nsec = tv.tv_usec * 1000;
 	
 	// @todo Porting to Mac - commented 4 lines below
 	/*
@@ -145,11 +141,20 @@ XN_C_API XnStatus xnOSQueryTimer(XnOSTimer Timer, XnUInt64* pnTimeSinceStart)
 	XN_VALIDATE_OUTPUT_PTR(pnTimeSinceStart);
 
 	struct timespec now;
+
+	// @todo Porting to Mac
+	struct timeval tv;
+	gettimeofday(&tv, NULL);	
+	now.tv_sec = tv.tv_sec;
+	now.tv_nsec = tv.tv_usec * 1000;
 	
+	// @todo Porting to Mac - commented 4 lines below
+	/*
 	if (0 != clock_gettime(CLOCK_REALTIME, &now))
 	{
 		return XN_STATUS_OS_TIMER_QUERY_FAILED;
 	}
+	*/
 	
 	*pnTimeSinceStart = ((now.tv_sec - Timer.tStartTime.tv_sec) * 1E6 + (now.tv_nsec - Timer.tStartTime.tv_nsec) / 1E3);
 	
