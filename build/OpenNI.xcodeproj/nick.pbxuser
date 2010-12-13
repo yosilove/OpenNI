@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	017D629C12B5D79400CE764E /* Sample-NiAudioSample */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Sample-NiAudioSample";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D629D12B5D79400CE764E /* Sample-NiBackRecorder */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Sample-NiBackRecorder";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D629E12B5D79400CE764E /* Sample-NiConvertXToONI */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Sample-NiConvertXToONI";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D629F12B5D79400CE764E /* Sample-NiCRead */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Sample-NiCRead";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D62A012B5D79400CE764E /* Sample-NiRecordSynthetic */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Sample-NiRecordSynthetic";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D62A112B5D79400CE764E /* Sample-NiSimpleCreate */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Sample-NiSimpleCreate";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D62A212B5D79400CE764E /* Sample-NiSimpleRead */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Sample-NiSimpleRead";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D62A312B5D79400CE764E /* Sample-NiSimpleViewer */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Sample-NiSimpleViewer";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D62A412B5D79400CE764E /* Sample-NiUserTracker */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Sample-NiUserTracker";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D62A512B5D79400CE764E /* Sample-NiViewer */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "Sample-NiViewer";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D62A612B5D79400CE764E /* niLicense */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = niLicense;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D62A712B5D79400CE764E /* niReg */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = niReg;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	017D62B012B5D7A400CE764E /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	017D62B112B5D7A400CE764E /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	100B3EC10100B3EC10100B3E /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 017D629C12B5D79400CE764E /* Sample-NiAudioSample */;
+		activeTarget = 100B42130100B42130100B42 /* ALL_BUILD */;
+		codeSenseManager = 017D62B112B5D7A400CE764E /* Code sense */;
+		executables = (
+			017D629C12B5D79400CE764E /* Sample-NiAudioSample */,
+			017D629D12B5D79400CE764E /* Sample-NiBackRecorder */,
+			017D629E12B5D79400CE764E /* Sample-NiConvertXToONI */,
+			017D629F12B5D79400CE764E /* Sample-NiCRead */,
+			017D62A012B5D79400CE764E /* Sample-NiRecordSynthetic */,
+			017D62A112B5D79400CE764E /* Sample-NiSimpleCreate */,
+			017D62A212B5D79400CE764E /* Sample-NiSimpleRead */,
+			017D62A312B5D79400CE764E /* Sample-NiSimpleViewer */,
+			017D62A412B5D79400CE764E /* Sample-NiUserTracker */,
+			017D62A512B5D79400CE764E /* Sample-NiViewer */,
+			017D62A612B5D79400CE764E /* niLicense */,
+			017D62A712B5D79400CE764E /* niReg */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 313907092;
+			PBXWorkspaceStateSaveDate = 313907092;
+		};
+		sourceControlManager = 017D62B012B5D7A400CE764E /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	100B42130100B42130100B42 /* ALL_BUILD */ = {
+		activeExec = 0;
+	};
+	100B4E820100B4E820100B4E /* install */ = {
+		activeExec = 0;
+	};
+	100B60390100B60390100B60 /* TinyXml */ = {
+		activeExec = 0;
+	};
+	100B97080100B97080100B97 /* OpenNI */ = {
+		activeExec = 0;
+	};
+	100BD6200100BD6200100BD6 /* JPEG */ = {
+		activeExec = 0;
+	};
+	100BE7170100BE7170100BE7 /* nimCommon */ = {
+		activeExec = 0;
+	};
+	100C04F40100C04F40100C04 /* nimCodecs */ = {
+		activeExec = 0;
+	};
+	100C20300100C20300100C20 /* nimMockNodes */ = {
+		activeExec = 0;
+	};
+	100C36240100C36240100C36 /* nimRecorder */ = {
+		activeExec = 0;
+	};
+	100C47EA0100C47EA0100C47 /* Sample-NiAudioSample */ = {
+		activeExec = 0;
+		executables = (
+			017D629C12B5D79400CE764E /* Sample-NiAudioSample */,
+		);
+	};
+	100C57DA0100C57DA0100C57 /* Sample-NiBackRecorder */ = {
+		activeExec = 0;
+		executables = (
+			017D629D12B5D79400CE764E /* Sample-NiBackRecorder */,
+		);
+	};
+	100C67BF0100C67BF0100C67 /* Sample-NiConvertXToONI */ = {
+		activeExec = 0;
+		executables = (
+			017D629E12B5D79400CE764E /* Sample-NiConvertXToONI */,
+		);
+	};
+	100C77A00100C77A00100C77 /* Sample-NiCRead */ = {
+		activeExec = 0;
+		executables = (
+			017D629F12B5D79400CE764E /* Sample-NiCRead */,
+		);
+	};
+	100C875C0100C875C0100C87 /* Sample-NiRecordSynthetic */ = {
+		activeExec = 0;
+		executables = (
+			017D62A012B5D79400CE764E /* Sample-NiRecordSynthetic */,
+		);
+	};
+	100C99150100C99150100C99 /* Sample-NiSampleModule */ = {
+		activeExec = 0;
+	};
+	100CAA8A0100CAA8A0100CAA /* Sample-NiSimpleCreate */ = {
+		activeExec = 0;
+		executables = (
+			017D62A112B5D79400CE764E /* Sample-NiSimpleCreate */,
+		);
+	};
+	100CBA8F0100CBA8F0100CBA /* Sample-NiSimpleRead */ = {
+		activeExec = 0;
+		executables = (
+			017D62A212B5D79400CE764E /* Sample-NiSimpleRead */,
+		);
+	};
+	100CCA640100CCA640100CCA /* Sample-NiSimpleViewer */ = {
+		activeExec = 0;
+		executables = (
+			017D62A312B5D79400CE764E /* Sample-NiSimpleViewer */,
+		);
+	};
+	100CDB500100CDB500100CDB /* Sample-NiUserTracker */ = {
+		activeExec = 0;
+		executables = (
+			017D62A412B5D79400CE764E /* Sample-NiUserTracker */,
+		);
+	};
+	100CF34C0100CF34C0100CF3 /* Sample-NiViewer */ = {
+		activeExec = 0;
+		executables = (
+			017D62A512B5D79400CE764E /* Sample-NiViewer */,
+		);
+	};
+	100D07720100D07720100D07 /* niLicense */ = {
+		activeExec = 0;
+		executables = (
+			017D62A612B5D79400CE764E /* niLicense */,
+		);
+	};
+	100D175C0100D175C0100D17 /* niReg */ = {
+		activeExec = 0;
+		executables = (
+			017D62A712B5D79400CE764E /* niReg */,
+		);
+	};
+}

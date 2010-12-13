@@ -28,7 +28,11 @@
 //---------------------------------------------------------------------------
 #include "SceneDrawer.h"
 
+#ifdef __APPLE__
+#include <GLUT/GLUT.h>
+#else
 #include <GL/glut.h>
+#endif
 
 extern xn::UserGenerator g_UserGenerator;
 extern xn::DepthGenerator g_DepthGenerator;

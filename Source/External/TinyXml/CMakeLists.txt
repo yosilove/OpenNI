@@ -1,7 +1,7 @@
-project(TinyXml)
+#project(TinyXml)
 
-set(${PROJECT_NAME}_sources tinyxml.cpp tinystr.cpp tinyxmlerror.cpp tinyxmlparser.cpp)
+set(${TINYXML_LIB_NAME}_sources tinyxml.cpp tinystr.cpp tinyxmlerror.cpp tinyxmlparser.cpp)
 
-add_library(${PROJECT_NAME} STATIC ${${PROJECT_NAME}_sources})
+add_library(${TINYXML_LIB_NAME} SHARED ${${TINYXML_LIB_NAME}_sources})
 
 

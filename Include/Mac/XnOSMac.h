@@ -118,7 +118,20 @@ typedef	void* XN_THREAD_PARAM;
 // Mutex
 //---------------------------------------------------------------------------
 /** A Xiron mutex type. */
-struct XnMutex;
+//---------------------------------------------------------------------------
+// Types
+//---------------------------------------------------------------------------
+struct XnMutex
+{
+	XnBool bIsNamed;
+	pthread_mutex_t ThreadMutex;
+	int NamedSem;
+	XnChar csSemFileName[XN_FILE_MAX_PATH];
+	int hSemFile;
+	XnBool bIsLocked; // used for named semaphore, to make sure a porcess doesn't unlock more than once (counting semaphore will no longer be a mutex).
+} ;
+typedef struct XnMutex XnMutex; 
+
 typedef	XnMutex* XN_MUTEX_HANDLE;
 
 //---------------------------------------------------------------------------

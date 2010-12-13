@@ -1,8 +1,9 @@
-project(Sample-NiSampleModule)
+#project(Sample-NiSampleModule)
+set(SAMPLEMODULE_LIB_NAME Sample-NiSampleModule)
 
 # Add all files we have for the example.
 # ---------------------------------------
-file(GLOB ${PROJECT_NAME}_sources ./*.cpp)
+file(GLOB ${SAMPLEMODULE_LIB_NAME}_sources ./*.cpp)
 
 # Include directories
 # ---------------------------------------
@@ -10,16 +11,16 @@ include_directories(${OPENNI_INCLUDE_DIR})
 
 # The target for this sample
 # ---------------------------------------
-add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_sources})
+add_library(${SAMPLEMODULE_LIB_NAME} SHARED ${${SAMPLEMODULE_LIB_NAME}_sources})
 
 # And make it link against these libs.
 # ---------------------------------------
-target_link_libraries(${PROJECT_NAME} OpenNI)
-target_link_libraries(${PROJECT_NAME} TinyXml)
+target_link_libraries(${SAMPLEMODULE_LIB_NAME} ${OPENNI_LIB_NAME})
+#target_link_libraries(${SAMPLEMODULE_LIB_NAME} ${TINYXML_LIB_NAME})
 
 # We install the file to the dir where cmake is executed
 # ------------------------------------------------------
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS ${SAMPLEMODULE_LIB_NAME}
 	LIBRARY DESTINATION .
 	RUNTIME DESTINATION .
 )

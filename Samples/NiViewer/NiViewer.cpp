@@ -77,7 +77,7 @@ using namespace glh;
 #if (XN_PLATFORM == XN_PLATFORM_WIN32)
 	#include <conio.h>
 	#include <direct.h>	
-#elif (XN_PLATFORM == XN_PLATFORM_LINUX_X86 || XN_PLATFORM == XN_PLATFORM_LINUX_ARM)
+#elif (XN_PLATFORM == XN_PLATFORM_LINUX_X86 || XN_PLATFORM == XN_PLATFORM_LINUX_ARM || XN_PLATFORM == XN_PLATFORM_MAC)
 	#define _getch() getchar()
 #endif
 
