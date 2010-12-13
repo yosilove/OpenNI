@@ -321,7 +321,7 @@ XN_C_API XnStatus xnOSLockMutex(const XN_MUTEX_HANDLE MutexHandle, XnUInt32 nMil
 		else
 		{
 			// @todo Porting to Mac - not yet ready
-			//rc = pthread_mutex_timedlock(&MutexHandle->ThreadMutex, &time);
+			rc = pthread_mutex_timedlock(&MutexHandle->ThreadMutex, &time);
 		}
 	}
 	
