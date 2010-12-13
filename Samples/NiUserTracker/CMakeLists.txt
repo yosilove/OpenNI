@@ -16,7 +16,9 @@ add_executable(${USERTRACKER_EXE} ${${USERTRACKER_EXE}_sources})
 # And make it link against these libs.
 # ---------------------------------------
 find_library(GLUT_LIB glut)
+if(DEFINED OPENNI_PLATFORM_APPLE)
 find_library(OPENGL_LIB OpenGL)
+endif(DEFINED OPENNI_PLATFORM_APPLE)
 target_link_libraries(${USERTRACKER_EXE} ${OPENNI_LIB_NAME} ${GLUT_LIB} ${OPENGL_LIB})
 add_dependencies(${USERTRACKER_EXE} ${OPENNI_LIB_NAME} )
 

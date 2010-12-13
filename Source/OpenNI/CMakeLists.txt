@@ -18,15 +18,14 @@ add_library(${OPENNI_LIB_NAME} SHARED ${${OPENNI_LIB_NAME}_sources} ${${OPENNI_L
 
 # @todo don't use full path here.
 find_library(LIBUSB usb-1.0)
-
+find_library(LIBDL dl)
 
 #if(OPENNI_PLATFORM_LINUX)
 #	target_link_libraries(${OPENNI_LIB_NAME} "/usr/local/lib/libusb-1.0.so")
 #elseif(OPENNI_PLATFORM_APPLE)
 #	target_link_libraries(${OPENNI_LIB_NAME} "/usr/local/lib/libusb-1.0.a")
 #endif()
-target_link_libraries(${OPENNI_LIB_NAME} ${LIBUSB})
-target_link_libraries(${OPENNI_LIB_NAME} ${TINYXML_LIB_NAME})
+target_link_libraries(${OPENNI_LIB_NAME} ${LIBUSB} ${LIBDL} ${TINYXML_LIB_NAME})
 
 #target_link_libraries(${OPENNI_LIB_NAME} dl)
 #target_link_libraries(${OPENNI_LIB_NAME} rt)

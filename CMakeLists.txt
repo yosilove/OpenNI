@@ -41,7 +41,7 @@ add_dependencies(${JPEG_LIB_NAME} ${OPENNI_LIB_NAME})
 add_subdirectory("./Samples/NiAudioSample") #Compiles and runs on Mac
 add_subdirectory("./Samples/NiBackRecorder") #Compiles and runs on Mac
 add_subdirectory("./Samples/NiConvertXToONI") #Compiles and runs on Mac
-add_subdirectory("./Samples/NiCRead") #Compiles and runs on Mac # gives error in linux
+#add_subdirectory("./Samples/NiCRead") #Compiles and runs on Mac # gives error in linux
 add_subdirectory("./Samples/NiRecordSynthetic") #Compiles and runs on Mac
 add_subdirectory("./Samples/NiSampleModule") #Library compiles on Mac
 add_subdirectory("./Samples/NiSimpleCreate") #Compiles and runs on Mac
