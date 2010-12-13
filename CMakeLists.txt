@@ -12,24 +12,11 @@ elseif (APPLE)
 	set(OPENNI_PLATFORM_APPLE true)
 endif()
 
-# Find system libraries
-find_package(JPEG)
-if(NOT JPEG_FOUND)
-  set(JPEG_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibJPEG/")
-  add_subdirectory("./Source/External/LibJPEG/")
-endif()
-
-if(UNIX)
-  find_package(libusb-1.0)
-  if(NOT LIBUSB_1_FOUND)
-    message(fatal "Cannot find libusb-1.0 package on system, exiting")
-  endif()
-endif()
+set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules" ${CMAKE_MODULE_PATH})
 
 # Some global variables
 # ----------------------
-
-# set(TINYXML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/TinyXml/")
+set(TINYXML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/TinyXml/")
 # set(JPEG_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibJPEG/")
 set(OPENNI_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Include/")
 set(OPENNI_MODULES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/Modules")
@@ -43,9 +30,28 @@ set(NIMMOCKNODES_LIB_NAME nimMockNodes)
 set(NIMRECORDER_LIB_NAME nimRecorder)
 
 
+# Find system libraries
+find_package(JPEG)
+if(NOT JPEG_FOUND)
+  set(JPEG_FOUND true)
+  set(JPEG_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibJPEG/")
+  add_subdirectory("./Source/External/LibJPEG/")
+endif()
+
+if(UNIX)
+  find_package(libusb-1.0)
+  if(NOT USB_LIB_FOUND)
+  	  set(USB_LIB_FOUND true)
+  	  set(USB_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibUSB/")
+  	  set(USB_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibUSB/libusb-1.0.a")
+      #message(fatal "Cannot find libusb-1.0 package on system, exiting")
+  endif()
+endif()
+
+
 # Use external libraries.
 # -----------------------
-# add_subdirectory("./Source/External/TinyXml/") # @todo only when lib was not found 
+add_subdirectory("./Source/External/TinyXml/") # @todo only when lib was not found 
 add_subdirectory("./Source/OpenNI/")
 # add_subdirectory("./Source/External/LibJPEG/") # @todo only when lib was not found
 add_subdirectory("./Source/Modules/")

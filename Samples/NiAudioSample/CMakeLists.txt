@@ -14,5 +14,6 @@ target_link_libraries(${AUDIOSAMPLE_EXE} ${OPENNI_LIB_NAME})
 add_dependencies(${AUDIOSAMPLE_EXE} ${OPENNI_LIB_NAME} )
 
 install(TARGETS ${AUDIOSAMPLE_EXE}
-
+		RUNTIME DESTINATION .
+)
 

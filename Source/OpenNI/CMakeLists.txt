@@ -1,7 +1,8 @@
 #project(OpenNI)
 
 file(GLOB ${OPENNI_LIB_NAME}_sources ./*.cpp)
-
+message(${USB_INCLUDE_DIR})
+include_directories(${USB_INCLUDE_DIR})
 include_directories(${TINYXML_INCLUDE_DIR})
 include_directories(${OPENNI_INCLUDE_DIR})
 include_directories("./FilesOnly")
@@ -17,7 +18,7 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_LIBRARIES TRUE)
 add_library(${OPENNI_LIB_NAME} SHARED ${${OPENNI_LIB_NAME}_sources} ${${OPENNI_LIB_NAME}_platform_sources})
 
 # @todo don't use full path here.
-find_library(LIBUSB usb-1.0)
+#find_library(LIBUSB usb-1.0)
 find_library(LIBDL dl)
 
 #if(OPENNI_PLATFORM_LINUX)
@@ -25,7 +26,9 @@ find_library(LIBDL dl)
 #elseif(OPENNI_PLATFORM_APPLE)
 #	target_link_libraries(${OPENNI_LIB_NAME} "/usr/local/lib/libusb-1.0.a")
 #endif()
-target_link_libraries(${OPENNI_LIB_NAME} ${LIBUSB} ${LIBDL} ${TINYXML_LIB_NAME})
+
+set(CMAKE_EXE_LINKER_FLAGS "-framework CoreFoundation -framework IOKit")
+target_link_libraries(${OPENNI_LIB_NAME} ${USB_LIB_NAME} ${LIBDL} ${TINYXML_LIB_NAME})
 
 #target_link_libraries(${OPENNI_LIB_NAME} dl)
 #target_link_libraries(${OPENNI_LIB_NAME} rt)
