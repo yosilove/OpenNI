@@ -24,3 +24,4 @@ add_dependencies(${CREAD_EXE} ${OPENNI_LIB_NAME} )
 install(TARGETS ${CREAD_EXE}
 	RUNTIME DESTINATION .
 )
+
