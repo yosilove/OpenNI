@@ -207,7 +207,7 @@ int glh_init_extensions(const char *origReqExts)
 
 #if (defined(WIN32) || defined(UNIX))
         if (!ExtensionExists(reqExt, sysExts) || !glh_init_extension(reqExt)) {
-#elif defined(MACOS)
+#elif defined(__APPLE__)
         if (!ExtensionExists(reqExt, sysExts)) {    // don't try to get function pointers if on MacOS
 #endif
             // add reqExt to end of unsupportedExts

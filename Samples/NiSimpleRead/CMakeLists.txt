@@ -1,8 +1,9 @@
-project(Sample-NiSimpleRead)
+#project(Sample-NiSimpleRead)
+set(SIMPLEREAD_EXE Sample-NiSimpleRead)
 
 # Add all files we have for the example.
 # ---------------------------------------
-file(GLOB ${PROJECT_NAME}_sources ./*.cpp)
+file(GLOB ${SIMPLEREAD_EXE}_sources ./*.cpp)
 
 # Include directories
 # ---------------------------------------
@@ -10,15 +11,15 @@ include_directories(${OPENNI_INCLUDE_DIR})
 
 # The target for this sample
 # ---------------------------------------
-add_executable(${PROJECT_NAME} ${${PROJECT_NAME}_sources})
+add_executable(${SIMPLEREAD_EXE} ${${SIMPLEREAD_EXE}_sources})
 
 # And make it link against these libs.
 # ---------------------------------------
-target_link_libraries(${PROJECT_NAME} OpenNI)
-target_link_libraries(${PROJECT_NAME} TinyXml)
+target_link_libraries(${SIMPLEREAD_EXE} ${OPENNI_LIB_NAME})
+add_dependencies(${SIMPLEREAD_EXE} ${OPENNI_LIB_NAME})
 
 # We install the file to the dir where cmake is executed
 # ------------------------------------------------------
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS ${SIMPLEREAD_EXE}
 	RUNTIME DESTINATION .
 )

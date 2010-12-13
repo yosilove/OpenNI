@@ -31,6 +31,12 @@
 #include <XnCppWrapper.h>
 #include "SceneDrawer.h"
 
+#ifdef __APPLE__
+#include <GLUT/GLUT.h>
+#else
+#include <GL/glut.h>
+#endif
+
 //---------------------------------------------------------------------------
 // Globals
 //---------------------------------------------------------------------------
@@ -45,8 +51,6 @@ XnBool g_bDrawPixels = TRUE;
 XnBool g_bDrawSkeleton = TRUE;
 XnBool g_bPrintID = TRUE;
 XnBool g_bPrintState = TRUE;
-
-#include <GL/glut.h>
 
 #define GL_WIN_SIZE_X 720
 #define GL_WIN_SIZE_Y 480

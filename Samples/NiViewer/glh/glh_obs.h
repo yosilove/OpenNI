@@ -49,9 +49,8 @@
 # include <windows.h>
 #endif
 
-#ifdef MACOS
-#include <OpenGL/gl.h>
-#include <OpenGL/glext.h>
+#ifdef __APPLE__
+#include <OpenGL/OpenGL.h>
 #else
 #include <GL/gl.h>
 #include <GL/glext.h>

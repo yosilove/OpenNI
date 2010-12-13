@@ -1,8 +1,9 @@
-project(Sample-NiSimpleViewer)
+#project(Sample-NiSimpleViewer)
+set(SIMPLEVIEWER_EXE Sample-NiSimpleViewer)
 
 # Add all files we have for the example.
 # ---------------------------------------
-file(GLOB ${PROJECT_NAME}_sources ./*.cpp)
+file(GLOB ${SIMPLEVIEWER_EXE}_sources ./*.cpp)
 
 # Include directories
 # ---------------------------------------
@@ -10,16 +11,21 @@ include_directories(${OPENNI_INCLUDE_DIR})
 
 # The target for this sample
 # ---------------------------------------
-add_executable(${PROJECT_NAME} ${${PROJECT_NAME}_sources})
+add_executable(${SIMPLEVIEWER_EXE} ${${SIMPLEVIEWER_EXE}_sources})
 
 # And make it link against these libs.
 # ---------------------------------------
-target_link_libraries(${PROJECT_NAME} OpenNI)
-target_link_libraries(${PROJECT_NAME} TinyXml)
-target_link_libraries(${PROJECT_NAME} glut)
+find_library(GLUT_LIB glut)
+if(DEFINED OPENNI_PLATFORM_APPLE)
+find_library(OPENGL_LIB OpenGL)
+endif(DEFINED OPENNI_PLATFORM_APPLE)
+target_link_libraries(${SIMPLEVIEWER_EXE} ${OPENNI_LIB_NAME} ${GLUT_LIB} ${OPENGL_LIB})
+add_dependencies(${SIMPLEVIEWER_EXE} ${OPENNI_LIB_NAME})
+#target_link_libraries(${SIMPLEVIEWER_EXE} TinyXml)
+#target_link_libraries(${SIMPLEVIEWER_EXE} glut)
 
 # We install the file to the dir where cmake is executed
 # ------------------------------------------------------
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS ${SIMPLEVIEWER_EXE}
 	RUNTIME DESTINATION .
 )
