@@ -29,31 +29,38 @@ set(NIMCODECS_LIB_NAME nimCodecs)
 set(NIMMOCKNODES_LIB_NAME nimMockNodes)
 set(NIMRECORDER_LIB_NAME nimRecorder)
 
-
-# Find system libraries
+# Find JPEG system lib
+# ---------------------
 find_package(JPEG)
 if(NOT JPEG_FOUND)
-  set(JPEG_FOUND true)
-  set(JPEG_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibJPEG/")
-  add_subdirectory("./Source/External/LibJPEG/")
+	# when not found use the one in the externals folder, so we can compile!
+	set(JPEG_FOUND true)
+	set(JPEG_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibJPEG/")
+	add_subdirectory("./Source/External/LibJPEG/")
 endif()
 
-if(UNIX)
+# Find USB lib
+# -------------
+if(OPENNI_PLATFORM_LINUX OR OPENNI_PLATFORM_APPLE) 
   find_package(libusb-1.0)
   if(NOT USB_LIB_FOUND)
-  	  set(USB_LIB_FOUND true)
-  	  set(USB_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibUSB/")
-  	  set(USB_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibUSB/libusb-1.0.a")
-      #message(fatal "Cannot find libusb-1.0 package on system, exiting")
+	# When not found compoile using libusb in external dir.
+	set(USB_LIB_FOUND true)
+	if (OPENNI_PLATFORM_APPLE)
+		set(USB_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibUSB/Mac/")
+		set(USB_LIB_NAME "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibUSB/Mac/libusb-1.0.a")
+	endif()
   endif()
 endif()
 
+if (NOT USB_LIB_FOUND OR NOT JPEG_FOUND)
+	message(FATAL_ERROR "Could not find library dependencies")
+endif()
 
 # Use external libraries.
 # -----------------------
 add_subdirectory("./Source/External/TinyXml/") # @todo only when lib was not found 
 add_subdirectory("./Source/OpenNI/")
-# add_subdirectory("./Source/External/LibJPEG/") # @todo only when lib was not found
 add_subdirectory("./Source/Modules/")
 
 add_dependencies(${OPENNI_LIB_NAME} ${TINYXML_LIB_NAME})

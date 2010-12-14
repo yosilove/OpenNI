@@ -1,38 +1,48 @@
-#project(OpenNI)
-
-file(GLOB ${OPENNI_LIB_NAME}_sources ./*.cpp)
-message(${USB_INCLUDE_DIR})
+# Add search paths.
+# ------------------
 include_directories(${USB_INCLUDE_DIR})
 include_directories(${TINYXML_INCLUDE_DIR})
 include_directories(${OPENNI_INCLUDE_DIR})
 include_directories("./FilesOnly")
 
+# Get sources for OpenNI
+# ----------------------
+file(GLOB ${OPENNI_LIB_NAME}_sources ./*.cpp)
 
+# Add platform specific sources.
+# ------------------------------
 if(OPENNI_PLATFORM_LINUX)
 	file(GLOB ${OPENNI_LIB_NAME}_platform_sources ./Linux-x86/*.cpp)
 elseif(OPENNI_PLATFORM_APPLE)
 	file(GLOB ${OPENNI_LIB_NAME}_platform_sources ./Mac/*.cpp)
+	set(CMAKE_EXE_LINKER_FLAGS "-framework CoreFoundation -framework IOKit")
 endif()
 
 set(CMAKE_INSTALL_RPATH_USE_LINK_LIBRARIES TRUE)
-add_library(${OPENNI_LIB_NAME} SHARED ${${OPENNI_LIB_NAME}_sources} ${${OPENNI_LIB_NAME}_platform_sources})
 
-# @todo don't use full path here.
-#find_library(LIBUSB usb-1.0)
+# Set our target
+# ---------------
+add_library(
+	${OPENNI_LIB_NAME} 
+	SHARED 
+	${${OPENNI_LIB_NAME}_sources} 
+	${${OPENNI_LIB_NAME}_platform_sources}
+)
+
+# Set Link libraries.
+# -------------------
 find_library(LIBDL dl)
+target_link_libraries(
+	${OPENNI_LIB_NAME}
+	${USB_LIB_NAME} 
+	${LIBDL} 
+	${TINYXML_LIB_NAME}
+	${CMAKE_EXE_LINKER_FLAGS}
+)
 
-#if(OPENNI_PLATFORM_LINUX)
-#	target_link_libraries(${OPENNI_LIB_NAME} "/usr/local/lib/libusb-1.0.so")
-#elseif(OPENNI_PLATFORM_APPLE)
-#	target_link_libraries(${OPENNI_LIB_NAME} "/usr/local/lib/libusb-1.0.a")
-#endif()
-
-set(CMAKE_EXE_LINKER_FLAGS "-framework CoreFoundation -framework IOKit")
-target_link_libraries(${OPENNI_LIB_NAME} ${USB_LIB_NAME} ${LIBDL} ${TINYXML_LIB_NAME})
-
-#target_link_libraries(${OPENNI_LIB_NAME} dl)
-#target_link_libraries(${OPENNI_LIB_NAME} rt)
-
+# Set path where to install the target, lib, runtime. 
+# (to same dir where we call cmake ., as we use the "dot")
+# -----------------------------------------------------
 install(TARGETS ${OPENNI_LIB_NAME}
 	LIBRARY DESTINATION .
 	RUNTIME DESTINATION .
