@@ -57,6 +57,8 @@ if (NOT USB_LIB_FOUND OR NOT JPEG_FOUND)
 	message(FATAL_ERROR "Could not find library dependencies")
 endif()
 
+# @todo find tinyxml!
+
 # Use external libraries.
 # -----------------------
 add_subdirectory("./Source/External/TinyXml/") # @todo only when lib was not found 
