@@ -17,7 +17,10 @@ add_executable(${CREAD_EXE} ${${CREAD_EXE}_sources})
 # ---------------------------------------
 target_link_libraries(${CREAD_EXE} ${OPENNI_LIB_NAME} )
 
-add_dependencies(${CREAD_EXE} ${OPENNI_LIB_NAME} )
+
+# Link to the shared libraries locally (from execution dir)
+# ----------------------------------------------------------
+set_target_properties(${CREAD_EXE} PROPERTIES INSTALL_RPATH ".")
 
 # We install the file to the dir where cmake is executed
 # ------------------------------------------------------

@@ -65,9 +65,6 @@ add_subdirectory("./Source/External/TinyXml/") # @todo only when lib was not fou
 add_subdirectory("./Source/OpenNI/")
 add_subdirectory("./Source/Modules/")
 
-add_dependencies(${OPENNI_LIB_NAME} ${TINYXML_LIB_NAME})
-add_dependencies(${JPEG_LIB_NAME} ${OPENNI_LIB_NAME})
-
 # Add samples
 # ---------------------------
 add_subdirectory("./Samples/NiAudioSample") #Compiles and runs on Mac
