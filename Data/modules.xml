@@ -1,0 +1,5 @@
+﻿<Modules>
+    <Module path="./libnimMockNodes.dylib" />
+    <Module path="./libnimCodecs.dylib" />
+    <Module path="./libnimRecorder.dylib" />
+</Modules>

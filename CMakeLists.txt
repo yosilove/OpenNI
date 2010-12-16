@@ -4,12 +4,13 @@ project(OpenNI)
 
 # Options
 # ---------
-OPTION(CREATE_TEST_BUILD	"Create a build which you do not have to install to testy" OFF)
-message(CREATE_TEST_BUILD)
+OPTION(CREATE_TEST_BUILD "Create a build which you do not have to install to" ON)
 if(CREATE_TEST_BUILD) 
 	#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCUSTOM_SAMPLE_XML_PATH=.")
 	add_definitions(-DCUSTOM_SAMPLE_XML_PATH="./SamplesConfig.xml")
+	add_definitions(-DXN_USE_CUSTOM_MODULES_FILE="./modules.xml")
 	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/Data/SamplesConfig.xml DESTINATION .)
+	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/Data/modules.xml DESTINATION .)
 endif()
 
 # Find platform 

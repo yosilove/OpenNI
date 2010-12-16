@@ -96,7 +96,10 @@ XnStatus resolveModulesFile(XnChar* strFileName, XnUInt32 nBufSize)
 {
 	XnStatus nRetVal = XN_STATUS_OK;
 
-#if (XN_PLATFORM == XN_PLATFORM_WIN32)
+#ifdef XN_USE_CUSTOM_MODULES_FILE // @todo Porting to Mac - use a custom module file path
+	nRetVal = xnOSStrCopy(strFileName, XN_USE_CUSTOM_MODULES_FILE, nBufSize);
+	XN_IS_STATUS_OK(nRetVal);
+#elif (XN_PLATFORM == XN_PLATFORM_WIN32)
 	nRetVal = xnOSExpandEnvironmentStrings("%OPEN_NI_INSTALL_PATH%\\Data\\modules.xml", strFileName, nBufSize);
 	XN_IS_STATUS_OK(nRetVal);
 #elif (XN_PLATFORM == XN_PLATFORM_LINUX_X86 || XN_PLATFORM == XN_PLATFORM_LINUX_ARM)
@@ -444,6 +447,7 @@ XnStatus XnModuleLoader::AddGenerator(XnModuleExportedProductionNodeInterface* p
 
 XnStatus XnModuleLoader::LoadSpecificInterface(XnProductionNodeType Type, XnModuleExportedProductionNodeInterface* pExportedInterface, XnProductionNodeInterfaceContainer*& pInterfaceContainer)
 {
+	
 	XnStatus nRetVal = XN_STATUS_OK;
 	
 	switch (Type)
