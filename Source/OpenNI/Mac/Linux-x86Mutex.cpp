@@ -366,7 +366,6 @@ XN_C_API XnStatus xnOSLockMutex(const XN_MUTEX_HANDLE MutexHandle, XnUInt32 nMil
 			 rc = errno;
 			 }
 			 */
-			printf("This functionality is not portet to mac.   Mutex.cpp");
 		}
 		else
 		{

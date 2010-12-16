@@ -138,6 +138,8 @@ XN_C_API XnStatus xnOSWaitForThreadExit(XN_THREAD_HANDLE ThreadHandle, XnUInt32 
 		void* pReturnValue;
 		
 		//rc = pthread_timedjoin_np(*ThreadHandle, &pReturnValue, &time); // @todo Porting to Mac - not yes ready
+		if (pthread_join(*ThreadHandle, &pReturnValue) == 0) // @todo Porting to Mac - added this line
+			rc = XN_STATUS_OK; // @todo Porting to Mac - added this line
 	}
 	
 	// check for failures
