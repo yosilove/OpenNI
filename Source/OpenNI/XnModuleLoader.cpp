@@ -222,7 +222,7 @@ XnStatus XnModuleLoader::LoadAllModules()
 		XN_IS_STATUS_OK(nRetVal);
 
 		const XnChar* strConfigDir = pModule->Attribute("configDir");
-
+		
 		nRetVal = LoadModule(strModulePath, strConfigDir);
 		XN_IS_STATUS_OK(nRetVal);
 
@@ -364,7 +364,6 @@ XnStatus XnModuleLoader::AddModuleGenerators(const XnChar* strModuleFile, XN_LIB
 		// get exported interface
 		XnModuleExportedProductionNodeInterface ExportedInterface;
 		aEntryPoints[i](&ExportedInterface);
-
 		nRetVal = AddGenerator(&ExportedInterface, strConfigDir);
 		if (nRetVal == XN_STATUS_INVALID_GENERATOR)
 		{
@@ -447,7 +446,6 @@ XnStatus XnModuleLoader::AddGenerator(XnModuleExportedProductionNodeInterface* p
 
 XnStatus XnModuleLoader::LoadSpecificInterface(XnProductionNodeType Type, XnModuleExportedProductionNodeInterface* pExportedInterface, XnProductionNodeInterfaceContainer*& pInterfaceContainer)
 {
-	
 	XnStatus nRetVal = XN_STATUS_OK;
 	
 	switch (Type)
@@ -461,6 +459,7 @@ XnStatus XnModuleLoader::LoadSpecificInterface(XnProductionNodeType Type, XnModu
 		XN_IS_STATUS_OK(nRetVal);
 		break;
 	case XN_NODE_TYPE_IMAGE:
+		printf("XnModuleLoader::LoadSpecificInterface(), load image\n");
 		nRetVal = LoadImageGenerator(pExportedInterface, pInterfaceContainer);
 		XN_IS_STATUS_OK(nRetVal);
 		break;
@@ -572,7 +571,6 @@ XnStatus XnModuleLoader::LoadImageGenerator(XnModuleExportedProductionNodeInterf
 	*pContainer = Interface;
 
 	pInterfaceContainer = pContainer;
-
 	return (XN_STATUS_OK);
 }
 

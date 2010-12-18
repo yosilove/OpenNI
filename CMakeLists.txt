@@ -11,6 +11,7 @@ if(CREATE_TEST_BUILD)
 	add_definitions(-DXN_USE_CUSTOM_MODULES_FILE="./modules.xml")
 	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/Data/SamplesConfig.xml DESTINATION .)
 	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/Data/modules.xml DESTINATION .)
+	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/Data/GlobalDefaults.ini DESTINATION .)
 endif()
 
 # Find platform 

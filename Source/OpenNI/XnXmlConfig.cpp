@@ -659,12 +659,12 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 	const TiXmlElement* pProudctionNodes = pRootElem->FirstChildElement("ProductionNodes");
 	if (pProudctionNodes == NULL)
 	{
-		printf("test: firstChildElement == ProductionNodes == NULL\n");
+		printf("XnXMLConfig::xnConfigureCreateNodes(): firstChildElement == ProductionNodes == NULL\n");
 		return (XN_STATUS_OK);
 	}
 
 	// global mirror
-	printf("test: check GlobalMirror\n");
+	printf("XnXMLConfig::xnConfigureCreateNodes(): Check GlobalMirror\n");
 	const TiXmlElement* pGlobalMirror = pProudctionNodes->FirstChildElement("GlobalMirror");
 	if (pGlobalMirror != NULL)
 	{
@@ -677,7 +677,6 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 	}
 	
 	// file recordings
-	printf("test: file recordings\n");
 	const TiXmlElement* pRecording = pProudctionNodes->FirstChildElement("Recording");
 	if (pRecording != NULL)
 	{
@@ -695,31 +694,28 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 	const XnChar* strStartGeneratingAttr = "startGenerating";
 
 	XnBool bStartGeneratingAll = TRUE;
-	printf("test: start generating all\n");
 	if (NULL != pProudctionNodes->Attribute(strStartGeneratingAttr))
 	{
 		nRetVal = xnXmlReadBoolAttribute(pProudctionNodes, strStartGeneratingAttr, &bStartGeneratingAll);
-		printf("test: start generating all, get bool\n");
 		XN_IS_STATUS_OK(nRetVal);
 	}
 
 	// new nodes
-	printf("test: lets loop through production nodes\n");
+	printf("XnXMLConfig::xnConfigureCreateNodes(): Start iterating over production nodes.\n");
 	const TiXmlElement* pNode = pProudctionNodes->FirstChildElement(strNodeTagName);
 	while (pNode != NULL)
 	{
-		printf("test: while node!\n");
 		// get type
 		const XnChar* strType;
 		nRetVal = xnXmlReadStringAttribute(pNode, "type", &strType);
-		printf("test: type\n");
 		XN_IS_STATUS_OK(nRetVal);
 
 		xnLogVerbose(XN_MASK_OPEN_NI, "Requested to create a node of type %s...", strType);
 
 		XnProductionNodeType Type;
+		printf("XnXMLConfig::xnConfigureCreateNodes(): call to xnProductionNodeTypeFromString()\n");
 		nRetVal = xnProductionNodeTypeFromString(strType, &Type);
-		printf("test: get production node from type string\n");
+		printf("ProductoniNodeType (see Include/XnTypes.h): %d\n", Type);
 		XN_IS_STATUS_OK(nRetVal);
 
 		// check if there is a query
@@ -736,33 +732,27 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 
 		// enumerate
 		XnNodeInfoList* pTrees;
-		printf("test: enumerate production tree\n");
+		printf("XnXMLConfig::xnConfigureCreateNodes(): call to xnEnumerateProductionTrees\n"); 
 		nRetVal = xnEnumerateProductionTrees(pContext, Type, pQuery, &pTrees, pErrors); // @todo Porting to Mac - this is where it goes wrong.
-		printf("test: enumerated tree\n");
 		XN_IS_STATUS_OK(nRetVal);
-		printf("test: .... \n");
+		
 		if (pQuery != NULL)
 		{
-			printf("test: now query free	\n");
 			xnNodeQueryFree(pQuery);
 			pQuery = NULL;
 		}
 
 		// choose first one
-		printf("test: choose first one\n");
 		XnNodeInfoListIterator itChosen = xnNodeInfoListGetFirst(pTrees);
 		XnNodeInfo* pChosenInfo = xnNodeInfoListGetCurrent(itChosen);
 
 		// check if a name was requested
 		if (NULL != pNode->Attribute("name"))
 		{
-			printf("test: name is requested \n");
 			const XnChar* strName = NULL;
 			nRetVal = xnXmlReadStringAttribute(pNode, "name", &strName);
-			printf("test: name is requested (after) \n");
 			if (nRetVal != XN_STATUS_OK)
 			{
-				printf("test: name is requested - status is not okay\n");
 				xnNodeInfoListFree(pTrees);
 				return (nRetVal);
 			}
@@ -774,15 +764,14 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 				return (nRetVal);
 			}
 		}
-
-		printf("test: start creating production tree \n");
+		
 		// create it
+		printf("XnXMLConfig::xnConfigureCreateNodes(): call to xnCreateProductionTree()"); 
 		XnNodeHandle hNode;
 		nRetVal = xnCreateProductionTree(pContext, pChosenInfo, &hNode);
 		if (nRetVal != XN_STATUS_OK)
 		{
-			
-			printf("test: creating production tree failed \n");
+
 			xnNodeInfoListFree(pTrees);
 			return (nRetVal);
 		}
@@ -791,7 +780,6 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 		xnNodeInfoListFree(pTrees);
 
 		// config it
-		printf("test: start configuring node from xml \n");
 		nRetVal = xnConfigureNodeFromXml(hNode, pNode);
 		XN_IS_STATUS_OK(nRetVal);
 
@@ -799,8 +787,6 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 		XnBool bStart = FALSE;
 		if (!bStartGeneratingAll)
 		{
-			
-			printf("test: !bStartGeneratingAll \n");
 			if (NULL != pNode->Attribute(strStartGeneratingAttr))
 			{
 				nRetVal = xnXmlReadBoolAttribute(pNode, strStartGeneratingAttr, &bStart);

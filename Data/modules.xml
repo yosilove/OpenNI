@@ -2,4 +2,5 @@
     <Module path="./libnimMockNodes.dylib" />
     <Module path="./libnimCodecs.dylib" />
     <Module path="./libnimRecorder.dylib" />
+    <Module path="./libXnDevicesSensorV2.dylib" configDir="." />
 </Modules>

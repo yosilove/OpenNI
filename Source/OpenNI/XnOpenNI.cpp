@@ -177,6 +177,8 @@ XN_C_API XnStatus xnInit(XnContext** ppContext)
 
 	// Initialize module loader
 	nRetVal = pContext->pModuleLoader->Init();
+	
+	//pContext->pModuleLoader->xnPrintRegisteredModules
 	if (nRetVal != XN_STATUS_OK)
 	{
 		xnShutdown(pContext);
@@ -189,7 +191,6 @@ XN_C_API XnStatus xnInit(XnContext** ppContext)
 	XN_IS_STATUS_OK(nRetVal);
 	// return to caller
 	*ppContext = pContext;
-	
 	return (XN_STATUS_OK);
 }
 
@@ -988,12 +989,9 @@ XN_C_API XnStatus xnEnumerateProductionTrees(XnContext* pContext, XnProductionNo
 	
 	XN_VALIDATE_INPUT_PTR(pContext);
 	XN_VALIDATE_OUTPUT_PTR(ppTreesList);
-	printf("enum_production_tree: 1\n");
 	XnNodeInfoList* pResult;
 	nRetVal = xnNodeInfoListAllocate(&pResult);
-	printf("enum_production_tree: 2\n");
 	XN_IS_STATUS_OK(nRetVal);
-	printf("enum_production_tree: 3\n");
 	// @todo Porting to Mac - check if there is a nodes map
 	if(pContext->pNodesMap->begin() == pContext->pNodesMap->end()) {
 		printf("The pContext->pNodesMap is empty\n");
@@ -1002,25 +1000,19 @@ XN_C_API XnStatus xnEnumerateProductionTrees(XnContext* pContext, XnProductionNo
 	// first take existing ones
 	for (XnNodesMap::Iterator it = pContext->pNodesMap->begin(); it != pContext->pNodesMap->end(); ++it)
 	{
-		printf("enum_production_tree: 4\n");
 		XnInternalNodeData* pNodeData = it.Value();
 		if (pNodeData->pNodeInfo->Description.Type == Type)
 		{
-			printf("enum_production_tree: 5\n");
 			nRetVal = xnNodeInfoListAddNode(pResult, pNodeData->pNodeInfo);
 			if (nRetVal != XN_STATUS_OK)
 			{
-				printf("enum_production_tree: 6\n");
 				xnNodeInfoListFree(pResult);
 				return (nRetVal);
 			}
-			printf("enum_production_tree: 7\n");
 		}
 	}
-	printf("enum_production_tree: 8\n");
 	// find exported generators
 	nRetVal = pContext->pModuleLoader->Enumerate(Type, pResult, pErrors);
-	printf("enum_production_tree: 9\n");
 	if (nRetVal != XN_STATUS_OK)
 	{
 		xnNodeInfoListFree(pResult);
@@ -1038,24 +1030,19 @@ XN_C_API XnStatus xnEnumerateProductionTrees(XnContext* pContext, XnProductionNo
 	}
 	// @todo Porting to Mac - end list
 	
-	printf("enum_production_tree: 10\n");
 	if (pQuery != NULL)
 	{
-		printf("enum_production_tree: 11\n");
 		xnNodeQueryFilterList(pContext, pQuery, pResult);
 	}
-	printf("enum_production_tree: 12\n");
-
+	
 	// see if we have any results
+	printf("XnOpenNI::xnEnumerateProductionTrees() line 1050, fails!\n");
 	if (!xnNodeInfoListIteratorIsValid(xnNodeInfoListGetFirst(pResult)))
 	{
-		printf("enum_production_tree: 13\n");
 		xnNodeInfoListFree(pResult);
-		printf("enum_production_tree: 14\n");
 		//@todo Porting to Mac - This XnOpenNI.cpp::xnEnumerateProductionTrees() should add verbose logging"
 		return (XN_STATUS_NO_NODE_PRESENT);
 	}
-	printf("enum_production_tree: 14\n");
 	*ppTreesList = pResult;
 
 	return (XN_STATUS_OK);
