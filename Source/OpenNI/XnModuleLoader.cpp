@@ -96,7 +96,10 @@ XnStatus resolveModulesFile(XnChar* strFileName, XnUInt32 nBufSize)
 {
 	XnStatus nRetVal = XN_STATUS_OK;
 
-#if (XN_PLATFORM == XN_PLATFORM_WIN32)
+#ifdef XN_USE_CUSTOM_MODULES_FILE // @todo Porting to Mac - use a custom module file path
+	nRetVal = xnOSStrCopy(strFileName, XN_USE_CUSTOM_MODULES_FILE, nBufSize);
+	XN_IS_STATUS_OK(nRetVal);
+#elif (XN_PLATFORM == XN_PLATFORM_WIN32)
 	nRetVal = xnOSExpandEnvironmentStrings("%OPEN_NI_INSTALL_PATH%\\Data\\modules.xml", strFileName, nBufSize);
 	XN_IS_STATUS_OK(nRetVal);
 #elif (XN_PLATFORM == XN_PLATFORM_LINUX_X86 || XN_PLATFORM == XN_PLATFORM_LINUX_ARM)
@@ -219,7 +222,7 @@ XnStatus XnModuleLoader::LoadAllModules()
 		XN_IS_STATUS_OK(nRetVal);
 
 		const XnChar* strConfigDir = pModule->Attribute("configDir");
-
+		
 		nRetVal = LoadModule(strModulePath, strConfigDir);
 		XN_IS_STATUS_OK(nRetVal);
 
@@ -361,7 +364,6 @@ XnStatus XnModuleLoader::AddModuleGenerators(const XnChar* strModuleFile, XN_LIB
 		// get exported interface
 		XnModuleExportedProductionNodeInterface ExportedInterface;
 		aEntryPoints[i](&ExportedInterface);
-
 		nRetVal = AddGenerator(&ExportedInterface, strConfigDir);
 		if (nRetVal == XN_STATUS_INVALID_GENERATOR)
 		{
@@ -457,6 +459,7 @@ XnStatus XnModuleLoader::LoadSpecificInterface(XnProductionNodeType Type, XnModu
 		XN_IS_STATUS_OK(nRetVal);
 		break;
 	case XN_NODE_TYPE_IMAGE:
+		printf("XnModuleLoader::LoadSpecificInterface(), load image\n");
 		nRetVal = LoadImageGenerator(pExportedInterface, pInterfaceContainer);
 		XN_IS_STATUS_OK(nRetVal);
 		break;
@@ -568,7 +571,6 @@ XnStatus XnModuleLoader::LoadImageGenerator(XnModuleExportedProductionNodeInterf
 	*pContainer = Interface;
 
 	pInterfaceContainer = pContainer;
-
 	return (XN_STATUS_OK);
 }
 

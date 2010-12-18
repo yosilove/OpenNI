@@ -659,10 +659,12 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 	const TiXmlElement* pProudctionNodes = pRootElem->FirstChildElement("ProductionNodes");
 	if (pProudctionNodes == NULL)
 	{
+		printf("XnXMLConfig::xnConfigureCreateNodes(): firstChildElement == ProductionNodes == NULL\n");
 		return (XN_STATUS_OK);
 	}
 
 	// global mirror
+	printf("XnXMLConfig::xnConfigureCreateNodes(): Check GlobalMirror\n");
 	const TiXmlElement* pGlobalMirror = pProudctionNodes->FirstChildElement("GlobalMirror");
 	if (pGlobalMirror != NULL)
 	{
@@ -673,7 +675,7 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 		nRetVal = xnSetGlobalMirror(pContext, bOn);
 		XN_IS_STATUS_OK(nRetVal);
 	}
-
+	
 	// file recordings
 	const TiXmlElement* pRecording = pProudctionNodes->FirstChildElement("Recording");
 	if (pRecording != NULL)
@@ -699,6 +701,7 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 	}
 
 	// new nodes
+	printf("XnXMLConfig::xnConfigureCreateNodes(): Start iterating over production nodes.\n");
 	const TiXmlElement* pNode = pProudctionNodes->FirstChildElement(strNodeTagName);
 	while (pNode != NULL)
 	{
@@ -710,7 +713,9 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 		xnLogVerbose(XN_MASK_OPEN_NI, "Requested to create a node of type %s...", strType);
 
 		XnProductionNodeType Type;
+		printf("XnXMLConfig::xnConfigureCreateNodes(): call to xnProductionNodeTypeFromString()\n");
 		nRetVal = xnProductionNodeTypeFromString(strType, &Type);
+		printf("ProductoniNodeType (see Include/XnTypes.h): %d\n", Type);
 		XN_IS_STATUS_OK(nRetVal);
 
 		// check if there is a query
@@ -727,9 +732,10 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 
 		// enumerate
 		XnNodeInfoList* pTrees;
-		nRetVal = xnEnumerateProductionTrees(pContext, Type, pQuery, &pTrees, pErrors);
+		printf("XnXMLConfig::xnConfigureCreateNodes(): call to xnEnumerateProductionTrees\n"); 
+		nRetVal = xnEnumerateProductionTrees(pContext, Type, pQuery, &pTrees, pErrors); // @todo Porting to Mac - this is where it goes wrong.
 		XN_IS_STATUS_OK(nRetVal);
-
+		
 		if (pQuery != NULL)
 		{
 			xnNodeQueryFree(pQuery);
@@ -758,12 +764,14 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 				return (nRetVal);
 			}
 		}
-
+		
 		// create it
+		printf("XnXMLConfig::xnConfigureCreateNodes(): call to xnCreateProductionTree()"); 
 		XnNodeHandle hNode;
 		nRetVal = xnCreateProductionTree(pContext, pChosenInfo, &hNode);
 		if (nRetVal != XN_STATUS_OK)
 		{
+
 			xnNodeInfoListFree(pTrees);
 			return (nRetVal);
 		}
@@ -808,19 +816,26 @@ XnStatus xnConfigureCreateNodes(XnContext* pContext, const TiXmlElement* pRootEl
 XN_C_API XnStatus xnContextRunXmlScriptFromFile(XnContext* pContext, const XnChar* strFileName, XnEnumerationErrors* pErrors)
 {
 	XnStatus nRetVal = XN_STATUS_OK;
-
+	
 	TiXmlDocument doc;
 	nRetVal = xnXmlLoadDocument(doc, strFileName);
+	printf("XnXMLConfig.xnContextRunXmlScriptFromFileL: Load document\n");
 	XN_IS_STATUS_OK(nRetVal);
-
+	
 	TiXmlElement* pRootElem = doc.RootElement();
 	if (pRootElem != NULL)
 	{
+		printf("XnXMLConfig.xnContextRunXmlScriptFromFile: call xnLoadLicednsesFromXML\n");
 		nRetVal = xnLoadLicensesFromXml(pContext, pRootElem);
 		XN_IS_STATUS_OK(nRetVal);
-
+		printf("XnXMLConfig.xnContextRunXmlScriptFromFile: Loaded licenses.\n");
+		printf("XnXMLConfig.xnContextRunXmlScriptFromFile: call xnConfigureCreateNodes()\n");
 		nRetVal = xnConfigureCreateNodes(pContext, pRootElem, pErrors);
+		printf("XnXMLConfig.xnContextRunXmlScriptFromFile: called xnConfigureCreateNodes()\n");
 		XN_IS_STATUS_OK(nRetVal);
+	}
+	else {
+		printf("Porting to mac, cannot load xml document: %s", strFileName);
 	}
 
 	return (XN_STATUS_OK);

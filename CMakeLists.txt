@@ -2,6 +2,18 @@ cmake_minimum_required(VERSION 2.8)
 
 project(OpenNI)
 
+# Options
+# ---------
+OPTION(CREATE_TEST_BUILD "Create a build which you do not have to install to" ON)
+if(CREATE_TEST_BUILD) 
+	#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCUSTOM_SAMPLE_XML_PATH=.")
+	add_definitions(-DCUSTOM_SAMPLE_XML_PATH="./SamplesConfig.xml")
+	add_definitions(-DXN_USE_CUSTOM_MODULES_FILE="./modules.xml")
+	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/Data/SamplesConfig.xml DESTINATION .)
+	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/Data/modules.xml DESTINATION .)
+	install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/Data/GlobalDefaults.ini DESTINATION .)
+endif()
+
 # Find platform 
 # -------------
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
@@ -17,10 +29,8 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules" ${CMAKE_MODULE_
 # Some global variables
 # ----------------------
 set(TINYXML_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/TinyXml/")
-# set(JPEG_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/External/LibJPEG/")
 set(OPENNI_INCLUDE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Include/")
 set(OPENNI_MODULES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source/Modules")
-
 set(TINYXML_LIB_NAME TinyXml)
 set(JPEG_LIB_NAME JPEG)
 set(OPENNI_LIB_NAME OpenNI)

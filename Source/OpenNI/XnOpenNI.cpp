@@ -177,19 +177,20 @@ XN_C_API XnStatus xnInit(XnContext** ppContext)
 
 	// Initialize module loader
 	nRetVal = pContext->pModuleLoader->Init();
+	
+	//pContext->pModuleLoader->xnPrintRegisteredModules
 	if (nRetVal != XN_STATUS_OK)
 	{
 		xnShutdown(pContext);
 		return (nRetVal);
 	}
 
+	
 	// load global licenses
 	nRetVal = xnLoadGlobalLicenses(pContext);
 	XN_IS_STATUS_OK(nRetVal);
-
 	// return to caller
 	*ppContext = pContext;
-	
 	return (XN_STATUS_OK);
 }
 
@@ -201,17 +202,18 @@ XN_C_API XnStatus xnInitFromXmlFile(const XnChar* strFileName, XnContext** ppCon
 	XN_VALIDATE_OUTPUT_PTR(ppContext);
 
 	*ppContext = NULL;
-
+	printf("Opening:%s\n", strFileName);
 	nRetVal = xnLogInitFromXmlFile(strFileName);
 	XN_IS_STATUS_OK(nRetVal);
 
 	XnContext* pContext;
 	nRetVal = xnInit(&pContext);
 	XN_IS_STATUS_OK(nRetVal);
-
+	printf("XnOpenNI.xnInitFromXMLFile() called\n");
  	nRetVal = xnContextRunXmlScriptFromFile(pContext, strFileName, pErrors);
 	if (nRetVal != XN_STATUS_OK)
 	{
+		printf("Call to xnContactRunXMLScriptFromFile() FAILED\n");
 		xnShutdown(pContext);
 		return (nRetVal);
 	}
@@ -987,11 +989,14 @@ XN_C_API XnStatus xnEnumerateProductionTrees(XnContext* pContext, XnProductionNo
 	
 	XN_VALIDATE_INPUT_PTR(pContext);
 	XN_VALIDATE_OUTPUT_PTR(ppTreesList);
-
 	XnNodeInfoList* pResult;
 	nRetVal = xnNodeInfoListAllocate(&pResult);
 	XN_IS_STATUS_OK(nRetVal);
-
+	// @todo Porting to Mac - check if there is a nodes map
+	if(pContext->pNodesMap->begin() == pContext->pNodesMap->end()) {
+		printf("The pContext->pNodesMap is empty\n");
+	}
+	// @todo Porting to Mac - END check if there is a nodes map.
 	// first take existing ones
 	for (XnNodesMap::Iterator it = pContext->pNodesMap->begin(); it != pContext->pNodesMap->end(); ++it)
 	{
@@ -1006,7 +1011,6 @@ XN_C_API XnStatus xnEnumerateProductionTrees(XnContext* pContext, XnProductionNo
 			}
 		}
 	}
-
 	// find exported generators
 	nRetVal = pContext->pModuleLoader->Enumerate(Type, pResult, pErrors);
 	if (nRetVal != XN_STATUS_OK)
@@ -1014,19 +1018,31 @@ XN_C_API XnStatus xnEnumerateProductionTrees(XnContext* pContext, XnProductionNo
 		xnNodeInfoListFree(pResult);
 		return (nRetVal);
 	}
-
+	// @todo Porting to Mac - begin list
+	XnNodeInfoListNode* curr = pResult->pFirst;
+	if(curr == pResult->pLast) {
+		printf("We did not find any items in the NodeInfoList\n");
+	}
+	while(curr != pResult->pLast) {
+		XnNodeInfo* item = curr->pCurrent;
+		printf("Enumerate, node:  %s\n", item->strInstanceName);
+		curr = curr->pNext;
+	}
+	// @todo Porting to Mac - end list
+	
 	if (pQuery != NULL)
 	{
 		xnNodeQueryFilterList(pContext, pQuery, pResult);
 	}
-
+	
 	// see if we have any results
+	printf("XnOpenNI::xnEnumerateProductionTrees() line 1050, fails!\n");
 	if (!xnNodeInfoListIteratorIsValid(xnNodeInfoListGetFirst(pResult)))
 	{
 		xnNodeInfoListFree(pResult);
+		//@todo Porting to Mac - This XnOpenNI.cpp::xnEnumerateProductionTrees() should add verbose logging"
 		return (XN_STATUS_NO_NODE_PRESENT);
 	}
-
 	*ppTreesList = pResult;
 
 	return (XN_STATUS_OK);
@@ -1245,6 +1261,7 @@ void XN_CALLBACK_TYPE xnNodeFrameSyncChanged(XnNodeHandle hNode, void* pCookie)
 
 static XnStatus xnCreateProductionNodeImpl(XnContext* pContext, XnNodeInfo* pTree)
 {
+	
 	XnStatus nRetVal = XN_STATUS_OK;
 	
 	// first of all, check if name is empty, if so - give it a default name

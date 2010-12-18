@@ -40,8 +40,12 @@ using namespace xn;
 //---------------------------------------------------------------------------
 // Defines
 //---------------------------------------------------------------------------
-#define SAMPLE_XML_PATH "../../../../Data/SamplesConfig.xml"
-//#define SAMPLE_XML_PATH "/home/roxlu/Documents/programming/c++/openni_fork/Data/SamplesConfig.xml"
+#ifdef CUSTOM_SAMPLE_XML_PATH
+	#define SAMPLE_XML_PATH CUSTOM_SAMPLE_XML_PATH
+#else
+	#define SAMPLE_XML_PATH "../../../../Data/SamplesConfig.xml"
+#endif
+
 #define GL_WIN_SIZE_X 1280
 #define GL_WIN_SIZE_Y 1024
 

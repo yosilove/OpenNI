@@ -359,6 +359,7 @@ XN_C_API XnStatus xnOSLockMutex(const XN_MUTEX_HANDLE MutexHandle, XnUInt32 nMil
 		// lock via the OS
 		if (MutexHandle->bIsNamed)
 		{
+			printf("Max/Linux-x86Mutex.cpp, xnOSLockMutex()\n");
 			// @todo Porting to Mac - not yet ready
 			/*
 			 if (0 != semtimedop(MutexHandle->NamedSem, &op, 1, &time))
@@ -366,7 +367,6 @@ XN_C_API XnStatus xnOSLockMutex(const XN_MUTEX_HANDLE MutexHandle, XnUInt32 nMil
 			 rc = errno;
 			 }
 			 */
-			printf("This functionality is not portet to mac.   Mutex.cpp");
 		}
 		else
 		{

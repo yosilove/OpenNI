@@ -34,7 +34,11 @@
 //---------------------------------------------------------------------------
 // Defines
 //---------------------------------------------------------------------------
-#define SAMPLE_XML_PATH "../../../../Data/SamplesConfig.xml"
+#ifdef CUSTOM_SAMPLE_XML_PATH
+	#define SAMPLE_XML_PATH CUSTOM_SAMPLE_XML_PATH
+#else
+	#define SAMPLE_XML_PATH "../../../../Data/SamplesConfig.xml"
+#endif
 
 //---------------------------------------------------------------------------
 // Macros
