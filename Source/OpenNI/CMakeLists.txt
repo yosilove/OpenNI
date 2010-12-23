@@ -18,8 +18,6 @@ elseif(OPENNI_PLATFORM_APPLE)
 	set(CMAKE_EXE_LINKER_FLAGS "-framework CoreFoundation -framework IOKit")
 endif()
 
-set(CMAKE_INSTALL_RPATH_USE_LINK_LIBRARIES TRUE)
-
 # Set our target
 # ---------------
 add_library(
@@ -40,10 +38,16 @@ target_link_libraries(
 	${CMAKE_EXE_LINKER_FLAGS}
 )
 
+set_target_properties(
+	${OPENNI_LIB_NAME}
+	PROPERTIES
+	INSTALL_RPATH "${OPENNI_RIBRARY_INSTALL_PREFIX}"
+)
+
 # Set path where to install the target, lib, runtime. 
 # (to same dir where we call cmake ., as we use the "dot")
 # -----------------------------------------------------
 install(TARGETS ${OPENNI_LIB_NAME}
-	LIBRARY DESTINATION .
-	RUNTIME DESTINATION .
+       LIBRARY DESTINATION ${OPENNI_LIB_DIR}
+       RUNTIME DESTINATION ${OPENNI_RUNTIME_DIR}
 )

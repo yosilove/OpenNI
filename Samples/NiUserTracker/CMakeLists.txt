@@ -36,6 +36,6 @@ add_dependencies(${USERTRACKER_EXE} ${OPENNI_LIB_NAME} )
 # We install the file to the dir where cmake is executed
 # ------------------------------------------------------
 install(TARGETS ${USERTRACKER_EXE}
-	RUNTIME DESTINATION .
+	RUNTIME DESTINATION ${OPENNI_RUNTIME_DIR}
 )
 

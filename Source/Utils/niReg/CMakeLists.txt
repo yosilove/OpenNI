@@ -11,5 +11,5 @@ target_link_libraries(${REG_EXE} ${OPENNI_LIB_NAME})
 add_dependencies(${REG_EXE} ${OPENNI_LIB_NAME})
 
 install(TARGETS ${REG_EXE}
-	RUNTIME DESTINATION .
+       RUNTIME DESTINATION ${OPENNI_RUNTIME_DIR}
 )

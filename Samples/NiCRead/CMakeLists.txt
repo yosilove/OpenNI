@@ -25,6 +25,6 @@ set_target_properties(${CREAD_EXE} PROPERTIES INSTALL_RPATH ".")
 # We install the file to the dir where cmake is executed
 # ------------------------------------------------------
 install(TARGETS ${CREAD_EXE}
-	RUNTIME DESTINATION .
+	RUNTIME DESTINATION ${OPENNI_RUNTIME_DIR}
 )
 

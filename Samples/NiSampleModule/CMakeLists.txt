@@ -21,7 +21,7 @@ target_link_libraries(${SAMPLEMODULE_LIB_NAME} ${OPENNI_LIB_NAME})
 # We install the file to the dir where cmake is executed
 # ------------------------------------------------------
 install(TARGETS ${SAMPLEMODULE_LIB_NAME}
-	LIBRARY DESTINATION .
-	RUNTIME DESTINATION .
+	LIBRARY DESTINATION ${OPENNI_LIB_DIR}
+	RUNTIME DESTINATION ${OPENNI_RUNTIME_DIR}
 )
 

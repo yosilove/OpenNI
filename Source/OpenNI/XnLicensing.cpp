@@ -141,7 +141,11 @@ XnStatus resolveLicensesFile(XnChar* strFileName, XnUInt32 nBufSize)
 	XN_IS_STATUS_OK(nRetVal);
 #elif (XN_PLATFORM == XN_PLATFORM_MAC)
 	// @todo porting to Mac
+#ifdef CUSTOM_LISENSE_XML_PATH
+	nRetVal = xnOSStrCopy(strFileName, CUSTOM_LISENSE_XML_PATH, nBufSize);
+#else
 	nRetVal = xnOSStrCopy(strFileName, "/var/lib/ni/licenses.xml", nBufSize);
+#endif
 	XN_IS_STATUS_OK(nRetVal);
 #else
 	#error "Unsupported platform!"

@@ -23,5 +23,5 @@ set_target_properties(${BACKRECORDER_EXE} PROPERTIES INSTALL_RPATH ".")
 # We install the file to the dir where cmake is executed
 # ------------------------------------------------------
 install(TARGETS ${BACKRECORDER_EXE}
-	RUNTIME DESTINATION .
+	RUNTIME DESTINATION ${OPENNI_RUNTIME_DIR}
 )

@@ -3,6 +3,6 @@ set(${TINYXML_LIB_NAME}_sources tinyxml.cpp tinystr.cpp tinyxmlerror.cpp tinyxml
 add_library(${TINYXML_LIB_NAME} SHARED ${${TINYXML_LIB_NAME}_sources})
 
 install(TARGETS ${TINYXML_LIB_NAME}
-       LIBRARY DESTINATION .
-       RUNTIME DESTINATION .
+       LIBRARY DESTINATION ${OPENNI_LIB_DIR}
+       RUNTIME DESTINATION ${OPENNI_RUNTIME_DIR}
 )
