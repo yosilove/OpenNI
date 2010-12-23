@@ -2,6 +2,22 @@ OpenNI
 ------
 Website: www.openni.org
 
+Change Memo:
+-----------
+[change by yosilove]
+  when CREATE_TEST_BUILD is OFF
+    librarys install to $(install prefix)/lib
+    runtimes install to $(install prefix)/bin
+    Data install to $(install prefix)/etc/etc/primesense  (for install Nite)
+    include install to $(install prefix)/include
+  fix niLicense
+
+  known bug
+    must use full path to CMAKE_INSTALL_PREFIX when CREATE_TEST_BUILD is OFF
+    ok-ex ) cmake -DCMAKE_INSTALL_PREFIX=/usr/local/OpenNI .
+    bad-ex) cmake -DCMAKE_INSTALL_PREFIX=../OpenNI_TEST .
+
+
 Release Notes:
 --------------
 * At the moment, the default is to compile the code with SSE3 support (this is also true for the supplied binaries). 
